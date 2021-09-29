@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter @Setter
 public class DoDTO extends BaseDTO{
     private String username;
-    private Long question_id;
+    private Long questionId;
 }

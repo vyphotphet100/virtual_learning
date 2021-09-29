@@ -14,7 +14,7 @@ CREATE TABLE `user`
     `birthday`  DATE,
     `phone`     LONGTEXT,
     `avatar`    LONGTEXT,
-    `role_code` VARCHAR(15) NOT NULL UNIQUE,
+    `role_code` VARCHAR(15) NOT NULL,
     FOREIGN KEY (`role_code`) REFERENCES role (`code`)
 );
 

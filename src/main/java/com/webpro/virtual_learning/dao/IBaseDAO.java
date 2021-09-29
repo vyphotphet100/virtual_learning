@@ -9,5 +9,4 @@ import java.util.List;
 public interface IBaseDAO<T>{
     List<T> findAll();
     T save(T dto);
-    T update(T dto);
 }

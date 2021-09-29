@@ -20,23 +20,6 @@ public class RoleDAO extends BaseDAO<RoleDTO> implements IRoleDAO{
     }
 
     @Override
-    public RoleDTO update(RoleDTO dto) {
-        if (dto.getId() == null)
-            return null;
-
-        StringBuilder sql = new StringBuilder("UPDATE `role` SET ");
-
-
-
-
-
-
-        String sql = "INSERT INTO `role`(`id`, `code`) VALUE(?, ?);";
-        Long id = (Long)baseLowerDao.insert(sql, dto.getCode());
-        return this.findById(id);
-    }
-
-    @Override
     public RoleDTO findById(Long id) {
         String sql = "SELECT * FROM `role` WHERE `id` = " + id;
         List<RoleDTO> res = baseLowerDao.query(sql, RoleDTO.class);

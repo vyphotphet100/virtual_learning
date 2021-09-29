@@ -9,5 +9,5 @@ public class LessonDTO extends BaseDTO{
     private String title;
     private String description;
     private String video;
-    private Long class_id;
+    private Long classId;
 }

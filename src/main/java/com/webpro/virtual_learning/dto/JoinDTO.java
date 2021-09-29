@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter @Setter
 public class JoinDTO extends BaseDTO{
     private String username;
-    private Long class_id;
+    private Long classId;
 }

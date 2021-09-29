@@ -9,6 +9,6 @@ public class ClassDTO extends BaseDTO{
     private String name;
     private String description;
     private String password;
-    private String author_username;
-    private Long subject_id;
+    private String authorUsername;
+    private Long subjectId;
 }

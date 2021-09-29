@@ -9,5 +9,5 @@ public class QuestionDTO extends BaseDTO{
     private String content;
     private String option;
     private Integer correct;
-    private Long lesson_id;
+    private Long lessonId;
 }
