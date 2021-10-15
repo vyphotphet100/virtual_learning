@@ -27,11 +27,16 @@ public class UserDAO extends BaseDAO<UserDTO> implements IUserDAO {
 
     @Override
     public UserDTO findById(String username) {
-        return null;
+        String sql = "SELECT * FROM `user` WHERE `username` = '" + username + "'";
+        List<UserDTO> res = baseLowerDao.query(sql, UserDTO.class);
+        if (res.isEmpty())
+            return null;
+        return res.get(0);
     }
 
     @Override
     public void delete(String username) {
-
+        String sql = "DELETE FROM `user` WHERE `username` = ?;";
+        baseLowerDao.delete(sql, username);
     }
 }

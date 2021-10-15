@@ -65,7 +65,7 @@ public class ResultSetDTOConverter {
             JoinDTO joinDto = new JoinDTO();
             try {
                 joinDto.setUsername(rs.getString("username"));
-                joinDto.setClassId(rs.getLong("classId"));
+                joinDto.setClassId(rs.getLong("class_id"));
                 return joinDto;
             } catch (SQLException e) {
                 e.printStackTrace();
