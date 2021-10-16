@@ -19,6 +19,11 @@ VALUES (1, "Class 1", "This is description", "123", "user2", "2"),
        (4, "Class 4", "This is description", "123", "user2", "4"),
        (5, "Class 5", "This is description", "123", "user1", "4");
 
+INSERT INTO `lesson`(`id`, `title`, `description`, `video`, `class_id`)
+VALUES (1, "Lesson 1", "Description", null, 1),
+       (2, "Lesson 2", "Description", null, 3),
+       (3, "Lesson 3", "Description", null, 4),
+       (4, "Lesson 4", "Description", null, 1);
 
 
 
