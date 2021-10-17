@@ -25,6 +25,17 @@ VALUES (1, "Lesson 1", "Description", null, 1),
        (3, "Lesson 3", "Description", null, 4),
        (4, "Lesson 4", "Description", null, 1);
 
+INSERT INTO `question`(`id`, `content`, `option`, `correct`, `lesson_id`)
+VALUES (1, "Content lesson 1", "option1|option2|option3|option4", 2, 1),
+       (2, "Content lesson 2", "option1|option2|option3|option4", 3, 1),
+       (3, "Content lesson 3", "option1|option2|option3|option4", 2, 2),
+       (4, "Content lesson 4", "option1|option2|option3|option4", 4, 3);
+
+INSERT INTO `do`(`username`, `question_id`)
+VALUES ("user1", 1),
+       ("user1", 2),
+       ("user2", 2),
+       ("user2", 3);
 
 
 

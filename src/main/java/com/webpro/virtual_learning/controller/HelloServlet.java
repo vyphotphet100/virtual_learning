@@ -18,14 +18,13 @@ public class HelloServlet extends HttpServlet {
     private String message;
 
     //@Inject
-    private LessonDAO lessonDao = new LessonDAO();
+    private DoDAO doDao = new DoDAO();
 
     public void init() {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        lessonDao.delete(5L);
-        lessonDao.delete(6L);
+        doDao.delete("user1", 4L);
 
     }
 
