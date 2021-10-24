@@ -1,0 +1,419 @@
+/*Sign up + form input*/
+#edit-form-position{
+    padding: 35px 55px 55px 55px !important;
+
+}
+
+.edit-form{
+    background: none !important;
+    width: 50% !important;
+    padding-top: 4px !important;
+    margin-left: 25% !important;
+    flex-direction: column;
+    justify-content: center !important ;
+}
+
+#edit-form-size{
+    width: 450px !important;
+    height: 65px !important;
+}
+
+/*index*/
+.fa-user-circle-o{
+    font-size: 30px !important;
+    color: black;
+}
+.fa-user-circle-o:hover{
+    color: #14BDEE;
+}
+.Login:hover{
+     color: #14BDEE;
+     background-color: #333333;
+}
+
+.list_classes_container{
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#popular-courses{
+    margin-top: 100px;
+}
+
+.course_image{
+    width: 100% !important;
+    height: 200px;
+}
+
+.topic-more{
+    margin-top: 4%;
+    margin-bottom: -3%;
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.more:hover{
+    color: burlywood !important;
+}
+
+.topic:hover{
+    color: burlywood !important;
+}
+
+/*Class detail*/
+
+.topic-of-page{
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-bottom: 5%;
+    color: black;
+    display: flex;
+    justify-content: left;
+}
+
+.h:hover{
+    color: burlywood !important;
+}
+
+.text-lg-right{
+    margin-right: 5%;
+}
+.teacher-subject{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+}
+
+.teacher{
+    margin-bottom: 1%;
+    margin-left: 0px;
+}
+
+.join-button{
+    width: 30% !important;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: #14bdee;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 3%;
+}
+.join-button:hover{ 
+    background-color: #333333;
+}
+
+.a-join-button{
+    width: 20%;
+}
+
+.effect-delete:hover{
+    background-color: burlywood !important;
+}
+
+/*My class*/
+.my-class{
+    margin-top: 80px;
+    margin-bottom: 10px !important;
+    margin-right: 20% !important;
+    display: flex;
+
+}
+
+.class-topic-description{
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.edit-delete{
+    display: flex;
+   flex-direction: column !important;
+   margin-left: 5%;
+}
+
+.edit-button{
+    width: 170% !important;
+    height: 100% !important;
+}
+
+.edit-course{
+    width: 66% !important;
+}
+
+/*Add lesson*/
+.join-button-edit{
+    width: 100% !important; 
+    height: 50px !important; 
+    font-size: 19px;
+}
+
+/*Edit lesson*/
+.edit-question-form{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+.button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+
+
+  }
+  .button:hover {
+    background-color: #f1f1f1;
+  }
+
+  .vertical-menu {
+    padding: 5px 5px; /* Set a width if you like */
+  }
+  
+  .vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+  .vertical-menu a.active {
+    background-color: #04AA6D; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+  .probootstrap-cta{
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 100px;
+  }
+
+/*******************************
+Start  lesstion
+*********************************/
+  #lession2{
+    position: relative;
+    top: 100px;
+    bottom: 500px;
+  }
+  .description{
+    width: 1125px;
+    height: 250px;
+    border: 0.3px inset #65d8ec;
+    padding: 10px;
+
+
+  }
+ 
+  .tt{
+    text-align: center;
+    width: 780px;
+  }
+  .des{
+    font-size: 14px;
+  }
+  #quizze{
+
+    position: relative;
+    top: 100px;
+    bottom: 500px;
+  
+    
+    flex-direction: row
+    
+  }
+
+/*******************************
+End  lesstion
+*********************************/  
+/* 
+Start Edit lession 
+ */
+ .menu-btn{
+  position: relative;
+  width: 100%;
+  background-color: #b0e0e6;
+  margin: 10px 5px 100px;
+
+
+}
+.btn-delete{
+  position: absolute;
+  right: 0px;
+  width: 200px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+
+      
+}
+.btn-edit{
+  position: absolute;
+  right: 220px;
+  width: 200px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+ 
+}
+.btn-delete:hover{
+  background-color: rgb(10, 84, 119);
+}
+.btn-edit:hover{
+  background-color: rgb(10, 84, 119);
+}
+.btn-quize{
+  position: relative;
+  margin-top:15px;
+  width: auto;
+  background-color: #b0e0e6;
+}
+
+/* 
+End Edit lession 
+ */
+
+/*******************************
+Start question
+*********************************/
+#backlession{
+    position: relative;
+    background-color: #14BDEE;
+    border-radius: 5px;
+    margin-left: 250px;
+    width: 20%;
+    height: 30px;
+  }
+  
+  #showResult,
+  #resetResult {
+    display: none;
+  }
+  
+  input[type="submit"],
+  input[type="button"],
+  button {
+    cursor: pointer;
+  }
+  
+  .qContent {
+    counter-increment: qIndex;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .qContent:before {
+    content: "Q" counter(qIndex)". ";
+    color: rgb(207, 17, 17);
+  }
+  
+  .qContent:after {
+    content: " ?";
+  }
+  
+  li {
+    /* list-style-type: lower-alpha; */
+    cursor: pointer;
+    line-height: 22px;
+    height: 22px;
+    color:#444;
+  }
+  
+  .items {
+    display: none;
+  }
+  
+  .items + label:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgba(24, 22, 22, 0.11);
+    margin: 0;
+    padding: 0;
+    top: 1px;
+    left: -26px;
+    border-radius: 50%;
+  }
+  
+  li:hover label:after {
+    border-color: orange;
+  }
+  
+  li:hover input:disabled + label:after {
+    border-color: black;
+  }
+  
+  .items:checked + label {
+    color: #0093FC;
+  }
+  
+  .items:checked + label:after {
+    border-color: #0093FC;
+  }
+  
+  .correct .items:checked + label {
+    color: green;
+  }
+  
+  .correct .items:checked + label:after {
+    border-color: green;
+  }
+  
+  .wrong .items:checked + label {
+    color: rgba(128, 57, 57, 0.918);
+  }
+  
+  .wrong .items:checked + label:after {
+    border-color: rgba(128, 57, 57, 0.918);
+  }
+  
+  .items.key + label {
+    color: #B500FF;
+  }
+  
+  .items.key + label:after {
+    border-color: #B500FF;
+  }
+  
+  
+  
+  #checkResult {
+    position: absolute;
+    color:black;
+    background:#14BDEE;
+    border-radius:5px;
+    width: 20%;
+    height: 30px;
+  }
+  
+  #resetResult {
+    color: red;
+  }
+  
+  #showResult {
+    color: #B500FF;
+  }
+
+
+/*******************************
+End question
+*********************************/
+/* custom css code goes here */

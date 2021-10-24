@@ -4,10 +4,8 @@ import com.webpro.virtual_learning.dto.UserDTO;
 
 import java.util.List;
 
-public interface IUserService extends IBaseService{
-    List<UserDTO> findAll();
+public interface IUserService extends IBaseService<UserDTO>{
     UserDTO findByUsername(String username);
-    UserDTO save(UserDTO userDto);
-    UserDTO update(UserDTO userDto);
+    UserDTO findByUsernameAndPassword(String username, String password);
     void delete(String username);
 }

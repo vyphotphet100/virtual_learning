@@ -1,3 +1,1 @@
-- Tìm hiểu Inject -> OK
-- Bắt đầu xây dựng Service
-
+- Đang thiết kế login.jsp
