@@ -1,6 +1,9 @@
 package com.webpro.virtual_learning.controller;
 
+import com.webpro.virtual_learning.dto.BaseDTO;
+import com.webpro.virtual_learning.dto.UserDTO;
 import com.webpro.virtual_learning.service.IUserService;
+import com.webpro.virtual_learning.utils.HttpUtil;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -21,7 +24,19 @@ public class LoginController extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
-
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        UserDTO userDto = (UserDTO)request.getSession().getAttribute("userDto");
+        UserDTO requestDto = (UserDTO)HttpUtil.toDTO(request, UserDTO.class);
+        UserDTO responseDto = userService.findByUsernameAndPassword(requestDto.getUsername(), requestDto.getPassword());
+        request.setAttribute("responseDto", responseDto);
+        if (responseDto.getHttpStatus().equals(BaseDTO.HttpStatus.ERROR)) {
+            request.getSession().setAttribute("userDto", null);
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        }
+        else {
+            // save user to session
+            request.getSession().setAttribute("userDto", responseDto);
+            response.sendRedirect("/home");
+        }
     }
 }

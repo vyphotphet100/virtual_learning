@@ -9,9 +9,8 @@ import javax.inject.Inject;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "test", value = "/test")
+@WebServlet(name = "test", value = "/test/*")
 public class HelloServlet extends HttpServlet {
-    private String message;
 
     @Inject
     private IUserService userService;
@@ -20,7 +19,10 @@ public class HelloServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        List<UserDTO> userDtos = userService.findAll();
+        String path = request.getPathInfo();
+        String username = path.split("/")[1];
+        String password = path.split("/")[2];
+        UserDTO userDto = userService.findByUsernameAndPassword(username, password);
 
     }
 

@@ -27,7 +27,7 @@ public class UserService extends BaseService<UserDTO> implements IUserService {
         UserDTO userDto = userDao.findById(username);
         if (userDto == null)
             return (UserDTO) exceptionObject(new UserDTO(), "This username does not exist.");
-        if (userDto.getPassword().equals(password))
+        if (!userDto.getPassword().equals(password))
             return (UserDTO) exceptionObject(new UserDTO(), "Wrong password.");
 
         userDto.setMessage("Login successfully.");
