@@ -6,6 +6,8 @@ import com.webpro.virtual_learning.service.IUserService;
 import com.webpro.virtual_learning.utils.HttpUtil;
 
 import javax.inject.Inject;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +22,7 @@ public class LoginController extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("virtual_learning");
         request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
