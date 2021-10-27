@@ -11,14 +11,10 @@
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-<!--            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/virtual_learning"/>-->
-<!--            <property name="javax.persistence.jdbc.password" value="Caodinhsyvy2001@"/>-->
-<!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>-->
-<!--            <property name="javax.persistence.jdbc.user" value="root"/>-->
-            <property name="javax.persistence.jdbc.url" value="${url}"/>
-            <property name="javax.persistence.jdbc.password" value="${password}"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/virtual_learning"/>
+            <property name="javax.persistence.jdbc.password" value="Caodinhsyvy2001@"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="${username}"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.schema-generation.database.action" value="none"/>
         </properties>
     </persistence-unit>
