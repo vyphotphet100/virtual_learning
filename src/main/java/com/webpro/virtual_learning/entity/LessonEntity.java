@@ -2,6 +2,8 @@ package com.webpro.virtual_learning.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ import java.util.List;
 @Table(name = "lesson")
 @Getter
 @Setter
-public class LessonEntity {
+public class LessonEntity extends BaseEntity{
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +33,7 @@ public class LessonEntity {
     private ClassEntity clazz;
 
     @OneToMany(mappedBy = "lesson")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<QuestionEntity> questions = new ArrayList<>();
 
 }

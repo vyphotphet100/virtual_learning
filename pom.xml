@@ -67,32 +67,20 @@
             <artifactId>sitemesh</artifactId>
             <version>2.4.2</version>
         </dependency>
+
         <!-- To use JPA-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>5.6.0.Final</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.jpa -->
+
+        <!-- To map from dto to entity and reverse -->
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>org.eclipse.persistence.jpa</artifactId>
-            <version>3.1.0-M1</version>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.5</version>
         </dependency>
-
-        <!--        <dependency>-->
-<!--            <groupId>javax.persistence</groupId>-->
-<!--            <artifactId>persistence-api</artifactId>-->
-<!--            <version>1.0.2</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.persistence</groupId>-->
-<!--            <artifactId>eclipselink</artifactId>-->
-<!--            <version>2.5.2</version>-->
-<!--        </dependency>-->
-
-
     </dependencies>
 
     <build>

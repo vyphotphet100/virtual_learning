@@ -14,7 +14,8 @@ public class UserService extends BaseService<UserDTO> implements IUserService {
 
     @Override
     public List<UserDTO> findAll() {
-        return userDao.findAll();
+        //return userDao.findAll();
+        return null;
     }
 
     @Override
@@ -24,7 +25,7 @@ public class UserService extends BaseService<UserDTO> implements IUserService {
 
     @Override
     public UserDTO findByUsernameAndPassword(String username, String password) {
-        UserDTO userDto = userDao.findById(username);
+        UserDTO userDto = (UserDTO)dtoEntityConverter.toDTO(userDao.findById(username), UserDTO.class);
         if (userDto == null)
             return (UserDTO) exceptionObject(new UserDTO(), "This username does not exist.");
         if (!userDto.getPassword().equals(password))

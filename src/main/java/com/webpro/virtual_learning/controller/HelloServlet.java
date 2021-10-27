@@ -1,11 +1,15 @@
 package com.webpro.virtual_learning.controller;
 
+import com.webpro.virtual_learning.converter.DTOEntityConverter;
+import com.webpro.virtual_learning.dao.*;
 import com.webpro.virtual_learning.dto.*;
+import com.webpro.virtual_learning.entity.*;
 import com.webpro.virtual_learning.service.IUserService;
 
 import java.io.*;
 import java.util.List;
 import javax.inject.Inject;
+import javax.persistence.Persistence;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
@@ -13,16 +17,20 @@ import javax.servlet.annotation.*;
 public class HelloServlet extends HttpServlet {
 
     @Inject
-    private IUserService userService;
+    private IClassDAO classDao;
+
+    @Inject
+    private DTOEntityConverter converter;
 
     public void init() {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String path = request.getPathInfo();
-        String username = path.split("/")[1];
-        String password = path.split("/")[2];
-        UserDTO userDto = userService.findByUsernameAndPassword(username, password);
+
+        ClassEntity classEntity = classDao.findById(1L);
+        ClassDTO classDto = (ClassDTO) converter.toDTO(classEntity, ClassDTO.class);
+        ClassEntity classEntity2 = (ClassEntity) converter.toEntity(classDto, ClassEntity.class);
+
 
     }
 
