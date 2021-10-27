@@ -1,8 +1,7 @@
 package com.webpro.virtual_learning.dao;
+import com.webpro.virtual_learning.entity.RoleEntity;
 
-import com.webpro.virtual_learning.dto.RoleDTO;
-
-public interface IRoleDAO extends IBaseDAO<RoleDTO>{
-    RoleDTO findById(Long id);
+public interface IRoleDAO extends IBaseDAO<RoleEntity>{
+    RoleEntity findById(Long id);
     void delete(Long id);
 }

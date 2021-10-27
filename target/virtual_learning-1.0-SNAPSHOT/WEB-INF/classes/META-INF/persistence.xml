@@ -2,13 +2,20 @@
     <persistence-unit name="virtual_learning" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+        <class>com.webpro.virtual_learning.entity.UserEntity</class>
+        <class>com.webpro.virtual_learning.entity.ClassEntity</class>
+        <class>com.webpro.virtual_learning.entity.LessonEntity</class>
+        <class>com.webpro.virtual_learning.entity.QuestionEntity</class>
+        <class>com.webpro.virtual_learning.entity.RoleEntity</class>
+        <class>com.webpro.virtual_learning.entity.SubjectEntity</class>
+
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/murach"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/virtual_learning"/>
             <property name="javax.persistence.jdbc.password" value="Caodinhsyvy2001@"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
         </properties>
     </persistence-unit>
 </persistence>

@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter @Setter
 public class UserDTO extends BaseDTO{
@@ -14,5 +16,8 @@ public class UserDTO extends BaseDTO{
     private Date birthday;
     private String phone;
     private String avatar;
-    private String roleCode;
+    private Long roleId;
+    private List<Long> createdClassIds = new ArrayList<>();
+    private List<Long> joinedClassIds = new ArrayList<>();
+    private List<Long> doneQuestionIds = new ArrayList<>();
 }

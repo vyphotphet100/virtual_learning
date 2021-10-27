@@ -23,7 +23,7 @@ public class HttpUtil {
             } catch (ParseException e) {}
             userDto.setPhone((String)request.getParameter("phone"));
             userDto.setAvatar((String)request.getParameter("avatar"));
-            userDto.setRoleCode((String)request.getParameter("roleCode"));
+            userDto.setRoleId(Long.getLong(request.getParameter("roleId")));
 
             return userDto;
         }
