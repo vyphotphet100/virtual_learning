@@ -1,4 +1,4 @@
-package com.webpro.virtual_learning.utils;
+package com.webpro.virtual_learning.converter;
 
 import com.webpro.virtual_learning.dto.BaseDTO;
 import com.webpro.virtual_learning.dto.UserDTO;
@@ -8,9 +8,9 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class HttpUtil {
-    public static BaseDTO toDTO(HttpServletRequest request, Class clazz) {
-        if (clazz == UserDTO.class) {
+public class HttpRequestDTOConverter {
+    public BaseDTO toDTO(HttpServletRequest request, Class tClass) {
+        if (tClass == UserDTO.class) {
             UserDTO userDto = new UserDTO();
             userDto.setUsername((String)request.getParameter("username"));
             userDto.setPassword((String)request.getParameter("password"));
