@@ -1,4 +1,4 @@
-package com.webpro.virtual_learning.converter;
+package com.webpro.virtual_learning.converter.dto_entity;
 
 import com.webpro.virtual_learning.dao.IClassDAO;
 import com.webpro.virtual_learning.dao.ILessonDAO;

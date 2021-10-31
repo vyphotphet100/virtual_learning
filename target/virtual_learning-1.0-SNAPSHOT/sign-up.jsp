@@ -31,43 +31,43 @@
 					</span>
 					
 					
-					<div class="wrap-input100 validate-input" id="edit-form-size" data-validate = "Username is required">
+					<div class="wrap-input100 validate-input" id="username" data-validate = "Username is required">
 						<input class="input100" type="text" name="username">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Username</span>
 					</div>
 					
-					<div class="wrap-input100 validate-input" id="edit-form-size" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" id="email" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Email</span>
 					</div>
-                    <div class="wrap-input100 validate-input" id="edit-form-size" data-validate = "Full-name is required">
+                    <div class="wrap-input100 validate-input" id="full-name" data-validate = "Full-name is required">
 						<input class="input100" type="text" name="Full-name">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Full-name</span>
 					</div>
 
-                    <div class="wrap-input100 validate-input" id="edit-form-size" data-validate = "Valid birthday is required: xx/yy/zzzz">
+                    <div class="wrap-input100 validate-input" id="birthday" data-validate = "Valid birthday is required">
 						<input class="input100" type="datet" name="Date">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Birthday</span>
 					</div>
 
-                    <div class="wrap-input100 validate-input" id="edit-form-size" data-validate = "Valid email is required: ex@abc.xyz">
+                    <div class="wrap-input100 validate-input" id="phone" data-validate = "Phone number is required">
 						<input class="input100" type="tel" name="number">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Phone number</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" id="edit-form-size" data-validate="Password is required">
+					<div class="wrap-input100 validate-input" id="password" data-validate="Password is required">
 						<input class="input100" id="password-field" type="text" name="pass">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
 
-                    <div class="wrap-input100 validate-input" id="edit-form-size" data-validate="Re-type password is required">
-						<input class="input100" id="password-field" type="text" name="pass">
+                    <div class="wrap-input100 validate-input" id="retype-password" data-validate="Re-type password is required">
+						<input class="input100" id="retype-password-field" type="text" name="pass">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Re-type password</span>
 					</div>
@@ -82,9 +82,9 @@
 					</div>
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
 						<h5 class="role-text">What do you want to be?</h5> 
-						<input type="radio" id="ckb1" name="gender">
+						<input type="radio" id="ckb2" name="gender">
 						<span><h5 class="role-text">Teacher</h5></span>
-						<input type="radio" id="ckb1" name="gender">
+						<input type="radio" id="ckb3" name="gender">
 						<span><h5 class="role-text">Student</h5></span>
 					</div>
 					<div class="container-login100-form-btn">

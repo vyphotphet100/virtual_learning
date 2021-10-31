@@ -1,6 +1,7 @@
 package com.webpro.virtual_learning.controller;
 
-import com.webpro.virtual_learning.converter.HttpRequestDTOConverter;
+import com.webpro.virtual_learning.converter.httprequest_dto.HttpRequestDTOConverter;
+import com.webpro.virtual_learning.converter.httprequest_dto.mapper.UserHttpRequestDTOMapper;
 import com.webpro.virtual_learning.dto.BaseDTO;
 import com.webpro.virtual_learning.dto.UserDTO;
 import com.webpro.virtual_learning.service.IUserService;
@@ -22,6 +23,9 @@ public class LoginController extends HttpServlet {
     @Inject
     private IUserService userService;
 
+    @Inject
+    private UserHttpRequestDTOMapper userHttpRequestDTOMapper;
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/login.jsp").forward(request, response);
@@ -30,7 +34,7 @@ public class LoginController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDTO userDto = (UserDTO)request.getSession().getAttribute("userDto");
-        UserDTO requestDto = (UserDTO) requestDTOConverter.toDTO(request, UserDTO.class);
+        UserDTO requestDto = requestDTOConverter.toDTO(request, userHttpRequestDTOMapper);
         UserDTO responseDto = userService.findByUsernameAndPassword(requestDto.getUsername(), requestDto.getPassword());
         request.setAttribute("responseDto", responseDto);
         if (responseDto.getHttpStatus().equals(BaseDTO.HttpStatus.ERROR)) {

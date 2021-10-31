@@ -1,6 +1,6 @@
 package com.webpro.virtual_learning.service.impl;
 
-import com.webpro.virtual_learning.converter.DTOEntityConverter;
+import com.webpro.virtual_learning.converter.dto_entity.DTOEntityConverter;
 import com.webpro.virtual_learning.dto.BaseDTO;
 import com.webpro.virtual_learning.service.IBaseService;
 
