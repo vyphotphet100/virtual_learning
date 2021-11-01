@@ -13,7 +13,7 @@ import java.util.List;
 public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
     @Override
     public List<LessonEntity> findAll() {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT l FROM LessonEntity l");
         List<LessonEntity> lessonEntities = new ArrayList<>();
         try {
@@ -28,7 +28,7 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
 
     @Override
     public LessonEntity save(LessonEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -46,7 +46,7 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
 
     @Override
     public LessonEntity update(LessonEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -64,7 +64,7 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
 
     @Override
     public LessonEntity findById(Long id) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT l FROM LessonEntity l WHERE l.id = :id");
         q.setParameter("id", id);
         LessonEntity lessonEntity = null;
@@ -80,7 +80,7 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
 
     @Override
     public void delete(Long id) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {

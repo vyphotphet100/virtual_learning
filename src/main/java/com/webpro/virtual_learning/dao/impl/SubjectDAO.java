@@ -13,7 +13,7 @@ import java.util.List;
 public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
     @Override
     public List<SubjectEntity> findAll() {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT s FROM SubjectEntity s");
         List<SubjectEntity> subjectEntities = new ArrayList<>();
         try {
@@ -28,7 +28,7 @@ public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
 
     @Override
     public SubjectEntity save(SubjectEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -46,7 +46,7 @@ public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
 
     @Override
     public SubjectEntity update(SubjectEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -64,7 +64,7 @@ public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
 
     @Override
     public SubjectEntity findById(Long id) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT s FROM SubjectEntity s WHERE s.id = :id");
         q.setParameter("id", id);
         SubjectEntity subjectEntity = null;
@@ -80,7 +80,7 @@ public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
 
     @Override
     public void delete(Long id) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {

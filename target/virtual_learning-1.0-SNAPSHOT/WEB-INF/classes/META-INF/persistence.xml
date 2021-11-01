@@ -2,12 +2,12 @@
     <persistence-unit name="virtual_learning" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
-        <class>com.webpro.virtual_learning.entity.UserEntity</class>
-        <class>com.webpro.virtual_learning.entity.ClassEntity</class>
-        <class>com.webpro.virtual_learning.entity.LessonEntity</class>
-        <class>com.webpro.virtual_learning.entity.QuestionEntity</class>
-        <class>com.webpro.virtual_learning.entity.RoleEntity</class>
-        <class>com.webpro.virtual_learning.entity.SubjectEntity</class>
+<!--        <class>com.webpro.virtual_learning.entity.UserEntity</class>-->
+<!--        <class>com.webpro.virtual_learning.entity.ClassEntity</class>-->
+<!--        <class>com.webpro.virtual_learning.entity.LessonEntity</class>-->
+<!--        <class>com.webpro.virtual_learning.entity.QuestionEntity</class>-->
+<!--        <class>com.webpro.virtual_learning.entity.RoleEntity</class>-->
+<!--        <class>com.webpro.virtual_learning.entity.SubjectEntity</class>-->
 
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>

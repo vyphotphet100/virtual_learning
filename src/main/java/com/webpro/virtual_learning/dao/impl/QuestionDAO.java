@@ -13,7 +13,7 @@ import java.util.List;
 public class QuestionDAO extends BaseDAO<QuestionEntity> implements IQuestionDAO {
     @Override
     public List<QuestionEntity> findAll() {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT q FROM QuestionEntity q");
         List<QuestionEntity> questionEntities = new ArrayList<>();
         try {
@@ -28,7 +28,7 @@ public class QuestionDAO extends BaseDAO<QuestionEntity> implements IQuestionDAO
 
     @Override
     public QuestionEntity save(QuestionEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -46,7 +46,7 @@ public class QuestionDAO extends BaseDAO<QuestionEntity> implements IQuestionDAO
 
     @Override
     public QuestionEntity update(QuestionEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -64,7 +64,7 @@ public class QuestionDAO extends BaseDAO<QuestionEntity> implements IQuestionDAO
 
     @Override
     public QuestionEntity findById(Long id) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT q FROM QuestionEntity q WHERE q.id = :id");
         q.setParameter("id", id);
         QuestionEntity questionEntity = null;
@@ -80,7 +80,7 @@ public class QuestionDAO extends BaseDAO<QuestionEntity> implements IQuestionDAO
 
     @Override
     public void delete(Long id) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {

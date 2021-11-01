@@ -9,6 +9,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/home"})
 public class HomeController extends HttpServlet {
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");

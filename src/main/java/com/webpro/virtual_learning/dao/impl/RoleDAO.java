@@ -12,7 +12,7 @@ import java.util.List;
 public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
     @Override
     public List<RoleEntity> findAll() {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT r FROM RoleEntity r");
         List<RoleEntity> roleEntities = new ArrayList<>();
         try {
@@ -27,7 +27,7 @@ public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
 
     @Override
     public RoleEntity save(RoleEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -45,7 +45,7 @@ public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
 
     @Override
     public RoleEntity update(RoleEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -63,7 +63,7 @@ public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
 
     @Override
     public RoleEntity findById(Long id) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT r FROM RoleEntity r WHERE r.id = :id");
         q.setParameter("id", id);
         RoleEntity roleEntity = null;
@@ -79,7 +79,7 @@ public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
 
     @Override
     public void delete(Long id) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {

@@ -14,7 +14,7 @@ public class UserDAO extends BaseDAO<UserEntity> implements IUserDAO {
 
     @Override
     public List<UserEntity> findAll() {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT u FROM UserEntity u");
         List<UserEntity> userEntities = new ArrayList<>();
         try {
@@ -29,7 +29,7 @@ public class UserDAO extends BaseDAO<UserEntity> implements IUserDAO {
 
     @Override
     public UserEntity save(UserEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -47,7 +47,7 @@ public class UserDAO extends BaseDAO<UserEntity> implements IUserDAO {
 
     @Override
     public UserEntity update(UserEntity entity) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
@@ -65,7 +65,7 @@ public class UserDAO extends BaseDAO<UserEntity> implements IUserDAO {
 
     @Override
     public UserEntity findById(String username) {
-        EntityManager em = this.emf.createEntityManager();
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
         Query q = em.createQuery("SELECT u FROM UserEntity u WHERE u.username = :username");
         q.setParameter("username", username);
         UserEntity userEntity = null;
@@ -81,7 +81,7 @@ public class UserDAO extends BaseDAO<UserEntity> implements IUserDAO {
 
     @Override
     public void delete(String username) {
-        EntityManager em  = emf.createEntityManager();
+        EntityManager em  = getEntityManagerFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
