@@ -28,9 +28,14 @@
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
-                <c:if test="${not empty responseDto}">
+                <c:if test="${not empty responseDto && responseDto.httpStatus == 'ERROR'}">
                     <div class="alert alert-danger" role="alert">
                         <c:out value="${responseDto.message}"/>
+                    </div>
+                </c:if>
+                <c:if test="${not empty param['message']}">
+                    <div class="alert alert-success" role="alert">
+                        <c:out value="${param['message']}"/>
                     </div>
                 </c:if>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
@@ -47,7 +52,7 @@
 
                 <div class="flex-sb-m w-full p-t-3 p-b-32">
                     <div class="contact100-form-checkbox">
-                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="rememberMe" value="yes">
                         <label class="label-checkbox100" for="ckb1">
                             Remember me
                         </label>
@@ -59,7 +64,7 @@
                 </div>
                 <span><br></span>
                 <div>
-                    <p class="text-center">Not a member? <a href="signup.html">Sign Up</a></p>
+                    <p class="text-center">Not a member? <a href="#">Sign Up</a></p>
                     <p class="text-center"><a href="index.html">Back to homepage</a></p>
                 </div>
             </form>
@@ -81,6 +86,7 @@
 <script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="resources/plugins/easing/easing.js"></script>
 <script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="common/app.js"></script>
 
 <script src="resources/js/custom.js"></script>
 <script src="resources/js/main.js"></script>

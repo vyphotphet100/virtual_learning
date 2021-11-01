@@ -16,14 +16,14 @@
                                 <div>19110065@student.hcmute.edu.vn</div>
                             </li>
                         </ul>
-                        <c:if test="${empty sessionScope.userDto}">
+                        <c:if test="${empty sessionScope.USER_SESSION}">
                             <div class="top_bar_login ml-auto">
                                 <div class="login_button"><a href="/log-in" class="Login">Login</a></div>
                             </div>
                         </c:if>
-                        <c:if test="${not empty sessionScope.userDto}">
+                        <c:if test="${not empty sessionScope.USER_SESSION}">
                             <div class="top_bar_login ml-auto">
-                                <div class="login_button"><a class="Login">Hello, ${sessionScope.userDto.fullName}</a></div>
+                                <div class="login_button"><a class="Login">Hello, ${sessionScope.USER_SESSION.fullName}</a></div>
                             </div>
                         </c:if>
 
