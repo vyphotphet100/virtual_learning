@@ -2,6 +2,7 @@ package com.webpro.virtual_learning.service.impl;
 
 import com.webpro.virtual_learning.dao.IUserDAO;
 import com.webpro.virtual_learning.dto.UserDTO;
+import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IUserService;
 
 import javax.inject.Inject;
@@ -37,7 +38,14 @@ public class UserService extends BaseService<UserDTO> implements IUserService {
 
     @Override
     public UserDTO save(UserDTO userDto) {
-        return null;
+        if (userDao.findById(userDto.getUsername()) != null)
+            return (UserDTO) this.exceptionObject(userDto, "This username exists.");
+
+        UserEntity userEntity = userDao.save((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
+        UserDTO resDto = (UserDTO) dtoEntityConverter.toDTO(userEntity, UserDTO.class);
+
+        userDto.setMessage("Register successfully.");
+        return userDto;
     }
 
     @Override

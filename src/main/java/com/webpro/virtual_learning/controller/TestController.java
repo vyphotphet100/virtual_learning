@@ -11,7 +11,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "test", value = "/test/*")
-public class HelloServlet extends HttpServlet {
+public class TestController extends HttpServlet {
 
     @Inject
     private IClassDAO classDao;

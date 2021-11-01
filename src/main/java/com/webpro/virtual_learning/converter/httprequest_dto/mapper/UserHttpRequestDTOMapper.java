@@ -23,7 +23,11 @@ public class UserHttpRequestDTOMapper extends BaseHttpRequestDTOMapper<UserDTO> 
         }
         userDto.setPhone((String) request.getParameter("phone"));
         userDto.setAvatar((String) request.getParameter("avatar"));
-        userDto.setRoleId(Long.getLong(request.getParameter("roleId")));
+        try {
+            userDto.setRoleId(Long.parseLong(request.getParameter("roleId")));
+        } catch (Exception ex){
+            userDto.setRoleId(null);
+        }
 
         return userDto;
     }

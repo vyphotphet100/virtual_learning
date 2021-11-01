@@ -22,6 +22,10 @@
 </head>
 <body>
     <div class="super_container">
+<%--		Remember user if user requires --%>
+		<c:if test="${param['rememberMe'] == 'yes'}">
+
+		</c:if>
 
         <!-- Header -->
     
@@ -472,6 +476,7 @@
 <script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="resources/plugins/easing/easing.js"></script>
 <script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="common/app.js"></script>
 
 <script src="resources/js/custom.js"></script>
 <script src="resources/js/main.js"></script>
