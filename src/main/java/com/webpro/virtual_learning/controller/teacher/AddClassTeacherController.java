@@ -1,4 +1,4 @@
-package com.webpro.virtual_learning.controller.common;
+package com.webpro.virtual_learning.controller.teacher;
 
 import java.io.IOException;
 
@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 public class AddClassTeacherController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
         request.getRequestDispatcher("/add-class-teacher.jsp").forward(request, response);
     }
 }

@@ -1,11 +1,11 @@
-<%@include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual learning | Add class</title>
+    <title>Virtual learning | Class detail</title>
+    <link rel="stylesheet" type="text/css" href="resources/styles/main.css">
     <link rel="stylesheet" type="text/css" href="resources/styles/bootstrap4/bootstrap.min.css">
     <link href="resources/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -18,8 +18,7 @@
     <link rel="stylesheet" type="text/css" href="resources/styles/util.css">
 	<link rel="stylesheet" type="text/css" href="resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="resources/styles/style.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles/styles-merged.css">>
-    
+    <link rel="stylesheet" type="text/css" href="resources/styles/styles-merged.css">
 </head>
 
 <body>
@@ -51,66 +50,32 @@
 			    </ul>
 		    </nav>
 	    </div>   
-    </div>
+    </div>   
 
     <div class="courses">
-        <!--Background-->
-        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="resources/images/courses_background.jpg" data-speed="0.8"></div>
+         <!--Background-->
+        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="images/courses_background.jpg" data-speed="0.8"></div>    
         <div class="topic-of-page">
-            <h3 class="h">Add Class</h3>
+            <h3 class="h">Class detail</h3>
         </div>
-
-        <!--Form add class-->
-        <form class="login100-form validate-form edit-form">
-            <span class="login100-form-title p-b-43">
-                <div class="text-center">
-                    <h1>Adding class form</h1>
-                    <p>This is the section for the initial setting up for your class</p>   
-                </div>
-            </span>
-            
-            
-            <div class="wrap-input100 validate-input" data-validate = "Name of class is required">
-                <input class="input100" type="text" name="name">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Name of class</span>
-            </div>
-            
-            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                <input class="input100" type="text" name="text">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Name of subject</span>
-            </div>
-            <div class="wrap-input100 validate-input" data-validate = "Full-name is required">
-                <input class="input100" type="text" name="text">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Description</span>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate="Password is required">
-                <input class="input100" id="password-field" type="text" name="pass">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Password</span>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate="Re-tye password is required">
-                <input class="input100" id="password-field" type="text" name="pass">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Re-type Password</span>
-            </div>
-        </form>
-
-        <!--join button-->
-        <div class="text-center">
-            <a href="#" class="a-join-button">
-                <button class="join-button">
-                    <b>Apply</b>
-                </button>
-            </a>
-        </div>
-
-
-    </div>    
+         <div class="text-center">
+             <h1>Name of class</h1></a>
+             <p>This is the section for desciption</p>   
+         </div>
+         <div class="teacher-subject text-lg-right">
+             <h4>Teacher:<a style="font-size: 18px;" href="#" > Name of the teacher</a></h4>
+             <h4>Subject:<a style="font-size: 18px;" href="#" > Name of the subject</a></h4>
+         </div>
+         <!--join button-->
+         <div class="text-center">
+             <a href="#" class="a-join-button">
+                 <button class="join-button" onclick="window.location.href='#'">
+                     <b>Join class</b>
+                 </button>
+             </a>
+         </div>
+    </div>
+    
 </body>
 
 <div class="newsletter">
@@ -145,21 +110,21 @@
 	<%@include file="/common/footer.jsp"%>
 
 </footer>
-    
-    <script src="resources/js/jquery-3.2.1.min.js"></script>
-    <script src="resources/styles/bootstrap4/popper.js"></script>
-    <script src="resources/styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="resources/plugins/greensock/TweenMax.min.js"></script>
-    <script src="resources/plugins/greensock/TimelineMax.min.js"></script>
-    <script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="resources/plugins/greensock/animation.gsap.min.js"></script>
-    <script src="resources/plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="resources/plugins/easing/easing.js"></script>
-    <script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
-    
-    <script src="resources/js/custom.js"></script>
-    <script src="resources/js/main.js"></script>
-    <script src="resources/js/main.min.js"></script>
-    <script src="resources/js/scripts.min.js"></script>
+
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="resources/styles/bootstrap4/popper.js"></script>
+<script src="resources/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="resources//greensock/TweenMax.min.js"></script>
+<script src="resources/plugins/greensock/TimelineMax.min.js"></script>
+<script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="resources/plugins/greensock/animation.gsap.min.js"></script>
+<script src="resources/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="resources/plugins/easing/easing.js"></script>
+<script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
+
+<script src="resources/js/custom.js"></script>
+<script src="resources/js/main.js"></script>
+<script src="resources/js/main.min.js"></script>
+<script src="resources/js/scripts.min.js"></script>
 </html>
