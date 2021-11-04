@@ -124,9 +124,9 @@
 		    </div>
 		    <nav class="menu_nav">
 		    	<ul class="menu_mm">
-				    <li class="menu_mm"><a href="index.html">Home</a></li>
+				    <li class="menu_mm"><a href="#">Home</a></li>
 				    <li class="menu_mm"><a href="#">My classes</a></li>
-			     	<li class="menu_mm"><a href="contact.html">Contact</a></li>
+			     	<li class="menu_mm"><a href="#">Contact</a></li>
 			    </ul>
 		    </nav>
 	    </div>   
@@ -145,6 +145,43 @@
 					</div>
 				</div>
 			</div>
+
+			<c:forEach items="${subjectEntities}" var="subjectEntity">
+				<div class="topic-more">
+					<a href="#"><h4 class="topic">${subjectEntity.name}</h4></a>
+					<a href="#"><h5 class="more">More</h5></a>
+				</div>
+				<div class="row courses_row">
+
+					<c:forEach items="${subjectEntity.classes}" var="classEntityBySubjectId" >
+						<!-- Class -->
+						<div class="col-lg-4 course_col">
+							<div class="course">
+								<div class="course_image"><img src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png" alt=""></div>
+								<div class="course_body">
+									<h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
+									<div class="course_teacher">Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
+									<div class="course_text">
+										<p>${classDtoBySubjectId.description}</p>
+									</div>
+								</div>
+								<div class="course_footer">
+									<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+										<div class="course_info">
+											<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+											<span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
+										</div>
+										<a class="course_price ml-auto" href="#">Join</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+			</c:forEach>
+
+
+
 			<div class="topic-more">
 				<a href="#"><h4 class="topic">Information technology</h4></a>
 				<a href="#"><h5 class="more">More</h5></a>
