@@ -28,9 +28,9 @@
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
-                <c:if test="${not empty responseDto && responseDto.httpStatus == 'ERROR'}">
+                <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'ERROR'}">
                     <div class="alert alert-danger" role="alert">
-                        <c:out value="${responseDto.message}"/>
+                        <c:out value="${responseEntity.message}"/>
                     </div>
                 </c:if>
                 <c:if test="${not empty param['message']}">
@@ -39,7 +39,7 @@
                     </div>
                 </c:if>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="username" value="${responseDto.username}">
+                    <input class="input100" type="text" name="username" value="${responseEntity.username}">
                     <span class="focus-input100"></span>
                     <span class="label-input100">Username</span>
                 </div>
@@ -65,7 +65,7 @@
                 <span><br></span>
                 <div>
                     <p class="text-center">Not a member? <a href="#">Sign Up</a></p>
-                    <p class="text-center"><a href="index.html">Back to homepage</a></p>
+                    <p class="text-center"><a href="#">Back to homepage</a></p>
                 </div>
             </form>
             <div class="login100-more" style="background-image: url('resources/images/background_login_signup.png');">

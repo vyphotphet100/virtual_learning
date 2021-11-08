@@ -1,6 +1,5 @@
 package com.webpro.virtual_learning.controller.common;
 
-import com.webpro.virtual_learning.constant.Constant;
 import com.webpro.virtual_learning.utils.CookieUtil;
 
 import javax.servlet.annotation.WebServlet;

@@ -2,43 +2,53 @@ package com.webpro.virtual_learning.service.impl;
 
 import com.webpro.virtual_learning.dao.ISubjectDAO;
 import com.webpro.virtual_learning.dto.SubjectDTO;
+import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.SubjectEntity;
 import com.webpro.virtual_learning.service.ISubjectService;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 
-public class SubjectService extends BaseService<SubjectDTO> implements ISubjectService {
+public class SubjectService extends BaseService<SubjectDTO, SubjectEntity> implements ISubjectService {
     @Inject
     private ISubjectDAO subjectDao;
 
     @Override
-    public List<SubjectDTO> findAll() {
-        List<SubjectDTO> subjectDtos = new ArrayList<>();
-        for (SubjectEntity subjectEntity: subjectDao.findAll())
-            subjectDtos.add((SubjectDTO) this.dtoEntityConverter.toDTO(subjectEntity, SubjectDTO.class));
-
-        return subjectDtos;
+    public List<SubjectEntity> findAll() {
+        return subjectDao.findAll();
     }
 
     @Override
-    public SubjectDTO save(SubjectDTO userDto) {
+    public SubjectEntity save(SubjectDTO dto) {
         return null;
     }
 
     @Override
-    public SubjectDTO update(SubjectDTO userDto) {
+    public SubjectEntity update(SubjectDTO dto) {
         return null;
     }
 
     @Override
-    public SubjectDTO findById(Long id) {
-        return null;
+    public SubjectEntity findById(Long id) {
+        return subjectDao.findById(id);
     }
 
     @Override
     public void delete(Long id) {
 
+    }
+
+    @Override
+    public List<SubjectEntity> findAllWithNumberOfClass(Integer numOfClass) {
+        List<SubjectEntity> subjectEntities = subjectDao.findAll();
+        for (SubjectEntity subjectEntity: subjectEntities) {
+            List<ClassEntity> classEntities = subjectEntity.getClasses();
+            while (classEntities.size() > numOfClass)
+                classEntities.remove((int)numOfClass);
+
+            subjectEntity.setClasses(classEntities);
+        }
+
+        return subjectEntities;
     }
 }

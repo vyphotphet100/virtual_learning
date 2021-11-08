@@ -1,40 +1,40 @@
 package com.webpro.virtual_learning.service.impl;
 
 import com.webpro.virtual_learning.dao.IClassDAO;
+import com.webpro.virtual_learning.dao.ISubjectDAO;
 import com.webpro.virtual_learning.dto.ClassDTO;
 import com.webpro.virtual_learning.entity.ClassEntity;
+import com.webpro.virtual_learning.entity.SubjectEntity;
 import com.webpro.virtual_learning.service.IClassService;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassService extends BaseService<ClassDTO> implements IClassService {
+public class ClassService extends BaseService<ClassDTO, ClassEntity> implements IClassService {
     @Inject
     private IClassDAO classDao;
 
-    @Override
-    public List<ClassDTO> findAll() {
-        List<ClassDTO> classDtos = new ArrayList<>();
-        for (ClassEntity classEntity: classDao.findAll()) {
-            classDtos.add((ClassDTO) this.dtoEntityConverter.toDTO(classEntity, ClassDTO.class));
-        }
+    @Inject
+    private ISubjectDAO subjectDao;
 
-        return classDtos;
+    @Override
+    public List<ClassEntity> findAll() {
+        return classDao.findAll();
     }
 
     @Override
-    public ClassDTO save(ClassDTO userDto) {
+    public ClassEntity save(ClassDTO dto) {
         return null;
     }
 
     @Override
-    public ClassDTO update(ClassDTO userDto) {
+    public ClassEntity update(ClassDTO dto) {
         return null;
     }
 
     @Override
-    public ClassDTO findById(Long id) {
+    public ClassEntity findById(Long id) {
         return null;
     }
 
@@ -44,12 +44,11 @@ public class ClassService extends BaseService<ClassDTO> implements IClassService
     }
 
     @Override
-    public List<ClassDTO> findBySubjectId(Long subjectId) {
-        List<ClassDTO> resDtos = new ArrayList<>();
-        for (ClassDTO classDto: this.findAll())
-            if (classDto.getSubjectId().equals(subjectId))
-                resDtos.add(classDto);
+    public List<ClassEntity> findBySubjectId(Long subjectId) {
+        SubjectEntity subjectEntity = subjectDao.findById(subjectId);
+        if (subjectEntity == null)
+            return new ArrayList<>();
 
-        return resDtos;
+        return subjectEntity.getClasses();
     }
 }

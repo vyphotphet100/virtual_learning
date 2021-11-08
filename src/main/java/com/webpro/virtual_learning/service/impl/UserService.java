@@ -8,48 +8,49 @@ import com.webpro.virtual_learning.service.IUserService;
 import javax.inject.Inject;
 import java.util.List;
 
-public class UserService extends BaseService<UserDTO> implements IUserService {
+public class UserService extends BaseService<UserDTO, UserEntity> implements IUserService {
 
     @Inject
     private IUserDAO userDao;
 
     @Override
-    public List<UserDTO> findAll() {
-        //return userDao.findAll();
-        return null;
+    public List<UserEntity> findAll() {
+        return userDao.findAll();
     }
 
     @Override
-    public UserDTO findByUsername(String username) {
-        return null;
+    public UserEntity findByUsername(String username) {
+        UserEntity userEntity = userDao.findById(username);
+        if (userEntity == null)
+            return this.exceptionObject(new UserEntity(), "This username does not exists.");
+
+        return userEntity;
     }
 
     @Override
-    public UserDTO findByUsernameAndPassword(String username, String password) {
-        UserDTO userDto = (UserDTO)dtoEntityConverter.toDTO(userDao.findById(username), UserDTO.class);
-        if (userDto == null)
-            return (UserDTO) exceptionObject(new UserDTO(), "This username does not exist.");
-        if (!userDto.getPassword().equals(password))
-            return (UserDTO) exceptionObject(new UserDTO(), "Wrong password.");
+    public UserEntity findByUsernameAndPassword(String username, String password) {
+        UserEntity userEntity = userDao.findById(username);
+        if (userEntity == null)
+            return exceptionObject(new UserEntity(), "This username does not exist.");
+        if (!userEntity.getPassword().equals(password))
+            return exceptionObject(new UserEntity(), "Wrong password.");
 
-        userDto.setMessage("Login successfully.");
-        return userDto;
+        userEntity.setMessage("Login successfully.");
+        return userEntity;
     }
 
     @Override
-    public UserDTO save(UserDTO userDto) {
+    public UserEntity save(UserDTO userDto) {
         if (userDao.findById(userDto.getUsername()) != null)
-            return (UserDTO) this.exceptionObject(userDto, "This username exists.");
+            return this.exceptionObject(new UserEntity(), "This username exists.");
 
         UserEntity userEntity = userDao.save((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
-        UserDTO resDto = (UserDTO) dtoEntityConverter.toDTO(userEntity, UserDTO.class);
-
-        userDto.setMessage("Register successfully.");
-        return userDto;
+        userEntity.setMessage("Register successfully.");
+        return userEntity;
     }
 
     @Override
-    public UserDTO update(UserDTO userDto) {
+    public UserEntity update(UserDTO userDto) {
         return null;
     }
 
