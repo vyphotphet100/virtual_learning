@@ -1,1 +1,1 @@
-- Đang thiết kế login.jsp
+- Lấy user từ trong session ra để gán dữ liệu vào trang profile.

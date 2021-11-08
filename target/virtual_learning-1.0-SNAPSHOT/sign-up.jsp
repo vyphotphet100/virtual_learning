@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" id="birthday" data-validate="Valid birthday is required">
-                    <input class="input100" type="date" name="birthday">
+                    <input class="input100 has-val" type="date" name="birthday">
                     <span class="focus-input100"></span>
                     <span class="label-input100">Birthday</span>
                 </div>

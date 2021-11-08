@@ -11,6 +11,7 @@ import java.util.List;
 public class UserDTO extends BaseDTO{
     private String username;
     private String password;
+    private String retypePassword;
     private String fullName;
     private String email;
     private Date birthday;

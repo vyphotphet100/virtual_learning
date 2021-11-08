@@ -11,7 +11,7 @@ public abstract class BaseService<D, E> implements IBaseService<D, E> {
     @Inject
     protected DTOEntityConverter dtoEntityConverter;
 
-    protected E exceptionObject(BaseEntity entity, String message) {
+    public E exceptionObject(BaseEntity entity, String message) {
         entity.setHttpStatus(BaseEntity.HttpStatus.ERROR);
         entity.setMessage(message);
         return (E)entity;

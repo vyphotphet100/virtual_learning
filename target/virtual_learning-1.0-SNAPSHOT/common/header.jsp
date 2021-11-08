@@ -42,7 +42,7 @@
             <div class="col">
                 <div class="header_content d-flex flex-row align-items-center justify-content-start">
                     <div class="logo_container">
-                        <a href="#">
+                        <a href="/home">
                             <div class="logo_text">Virtual<span>Learning</span></div>
                         </a>
                     </div>
@@ -55,8 +55,7 @@
                         <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
                         <!-- Hamburger -->
-
-                        <div class="shopping_cart"><i><a href="profile.html" class="fa fa-user-circle-o"></a></i></div>
+                        <div class="shopping_cart"><i><a href="/profile" class="fa fa-user-circle-o"></a></i></div>
                         <div class="hamburger menu_mm">
                             <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
                         </div>

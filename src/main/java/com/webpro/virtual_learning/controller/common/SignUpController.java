@@ -39,14 +39,27 @@ public class SignUpController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
         UserDTO userDto = requestDTOConverter.toDTO(request, userHttpRequestDTOMapper);
+
+        // check retype password
+        if (!userDto.getPassword().equals(userDto.getRetypePassword())) {
+            request.setAttribute("responseEntity", userService.exceptionObject(new UserEntity(), "Password confirmation failed"));
+            this.doGet(request, response);
+            return;
+        }
+
         UserEntity responseEntity = userService.save(userDto);
         request.setAttribute("responseEntity", responseEntity);
 
+        // save successfully
         if (responseEntity.getHttpStatus().equals(BaseEntity.HttpStatus.OK)) {
             response.sendRedirect("/log-in?message=" + responseEntity.getMessage());
-        } else {
-            this.doGet(request, response);
+            return;
         }
+
+        // save failed
+        this.doGet(request, response);
+
     }
 }

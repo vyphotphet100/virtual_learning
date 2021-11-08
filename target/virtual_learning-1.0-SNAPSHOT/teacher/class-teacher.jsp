@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual learning | My class</title>
-    <link rel="stylesheet" type="text/css" href="resources/styles/bootstrap4/bootstrap.min.css">
-    <link href="resources/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="resources/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="resources/plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles/responsive.css">
+    <title>Virtual learning | Class</title>
+    <link rel="stylesheet" type="text/css" href="../resources/styles/bootstrap4/bootstrap.min.css">
+    <link href="../resources/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../resources/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="../resources/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="../resources/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/responsive.css">
 
-    <link rel="stylesheet" type="text/css" href="resources/styles/main.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles/util.css">
-	  <link rel="stylesheet" type="text/css" href="resources/styles/main_1.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles/style.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles/styles-merged.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/util.css">
+	<link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/styles-merged.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/style.min.css">
 </head>
-    
 <body>
     <div class="super_container">
 
@@ -69,7 +68,7 @@
 						    	<nav class="main_nav_contaner ml-auto">
 							    	<ul class="main_nav">
 							    		<li><a href="#">Home</a></li>
-								    	<li class="active"><a href="#">My classes</a></li>
+								    	<li><a href="#">My classes</a></li>
 									    <li><a href="#">Contact</a></li>
 								    </ul>
 								    <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
@@ -126,93 +125,66 @@
 			    </ul>
 		    </nav>
 	    </div>   
-    </div>   
-
+    </div>          
+    
     <div class="courses">
         <!--Background-->
         <div class="section_background parallax-window" data-parallax="scroll" data-image-src="resources/images/courses_background.jpg" data-speed="0.8"></div>
-        <div class="container my-class">
 
-            <!--Course-->
-            <a class="class-topic-description">
-                <div class="course edit-course" onclick="window.location.href='Class(teacher).html'">
-                    <div class="course_image"><img src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png" alt=""></div>
-                    <div class="course_body">
-                        <h3 class="course_title"><a href="#">Software Training</a></h3>
-                        <div class="course_teacher">Mr. Hung Pham</div>
-                        <div class="course_text">
-                            <p>A best course that will support you understand deeply about software technology</p>
-                        </div>
-                    </div>
-                    <div class="course_footer">
-                        <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_info">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span>20 Student</span>
-                            </div>
-                            <div class="course_info">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>4.5 Ratings</span>
-                            </div>
+        <div class="probootstrap-page-wrapper" id="lession2">
+            <!-- Fixed navbar -->   
+            <section class="probootstrap-section probootstrap-section-colored">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-left section-heading probootstrap-animate">
+                            <h1>My Courses</h1>
                         </div>
                     </div>
                 </div>
-            </a>
-
-            <div class="edit-delete">
-                <button class="join-button edit-button" onclick="window.location.href='#'">Edit</button>
-                <button class="join-button edit-button">Delete</button>
-            </div>
-        </div>
-
-        <div class="container my-class">
-
-            <!--Course-->
-            <a class="class-topic-description">
-                <div class="course edit-course" onclick="window.location.href='Class(teacher).html'">
-                    <div class="course_image"><img src="https://miro.medium.com/max/7872/1*ecU3mH6ajULJpcVFvLGcaQ.png" alt=""></div>
-                    <div class="course_body">
-                        <h3 class="course_title"><a href="Class(teacher).html">Developing Mobile Apps</a></h3>
-                        <div class="course_teacher">Mr. Tuong Le</div>
-                        <div class="course_text">
-                            <p>After this course, you will be able to design your mobile apps by yoursefl</p>
-                        </div>
-                    </div>
-                    <div class="course_footer">
-                        <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="course_info">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span>35 Student</span>
-                            </div>
-                            <div class="course_info">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>4.8 Ratings</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <div class="edit-delete">
-                <button class="join-button edit-button" onclick="window.location.href='editClass.html'">Edit</button>
-                <button class="join-button edit-button">Delete</button>
-            </div>
-        </div>
-        
-        <!--join button-->
-        <div class="text-center" style="margin-top: 15% !important;">
-            <a href="#" class="a-join-button">
-                <button class="join-button" onclick="window.location.href='#'">
-                    <b>Add</b>
-                </button>
-            </a>
-        </div>
-
-    </div>
+            </section>
     
+            <section class="probootstrap-section style" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="probootstrap-flex-block">
+                                <div class="probootstrap-text probootstrap-animate">
+                                    <div class="text-uppercase probootstrap-uppercase">Featured Course</div>
+                                        
+                                    <div class="vertical-menu">
+                                        <a href="#" class="active">Introduction</a>
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                        <a href="#">Link 4</a>
+                                    </div>
+                               
+                            
+                                <p><a href="#"  class="btn btn-quize">Add lesson</a> </p>
+                                </div>
+                    
+                                <div class="probootstrap-image probootstrap-animate" style="background-image: url(../resources/images/img/slider_3.jpg)">
+                                <a href="https://www.youtube.com/watch?v=iLnRiERKX80" class="btn-video popup-vimeo"><i class="fa fa-play"></i></a>
+                                </div>
+                                <div class="menu-btn">
+                                    <button href="#" class="menu-btn btn-delete" >Delete</button>
+                                    <button onclick="window.location.href='#'" class="menu-btn btn-edit" >Edit</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+        <!-- END wrapper -->
+    
+    </div>    
+
 
 </body>
-
+    
 <div class="newsletter">
     <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="resources/images/newsletter.jpg" data-speed="0.8"></div>
     <div class="container">
@@ -240,26 +212,26 @@
     </div>
 </div>
 
-<!-- Footer-->
-<footer class="footer">
-	<%@include file="/common/footer.jsp"%>
+    <!-- Footer -->
+    <footer class="footer">
+        <%@include file="/common/footer.jsp"%>
+    
+    </footer>
 
-</footer>
+<script src="../resources/js/jquery-3.2.1.min.js"></script>
+<script src="../resources/styles/bootstrap4/popper.js"></script>
+<script src="../resources/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="../resources/plugins/greensock/TweenMax.min.js"></script>
+<script src="../resources/plugins/greensock/TimelineMax.min.js"></script>
+<script src="../resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="../resources/plugins/greensock/animation.gsap.min.js"></script>
+<script src="../resources/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="../resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="../resources/plugins/easing/easing.js"></script>
+<script src="../resources/plugins/parallax-js-master/parallax.min.js"></script>
 
-<script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/styles/bootstrap4/popper.js"></script>
-<script src="resources/styles/bootstrap4/bootstrap.min.js"></script>
-<script src="resources/plugins/greensock/TweenMax.min.js"></script>
-<script src="resources/plugins/greensock/TimelineMax.min.js"></script>
-<script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="resources/plugins/greensock/animation.gsap.min.js"></script>
-<script src="resources/plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="resources/plugins/easing/easing.js"></script>
-<script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
-
-<script src="resources/js/custom.js"></script>
-<script src="resources/js/main.js"></script>
-<script src="resources/js/main.min.js"></script>
-<script src="resources/js/scripts.min.js"></script>
+<script src="../resources/js/custom.js"></script>
+<script src="../resources/js/main.js"></script>
+<script src="../resources/js/main.min.js"></script>
+<script src="../resources/js/scripts.min.js"></script>
 </html>

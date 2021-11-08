@@ -22,10 +22,7 @@
 </head>
 <body>
 <div class="super_container">
-
-
     <!-- Header -->
-
     <header class="header">
         <%@include file="/common/header.jsp" %>
     </header>

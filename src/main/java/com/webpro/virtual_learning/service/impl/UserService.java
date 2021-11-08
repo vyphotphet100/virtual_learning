@@ -45,13 +45,26 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
             return this.exceptionObject(new UserEntity(), "This username exists.");
 
         UserEntity userEntity = userDao.save((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
+
+        if (userEntity == null)
+            return this.exceptionObject(new UserEntity(), "Somethisng's wrong");
+
         userEntity.setMessage("Register successfully.");
         return userEntity;
     }
 
     @Override
     public UserEntity update(UserDTO userDto) {
-        return null;
+        if (userDao.findById(userDto.getUsername()) == null)
+            return this.exceptionObject(new UserEntity(), "This username does not exist");
+
+        UserEntity userEntity = userDao.update((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
+
+        if (userEntity == null)
+            return this.exceptionObject(new UserEntity(), "Somethisng's wrong");
+
+        userEntity.setMessage("Update information successfully");
+        return userEntity;
     }
 
     @Override

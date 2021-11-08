@@ -30,7 +30,7 @@ public class HomeController extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NumberFormatException {
-
+        request.setCharacterEncoding("UTF-8");
         // check viewAll param
         String viewAll = request.getParameter("viewAll");
         if (viewAll != null &&
