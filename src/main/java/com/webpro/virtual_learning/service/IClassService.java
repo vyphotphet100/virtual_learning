@@ -1,12 +1,13 @@
 package com.webpro.virtual_learning.service;
 
 import com.webpro.virtual_learning.dto.ClassDTO;
+import com.webpro.virtual_learning.entity.ClassEntity;
 
 import java.util.List;
 
-public interface IClassService extends IBaseService<ClassDTO>{
-    ClassDTO findById(Long id);
+public interface IClassService extends IBaseService<ClassDTO, ClassEntity>{
+    ClassEntity findById(Long id);
     void delete(Long id);
 
-    List<ClassDTO> findBySubjectId(Long subjectId);
+    List<ClassEntity> findBySubjectId(Long subjectId);
 }

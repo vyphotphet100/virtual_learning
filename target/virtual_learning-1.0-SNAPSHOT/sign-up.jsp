@@ -29,9 +29,9 @@
 						Sign Up
                        		<p style="color:black ;">Virtual<span style="color:#14BDEE;">Learning</span></p>
 					</span>
-                <c:if test="${not empty responseDto && responseDto.httpStatus == 'ERROR'}">
+                <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'ERROR'}">
                     <div class="alert alert-danger" role="alert">
-                        <c:out value="${responseDto.message}"/>
+                        <c:out value="${responseEntity.message}"/>
                     </div>
                 </c:if>
                 <c:if test="${not empty param['message']}">

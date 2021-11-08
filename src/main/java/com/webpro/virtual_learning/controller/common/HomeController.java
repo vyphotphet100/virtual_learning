@@ -29,18 +29,32 @@ public class HomeController extends HttpServlet {
     private ISubjectDAO subjectDao;
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // get class by subject id
-//        List<SubjectDTO> subjectDtos = subjectService.findAll();
-//        for (SubjectDTO subjectDto: subjectDtos) {
-//            List<ClassDTO> classDtosBySubjectId = classService.findBySubjectId(subjectDto.getId());
-//            subjectDto.getResultList().add(classDtosBySubjectId);
-//        }
-//        request.setAttribute("subjectDtos", subjectDtos);
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NumberFormatException {
 
-        List<SubjectEntity> subjectEntities = subjectDao.findAll();
+        // check viewAll param
+        String viewAll = request.getParameter("viewAll");
+        if (viewAll != null &&
+                !viewAll.equals("")) {
+            if (viewAll.equals("all")) { // view all classes
+                List<SubjectEntity> subjectEntities = subjectDao.findAll();
+                request.setAttribute("subjectEntities", subjectEntities);
+
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                return;
+            }
+
+            // view classes in one subject
+            SubjectEntity subjectEntity = subjectService.findById(Long.parseLong(viewAll));
+            if (subjectEntity != null) {
+                request.setAttribute("subjectEntity", subjectEntity);
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                return;
+            }
+        }
+
+        // view 4 classes in each subject
+        List<SubjectEntity> subjectEntities = subjectService.findAllWithNumberOfClass(3);
         request.setAttribute("subjectEntities", subjectEntities);
-
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

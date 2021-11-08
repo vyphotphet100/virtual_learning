@@ -5,6 +5,8 @@ import com.webpro.virtual_learning.converter.httprequest_dto.HttpRequestDTOConve
 import com.webpro.virtual_learning.converter.httprequest_dto.mapper.UserHttpRequestDTOMapper;
 import com.webpro.virtual_learning.dto.BaseDTO;
 import com.webpro.virtual_learning.dto.UserDTO;
+import com.webpro.virtual_learning.entity.BaseEntity;
+import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IUserService;
 import com.webpro.virtual_learning.utils.CookieUtil;
 
@@ -40,37 +42,37 @@ public class LogInController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDTO requestDto = null;
-        UserDTO responseDto = null;
+        UserEntity responseEntity = null;
 
         // LOG IN BY COOKIE
         String username = CookieUtil.getValue(request, "username");
         String password = CookieUtil.getValue(request, "password");
-        if (username != null &&
-                password != null) {
-            responseDto = userService.findByUsernameAndPassword(username, password);
-            this.checkLoginRedirect(request, response, requestDto, responseDto);
+        if (username != null && !username.equals("") && !username.equals("null") &&
+                password != null && !password.equals("") && !password.equals("null")) {
+            responseEntity = userService.findByUsernameAndPassword(username, password);
+            this.checkLoginRedirect(request, response, requestDto, responseEntity);
             return;
         }
 
         // LOG IN BY SESSION
         UserDTO sessionDto = (UserDTO) request.getSession().getAttribute(Constant.USER_SESSION);
         if (sessionDto != null) { // log in by session
-            responseDto = userService.findByUsernameAndPassword(sessionDto.getUsername(), sessionDto.getPassword());
-            this.checkLoginRedirect(request, response, requestDto, responseDto);
+            responseEntity = userService.findByUsernameAndPassword(sessionDto.getUsername(), sessionDto.getPassword());
+            this.checkLoginRedirect(request, response, requestDto, responseEntity);
             return;
         }
 
         // LOG IN BY CLICK BUTTON
         requestDto = requestDTOConverter.toDTO(request, userHttpRequestDTOMapper);
-        responseDto = userService.findByUsernameAndPassword(requestDto.getUsername(), requestDto.getPassword());
-        this.checkLoginRedirect(request, response, requestDto, responseDto);
+        responseEntity = userService.findByUsernameAndPassword(requestDto.getUsername(), requestDto.getPassword());
+        this.checkLoginRedirect(request, response, requestDto, responseEntity);
     }
 
-    private void checkLoginRedirect(HttpServletRequest request, HttpServletResponse response, UserDTO requestDto, UserDTO responseDto) throws ServletException, IOException {
-        request.setAttribute("responseDto", responseDto);
+    private void checkLoginRedirect(HttpServletRequest request, HttpServletResponse response, UserDTO requestDto, UserEntity responseEntity) throws ServletException, IOException {
+        request.setAttribute("responseEntity", responseEntity);
 
         // LOG IN FAIL
-        if (responseDto.getHttpStatus().equals(BaseDTO.HttpStatus.ERROR)) {
+        if (responseEntity.getHttpStatus().equals(BaseEntity.HttpStatus.ERROR)) {
             CookieUtil.removeUserInCookieAndSession(request, response);
             this.doGet(request, response);
             return;
@@ -78,13 +80,13 @@ public class LogInController extends HttpServlet {
 
         // LOG IN SUCCESSFULLY
         // save user to session
-        request.getSession().setAttribute(Constant.USER_SESSION, responseDto);
+        request.getSession().setAttribute(Constant.USER_SESSION, responseEntity);
 
         // save user cookie if user require
         if (request.getParameter("rememberMe") != null &&
                 request.getParameter("rememberMe").equals("yes")) {
-            CookieUtil.setCookie(response, "username", requestDto.getUsername(), 5 * 60);
-            CookieUtil.setCookie(response, "password", requestDto.getPassword(), 5 * 60);
+            CookieUtil.setCookie(response, "username", requestDto.getUsername(), 24 * 60);
+            CookieUtil.setCookie(response, "password", requestDto.getPassword(), 24 * 60);
         }
 
         response.sendRedirect("/home");

@@ -1,11 +1,10 @@
 package com.webpro.virtual_learning.service;
 
 import com.webpro.virtual_learning.dto.UserDTO;
+import com.webpro.virtual_learning.entity.UserEntity;
 
-import java.util.List;
-
-public interface IUserService extends IBaseService<UserDTO>{
-    UserDTO findByUsername(String username);
-    UserDTO findByUsernameAndPassword(String username, String password);
+public interface IUserService extends IBaseService<UserDTO, UserEntity>{
+    UserEntity findByUsername(String username);
+    UserEntity findByUsernameAndPassword(String username, String password);
     void delete(String username);
 }

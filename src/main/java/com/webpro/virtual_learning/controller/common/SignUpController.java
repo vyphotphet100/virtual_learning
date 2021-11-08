@@ -4,6 +4,8 @@ import com.webpro.virtual_learning.converter.httprequest_dto.HttpRequestDTOConve
 import com.webpro.virtual_learning.converter.httprequest_dto.mapper.UserHttpRequestDTOMapper;
 import com.webpro.virtual_learning.dto.BaseDTO;
 import com.webpro.virtual_learning.dto.UserDTO;
+import com.webpro.virtual_learning.entity.BaseEntity;
+import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IUserService;
 import com.webpro.virtual_learning.utils.CookieUtil;
 
@@ -38,11 +40,11 @@ public class SignUpController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         UserDTO userDto = requestDTOConverter.toDTO(request, userHttpRequestDTOMapper);
-        UserDTO responseDto = userService.save(userDto);
-        request.setAttribute("responseDto", responseDto);
+        UserEntity responseEntity = userService.save(userDto);
+        request.setAttribute("responseEntity", responseEntity);
 
-        if (responseDto.getHttpStatus().equals(BaseDTO.HttpStatus.OK)) {
-            response.sendRedirect("/log-in?message=" + responseDto.getMessage());
+        if (responseEntity.getHttpStatus().equals(BaseEntity.HttpStatus.OK)) {
+            response.sendRedirect("/log-in?message=" + responseEntity.getMessage());
         } else {
             this.doGet(request, response);
         }

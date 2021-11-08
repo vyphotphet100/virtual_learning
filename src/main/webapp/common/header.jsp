@@ -1,4 +1,5 @@
 <!-- Top Bar -->
+<c:set var="currentUrl" value="${pageContext.request.getAttribute('javax.servlet.forward.request_uri')}"/>
 <div class="top_bar">
     <div class="top_bar_container">
         <div class="container">
@@ -47,9 +48,9 @@
                     </div>
                     <nav class="main_nav_contaner ml-auto">
                         <ul class="main_nav">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="MyClass.html">My classes</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="#">My classes</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                         <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
