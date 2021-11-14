@@ -1,1 +1,3 @@
-- Lấy user từ trong session ra để gán dữ liệu vào trang profile.
+- Căn bản xong teacher
+-> Làm trang verify
+-> Làm các trang cho student

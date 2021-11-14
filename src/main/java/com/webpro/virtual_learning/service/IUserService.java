@@ -7,4 +7,6 @@ public interface IUserService extends IBaseService<UserDTO, UserEntity>{
     UserEntity findByUsername(String username);
     UserEntity findByUsernameAndPassword(String username, String password);
     void delete(String username);
+
+    void deleteDoneQuestions(Long questionId);
 }
