@@ -13,6 +13,7 @@ public class UserHttpRequestDTOMapper extends BaseHttpRequestDTOMapper<UserDTO> 
         UserDTO userDto = new UserDTO();
         userDto.setUsername((String) request.getParameter("username"));
         userDto.setPassword((String) request.getParameter("password"));
+        userDto.setRetypePassword((String) request.getParameter("retypePassword"));
         userDto.setFullName((String) request.getParameter("fullName"));
         userDto.setEmail((String) request.getParameter("email"));
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
