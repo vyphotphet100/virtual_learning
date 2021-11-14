@@ -1,4 +1,4 @@
-package com.webpro.virtual_learning.controller.teacher;
+package com.webpro.virtual_learning.controller.teacher.clazz;
 
 import com.webpro.virtual_learning.converter.httprequest_dto.HttpRequestDTOConverter;
 import com.webpro.virtual_learning.converter.httprequest_dto.mapper.ClassHttpRequestDTOMapper;

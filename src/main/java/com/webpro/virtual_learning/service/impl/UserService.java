@@ -1,7 +1,9 @@
 package com.webpro.virtual_learning.service.impl;
 
+import com.webpro.virtual_learning.dao.IQuestionDAO;
 import com.webpro.virtual_learning.dao.IUserDAO;
 import com.webpro.virtual_learning.dto.UserDTO;
+import com.webpro.virtual_learning.entity.QuestionEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IUserService;
 
@@ -70,5 +72,20 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
     @Override
     public void delete(String username) {
 
+    }
+
+    @Inject
+    private IQuestionDAO questionDao;
+
+    @Override
+    public void deleteDoneQuestions(Long questionId) {
+        QuestionEntity questionEntity = questionDao.findById(questionId);
+        if (questionEntity == null)
+            return;
+
+        for (UserEntity userEntity : questionEntity.getUsers()) {
+            userEntity.getDoneQuestions().remove(questionEntity);
+            userDao.update(userEntity);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.webpro.virtual_learning.controller.teacher;
+package com.webpro.virtual_learning.controller.teacher.clazz;
 
 import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = {"/teacher/my-class"})
-public class ClassController extends HttpServlet {
+public class MyClassController extends HttpServlet {
     @Inject
     private IClassService classService;
 

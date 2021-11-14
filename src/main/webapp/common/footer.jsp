@@ -1,4 +1,4 @@
-<div class="footer_background" style="background-image:url(resources/images/footer_background.png)"></div>
+<div class="footer_background" style="background-image:url(/resources/images/footer_background.png)"></div>
 <div class="container">
     <div class="row footer_row">
         <div class="col">
@@ -73,9 +73,9 @@
                         <div class="footer_section footer_mobile">
                             <div class="footer_title">Mobile</div>
                             <div class="footer_mobile_content">
-                                <div class="footer_image"><a href="#"><img src="resources/images/mobile_1.png"
+                                <div class="footer_image"><a href="#"><img src="/resources/images/mobile_1.png"
                                                                            alt=""></a></div>
-                                <div class="footer_image"><a href="#"><img src="resources/images/mobile_2.png"
+                                <div class="footer_image"><a href="#"><img src="/resources/images/mobile_2.png"
                                                                            alt=""></a></div>
                             </div>
                         </div>
