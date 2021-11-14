@@ -26,31 +26,9 @@
     <div class="super_container">
 
         <!-- Header -->
-    
         <header class="header">
 			<%@include file="/common/header.jsp"%>
-
-	    </header>
-
-	    <!-- Menu -->
-	    <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-		    <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-		    <div class="search">
-			    <form action="#" class="header_search_form menu_mm">
-				    <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-				    <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-					    <i class="fa fa-search menu_mm" aria-hidden="true"></i>
-			    	</button>
-		    	</form>
-		    </div>
-		    <nav class="menu_nav">
-		    	<ul class="menu_mm">
-				    <li class="menu_mm"><a href="#">Home</a></li>
-				    <li class="menu_mm"><a href="#">My classes</a></li>
-			     	<li class="menu_mm"><a href="#">Contact</a></li>
-			    </ul>
-		    </nav>
-	    </div>   
+        </header>
     </div>
 
     <div class="courses">
@@ -61,84 +39,74 @@
         </div>
 
         <!--Form add class-->
-        <form class="login100-form validate-form edit-form">
+        <form class="login100-form validate-form edit-form" method="post">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
                     <h1>Adding class form</h1>
                     <p>This is the section for the initial setting up for your class</p>   
                 </div>
             </span>
-            
+
+            <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'ERROR'}">
+                <div class="alert alert-danger" role="alert">
+                    <c:out value="${responseEntity.message}"/>
+                </div>
+            </c:if>
+            <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'OK'}">
+                <div class="alert alert-success" role="alert">
+                    <c:out value="${responseEntity.message}"/>
+                </div>
+            </c:if>
             
             <div class="wrap-input100 validate-input" data-validate = "Name of class is required">
                 <input class="input100" type="text" name="name">
                 <span class="focus-input100"></span>
                 <span class="label-input100">Name of class</span>
             </div>
-            
-            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                <input class="input100" type="text" name="text">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Name of subject</span>
+
+            <div>
+                <select name="subjectId">
+                    <c:forEach items="${subjects}" var="subject">
+                            <option value="${subject.id}">${subject.name}</option>
+                    </c:forEach>
+                </select>
             </div>
-            <div class="wrap-input100 validate-input" data-validate = "Full-name is required">
-                <input class="input100" type="text" name="text">
+
+<%--            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">--%>
+<%--                <input class="input100" type="text" name="text">--%>
+<%--                <span class="focus-input100"></span>--%>
+<%--                <span class="label-input100">Name of subject</span>--%>
+<%--            </div>--%>
+            <div class="wrap-input100 validate-input" data-validate = "Description is required">
+                <input class="input100" type="text" name="description">
                 <span class="focus-input100"></span>
                 <span class="label-input100">Description</span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate="Password is required">
-                <input class="input100" id="password-field" type="text" name="pass">
+                <input class="input100" id="password-field1" type="password" name="password">
                 <span class="focus-input100"></span>
                 <span class="label-input100">Password</span>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Re-tye password is required">
-                <input class="input100" id="password-field" type="text" name="pass">
+            <div class="wrap-input100 validate-input" data-validate="Re-type password is required">
+                <input class="input100" id="password-field2" type="password" name="confirmPassword">
                 <span class="focus-input100"></span>
-                <span class="label-input100">Re-type Password</span>
+                <span class="label-input100">Confirm password</span>
+            </div>
+            <input type="hidden" name="authorUsername" value="${sessionScope.USER_SESSION.username}"/>
+
+            <div class="text-center">
+                <a href="#" class="a-join-button">
+                    <button class="join-button">
+                        <b>Apply</b>
+                    </button>
+                </a>
             </div>
         </form>
 
-        <!--join button-->
-        <div class="text-center">
-            <a href="#" class="a-join-button">
-                <button class="join-button">
-                    <b>Apply</b>
-                </button>
-            </a>
-        </div>
-
-
     </div>    
 </body>
-
-<div class="newsletter">
-    <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="resources/images/newsletter.jpg" data-speed="0.8"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
-
-                    <!-- Newsletter Content -->
-                    <div class="newsletter_content text-lg-left text-center">
-                        <div class="newsletter_title">sign up for news and offers</div>
-                        <div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we offer</div>
-                    </div>
-
-                    <!-- Newsletter Form -->
-                    <div class="newsletter_form_container ml-lg-auto">
-                        <form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
-                            <input type="email" class="newsletter_input" placeholder="Your Email" required="required">
-                            <button type="submit" class="newsletter_button">subscribe</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Footer-->
 <footer class="footer">

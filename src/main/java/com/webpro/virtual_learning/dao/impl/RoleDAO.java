@@ -1,6 +1,8 @@
 package com.webpro.virtual_learning.dao.impl;
 import com.webpro.virtual_learning.dao.IRoleDAO;
+import com.webpro.virtual_learning.entity.QuestionEntity;
 import com.webpro.virtual_learning.entity.RoleEntity;
+import org.springframework.beans.BeanUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -49,6 +51,8 @@ public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
+            RoleEntity roleEntity = this.findById(entity.getId());
+            BeanUtils.copyProperties(entity, roleEntity, getNullPropertyNames(entity));
             em.merge(entity);
             trans.commit();
         } catch (Exception e) {
