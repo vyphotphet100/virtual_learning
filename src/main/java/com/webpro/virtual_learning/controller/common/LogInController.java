@@ -55,9 +55,9 @@ public class LogInController extends HttpServlet {
         }
 
         // LOG IN BY SESSION
-        UserDTO sessionDto = (UserDTO) request.getSession().getAttribute(Constant.USER_SESSION);
-        if (sessionDto != null) { // log in by session
-            responseEntity = userService.findByUsernameAndPassword(sessionDto.getUsername(), sessionDto.getPassword());
+        UserEntity sessionEntity = (UserEntity) request.getSession().getAttribute(Constant.USER_SESSION);
+        if (sessionEntity != null) { // log in by session
+            responseEntity = userService.findByUsernameAndPassword(sessionEntity.getUsername(), sessionEntity.getPassword());
             this.checkLoginRedirect(request, response, requestDto, responseEntity);
             return;
         }

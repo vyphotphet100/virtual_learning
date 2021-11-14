@@ -1,7 +1,9 @@
 package com.webpro.virtual_learning.dao.impl;
 
 import com.webpro.virtual_learning.dao.ISubjectDAO;
+import com.webpro.virtual_learning.entity.QuestionEntity;
 import com.webpro.virtual_learning.entity.SubjectEntity;
+import org.springframework.beans.BeanUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -50,6 +52,8 @@ public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
+            SubjectEntity subjectEntity = this.findById(entity.getId());
+            BeanUtils.copyProperties(entity, subjectEntity, getNullPropertyNames(entity));
             em.merge(entity);
             trans.commit();
         } catch (Exception e) {

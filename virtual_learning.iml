@@ -69,5 +69,8 @@
     <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: org.modelmapper:modelmapper:2.3.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.13" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.13" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.13" level="project" />
   </component>
 </module>

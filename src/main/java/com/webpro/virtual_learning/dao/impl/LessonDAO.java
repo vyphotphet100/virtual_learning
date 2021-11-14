@@ -1,7 +1,9 @@
 package com.webpro.virtual_learning.dao.impl;
 
 import com.webpro.virtual_learning.dao.ILessonDAO;
+import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.LessonEntity;
+import org.springframework.beans.BeanUtils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -50,6 +52,8 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
         EntityTransaction trans = em.getTransaction();
         trans.begin();
         try {
+            LessonEntity lessonEntity = this.findById(entity.getId());
+            BeanUtils.copyProperties(entity, lessonEntity, getNullPropertyNames(entity));
             em.merge(entity);
             trans.commit();
         } catch (Exception e) {

@@ -10,4 +10,5 @@ public interface IClassService extends IBaseService<ClassDTO, ClassEntity>{
     void delete(Long id);
 
     List<ClassEntity> findBySubjectId(Long subjectId);
+    List<ClassEntity> findAllByAuthorUsername(String username);
 }
