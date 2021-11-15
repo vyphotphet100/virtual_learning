@@ -37,8 +37,8 @@ public class VerifyController extends HttpServlet {
         UserDTO userDto = (UserDTO) request.getSession().getAttribute("verificationUser_Session");
         request.setAttribute("verificationUser", userDto);
 
-        // Get host email infor
-        ResourceBundle rb = ResourceBundle.getBundle("host-email");
+        // Get host email info
+        ResourceBundle rb = ResourceBundle.getBundle("host_email");
         String hostEmail = rb.getString("email");
         String password = rb.getString("password");
         request.setAttribute("hostEmail", hostEmail);

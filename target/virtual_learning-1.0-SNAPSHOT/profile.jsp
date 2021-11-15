@@ -37,13 +37,18 @@
         <div class="row">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" src="resources/images/comment_2.jpg" width="90">
+                    <img id="avatar" class="rounded-circle mt-5" src="${sessionScope.USER_SESSION.avatar}" width="90">
                     <span class="font-weight-bold">${sessionScope.USER_SESSION.fullName}</span>
                     <span class="text-black-50">${sessionScope.USER_SESSION.email}</span>
                     <span>${sessionScope.USER_SESSION.phone}</span>
+                    <div>
+                        <input id="upload" type="file" onchange="readURL(this);"
+                               class="form-control border-0">
+                    </div>
                 </div>
             </div>
             <form class="col-md-5 border-right" method="POST">
+                <input id="avatarInput" value="${sessionScope.USER_SESSION.avatar}" type="hidden" name="avatar">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="text-right">Edit your profile</h5>
@@ -51,23 +56,27 @@
                     <div class="row mt-2">
                         <div class="col-md-12">
                             <label class="labels">Full name</label>
-                            <input type="text" class="form-control" name="fullName" placeholder="Full name" value="${sessionScope.USER_SESSION.fullName}">
+                            <input type="text" class="form-control" name="fullName" placeholder="Full name"
+                                   value="${sessionScope.USER_SESSION.fullName}">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="labels">Email</label>
-                            <input type="text" class="form-control" name="email" placeholder="Email" value="${sessionScope.USER_SESSION.email}">
+                            <input type="text" class="form-control" name="email" placeholder="Email"
+                                   value="${sessionScope.USER_SESSION.email}">
                         </div>
                         <div class="col-md-12">
                             <label class="labels">Birthday</label>
-                            <input type="date" class="form-control" name="birthday" placeholder="Birthday" value="${sessionScope.USER_SESSION.birthday}">
+                            <input type="date" class="form-control" name="birthday" placeholder="Birthday"
+                                   value="${sessionScope.USER_SESSION.birthday}">
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <label class="labels">Phone</label>
-                            <input type="text" class="form-control" name="phone" placeholder="Your phone" value="${sessionScope.USER_SESSION.phone}">
+                            <input type="text" class="form-control" name="phone" placeholder="Your phone"
+                                   value="${sessionScope.USER_SESSION.phone}">
                         </div>
                     </div>
                     <div class="row mt-3">
@@ -156,6 +165,7 @@
 
 <script src="resources/js/custom.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="resources/js/profile.js"></script>
 <script src="resources/js/main.min.js"></script>
 <script src="resources/js/scripts.min.js"></script>
 </html>

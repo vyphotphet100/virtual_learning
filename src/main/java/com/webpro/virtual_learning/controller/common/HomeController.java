@@ -1,12 +1,9 @@
 package com.webpro.virtual_learning.controller.common;
 
 import com.webpro.virtual_learning.dao.ISubjectDAO;
-import com.webpro.virtual_learning.dto.ClassDTO;
-import com.webpro.virtual_learning.dto.SubjectDTO;
 import com.webpro.virtual_learning.entity.SubjectEntity;
 import com.webpro.virtual_learning.service.IClassService;
 import com.webpro.virtual_learning.service.ISubjectService;
-import com.webpro.virtual_learning.utils.CookieUtil;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;

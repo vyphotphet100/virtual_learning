@@ -6,8 +6,10 @@ import com.webpro.virtual_learning.dto.UserDTO;
 import com.webpro.virtual_learning.entity.QuestionEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IUserService;
+import com.webpro.virtual_learning.utils.GoogleCloudUtil;
 
 import javax.inject.Inject;
+import java.util.Base64;
 import java.util.List;
 
 public class UserService extends BaseService<UserDTO, UserEntity> implements IUserService {
@@ -49,7 +51,7 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
         UserEntity userEntity = userDao.save((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
 
         if (userEntity == null)
-            return this.exceptionObject(new UserEntity(), "Somethisng's wrong");
+            return this.exceptionObject(new UserEntity(), "Something's wrong");
 
         userEntity.setMessage("Register successfully.");
         return userEntity;
@@ -60,10 +62,21 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
         if (userDao.findById(userDto.getUsername()) == null)
             return this.exceptionObject(new UserEntity(), "This username does not exist");
 
+        // save avatar if it has new value
+        if (userDto.getAvatar().contains(",")) {
+            byte[] pictueBytes = Base64.getDecoder().decode(userDto.getAvatar().split(",")[1]);
+            String fileName = "user_" + userDto.getUsername() + "_avatar.png";
+            if (!GoogleCloudUtil.upFileToGoogleCloud(fileName, pictueBytes))
+                return this.exceptionObject(new UserEntity(), "Something's wrong when adding avatar picture");
+
+            GoogleCloudUtil.getFileFromGoogleCloud(fileName);
+            userDto.setAvatar("/file?name=" + fileName);
+        }
+
         UserEntity userEntity = userDao.update((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
 
         if (userEntity == null)
-            return this.exceptionObject(new UserEntity(), "Somethisng's wrong");
+            return this.exceptionObject(new UserEntity(), "Something's wrong");
 
         userEntity.setMessage("Update information successfully");
         return userEntity;
