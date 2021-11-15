@@ -9,4 +9,5 @@ public interface IUserService extends IBaseService<UserDTO, UserEntity>{
     void delete(String username);
 
     void deleteDoneQuestions(Long questionId);
+    void deleteJoinedClass(Long classId);
 }

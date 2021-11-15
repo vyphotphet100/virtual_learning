@@ -1,5 +1,8 @@
-- Căn bản xong teacher
--> Làm trang verify
--> Làm các trang cho student
+- Teacher:
+    - add/edit lesson
+    - Thêm phần js cho delete class
+    - Chưa test delete class
+
+- Làm các trang cho student
 
 resources/images/comment_2.jpg

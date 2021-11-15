@@ -42,4 +42,11 @@ public class LessonService extends BaseService<LessonDTO, LessonEntity> implemen
         questionService.deleteByLessonId(lessonId);
         lessonDao.delete(lessonId);
     }
+
+    @Override
+    public void deleteByClassId(Long classId) {
+        for (LessonEntity lessonEntity: lessonDao.findAll())
+            if (lessonEntity.getClazz().getId().equals(classId))
+                this.delete(lessonEntity.getId());
+    }
 }

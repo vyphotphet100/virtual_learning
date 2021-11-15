@@ -1,8 +1,10 @@
 package com.webpro.virtual_learning.service.impl;
 
+import com.webpro.virtual_learning.dao.IClassDAO;
 import com.webpro.virtual_learning.dao.IQuestionDAO;
 import com.webpro.virtual_learning.dao.IUserDAO;
 import com.webpro.virtual_learning.dto.UserDTO;
+import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.QuestionEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IUserService;
@@ -98,6 +100,21 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
 
         for (UserEntity userEntity : questionEntity.getUsers()) {
             userEntity.getDoneQuestions().remove(questionEntity);
+            userDao.update(userEntity);
+        }
+    }
+
+    @Inject
+    private IClassDAO classDao;
+
+    @Override
+    public void deleteJoinedClass(Long classId) {
+        ClassEntity classEntity =  classDao.findById(classId);
+        if (classEntity == null)
+            return;
+
+        for (UserEntity userEntity : classEntity.getJoinedUser()) {
+            userEntity.getJoinedClasses().remove(classEntity);
             userDao.update(userEntity);
         }
     }
