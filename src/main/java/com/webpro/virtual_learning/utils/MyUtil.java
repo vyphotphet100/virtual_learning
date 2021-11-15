@@ -6,7 +6,7 @@ import com.webpro.virtual_learning.entity.UserEntity;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Random;
 
-public class MyUtils {
+public class MyUtil {
     public static String generateRandomString(Integer length) {
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'

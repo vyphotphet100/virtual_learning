@@ -14,7 +14,7 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                <div>19110065@student.hcmute.edu.vn</div>
+                                <div>virtual.learning.hcmute@gmail.com</div>
                             </li>
                         </ul>
                         <c:if test="${empty sessionScope.USER_SESSION}">

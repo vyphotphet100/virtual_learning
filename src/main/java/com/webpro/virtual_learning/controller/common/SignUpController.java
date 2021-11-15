@@ -42,24 +42,36 @@ public class SignUpController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         UserDTO userDto = requestDTOConverter.toDTO(request, userHttpRequestDTOMapper);
 
-        // check retype password
+        // check confirm password
         if (!userDto.getPassword().equals(userDto.getRetypePassword())) {
             request.setAttribute("responseEntity", userService.exceptionObject(new UserEntity(), "Password confirmation failed"));
             this.doGet(request, response);
             return;
         }
 
-        UserEntity responseEntity = userService.save(userDto);
-        request.setAttribute("responseEntity", responseEntity);
-
-        // save successfully
-        if (responseEntity.getHttpStatus().equals(BaseEntity.HttpStatus.OK)) {
-            response.sendRedirect("/log-in?message=" + responseEntity.getMessage());
+        // check username exist
+        UserEntity userEntity = userService.findByUsername(userDto.getUsername());
+        if (userEntity.getHttpStatus().equals(BaseEntity.HttpStatus.OK)) {
+            request.setAttribute("responseEntity", userService.exceptionObject(new UserEntity(), "This username exists"));
+            this.doGet(request, response);
             return;
         }
 
-        // save failed
-        this.doGet(request, response);
+        // save verifictionUser to session
+        request.getSession().setAttribute("verificationUser_Session", userDto);
+        response.sendRedirect("/verify");
+
+//        UserEntity responseEntity = userService.save(userDto);
+//        request.setAttribute("responseEntity", responseEntity);
+//
+//        // save successfully
+//        if (responseEntity.getHttpStatus().equals(BaseEntity.HttpStatus.OK)) {
+//            response.sendRedirect("/log-in?message=" + responseEntity.getMessage());
+//            return;
+//        }
+//
+//        // save failed
+//        this.doGet(request, response);
 
     }
 }

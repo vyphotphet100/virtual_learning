@@ -21,6 +21,9 @@ public abstract class BaseEntity {
     private String message;
 
     @Transient
+    private String verificationCode;
+
+    @Transient
     private HttpStatus httpStatus = HttpStatus.OK;
 
     @Transient

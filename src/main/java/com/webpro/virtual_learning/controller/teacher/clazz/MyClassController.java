@@ -3,7 +3,7 @@ package com.webpro.virtual_learning.controller.teacher.clazz;
 import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IClassService;
-import com.webpro.virtual_learning.utils.MyUtils;
+import com.webpro.virtual_learning.utils.MyUtil;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class MyClassController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        UserEntity userEntity = MyUtils.getUserFromSession(request);
+        UserEntity userEntity = MyUtil.getUserFromSession(request);
         List<ClassEntity> classes = null;
         if (userEntity != null)
             classes = classService.findAllByAuthorUsername(userEntity.getUsername());

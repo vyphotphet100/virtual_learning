@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<%@include file="common/taglib.jsp" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual learning | Varifying Account</title>
+    <title>Virtual learning | Verifying Account</title>
     <link rel="stylesheet" type="text/css" href="resources/styles/bootstrap4/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="resources/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -23,22 +24,37 @@
 <body>
     <div id="background-1">
         <div id="background-2">
-        <p class="text">virtual learning</p>
+        <p class="text">VIRTUAL LEARNING</p>
         </div>
         <div id="content">
             <h1>Welcome!</h1>
             <p>We're excited to have you get started. First, you need to confirm your account.
-                Just type the code which we sent your email a few minutes ago.
+                Just type the code which we sent your email <strong>${verificationUser.email}</strong> a few minutes ago.
             </p>
-            <form class="input-container">
+            <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'ERROR'}">
+                <div class="alert alert-danger" role="alert">
+                    <c:out value="${responseEntity.message}"/>
+                </div>
+            </c:if>
+            <c:if test="${not empty param['message']}">
+                <div class="alert alert-success" role="alert">
+                    <c:out value="${param['message']}"/>
+                </div>
+            </c:if>
+            <form class="input-container" method="post">
                 <label>Enter code</label>
-                <input id="input-code" type="text">
+                <input id="input-code" type="text" name="verificationCode"><br>
+                <button class="verify-btn">Confirm account</button>
             </form>
-            <button class="verify-btn">Confirm account</button>
+
             <p style="margin-top: 2%;">If that doesn't work, please click the button below to sent the code again.</p>
-            <button class="verify-btn">Re-send code</button>
+            <form class="input-container" method="post">
+                <input type="hidden" name="verificationCode" value="resend"><br>
+                <button class="verify-btn">Resend code</button>
+            </form>
+
             <p>If you have any questions, just contact us by email below:</p>
-            <p style="text-align: center;"><a href="" style="color:#2BC9B9;">abc@gmail.virtuallearning.edu.com</a></p>
+            <p style="text-align: center;"><a style="color:#2BC9B9;">${hostEmail}</a></p>
             <p style="margin-top: 2%;">Cheers,</p>
             <p>Virtual learning</p>
         </div>

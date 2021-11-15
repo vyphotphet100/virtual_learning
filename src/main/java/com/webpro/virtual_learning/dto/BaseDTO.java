@@ -17,4 +17,5 @@ public abstract class BaseDTO {
     private List<Object> requestList = new ArrayList<>();
     private HttpStatus httpStatus = HttpStatus.OK;
     private String message;
+    private String verificationCode;
 }

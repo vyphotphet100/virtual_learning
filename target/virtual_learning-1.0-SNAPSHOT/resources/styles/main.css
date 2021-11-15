@@ -200,7 +200,7 @@
 .verify-btn {
   width: 30%;
   height: 8%;
-  margin-left: 35%;
+  /*margin-left: 35%;*/
   margin-bottom: 2%;
   margin-top: 20px;
   border-radius: 3px;
@@ -211,6 +211,22 @@
 .verify-btn:hover {
   background-color: #333333;
   color: whitesmoke;
+}
+
+.resend-btn {
+    width: 30%;
+    height: 8%;
+    margin-left: 35%;
+    margin-bottom: 2%;
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: #14bdee;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.resend-btn:hover {
+    background-color: #333333;
+    color: whitesmoke;
 }
 
 .input-container {

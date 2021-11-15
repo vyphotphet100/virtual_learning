@@ -80,7 +80,7 @@
                      data-validate="Re-type password is required">
                     <input class="input100" id="retype-password-field" type="password" name="retypePassword">
                     <span class="focus-input100"></span>
-                    <span class="label-input100">Re-type password</span>
+                    <span class="label-input100">Confirm password</span>
                 </div>
 
                 <div class="flex-sb-m w-full p-t-3 p-b-32">
