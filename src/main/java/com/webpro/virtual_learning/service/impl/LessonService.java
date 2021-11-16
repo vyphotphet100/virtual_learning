@@ -45,7 +45,8 @@ public class LessonService extends BaseService<LessonDTO, LessonEntity> implemen
 
     @Override
     public void deleteByClassId(Long classId) {
-        for (LessonEntity lessonEntity: lessonDao.findAll())
+        List<LessonEntity> lessonEntities = lessonDao.findAll();
+        for (LessonEntity lessonEntity: lessonEntities)
             if (lessonEntity.getClazz().getId().equals(classId))
                 this.delete(lessonEntity.getId());
     }

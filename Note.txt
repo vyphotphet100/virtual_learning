@@ -1,7 +1,5 @@
 - Teacher:
     - add/edit lesson
-    - Thêm phần js cho delete class
-    - Chưa test delete class
 
 - Làm các trang cho student
 

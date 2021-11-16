@@ -53,7 +53,7 @@ public class RoleDAO extends BaseDAO<RoleEntity> implements IRoleDAO{
         try {
             RoleEntity roleEntity = this.findById(entity.getId());
             BeanUtils.copyProperties(entity, roleEntity, getNullPropertyNames(entity));
-            em.merge(entity);
+            em.merge(roleEntity);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();

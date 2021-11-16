@@ -46,7 +46,8 @@ public class QuestionService extends BaseService<QuestionDTO, QuestionEntity> im
 
     @Override
     public void deleteByLessonId(Long lessonId) {
-        for (QuestionEntity questionEntity: questionDao.findAll()) {
+        List<QuestionEntity> questionEntities = questionDao.findAll();
+        for (QuestionEntity questionEntity: questionEntities) {
             if (questionEntity.getLesson().getId().equals(lessonId))
                 this.delete(questionEntity.getId());
         }

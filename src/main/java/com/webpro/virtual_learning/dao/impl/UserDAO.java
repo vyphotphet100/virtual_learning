@@ -55,7 +55,7 @@ public class UserDAO extends BaseDAO<UserEntity> implements IUserDAO {
         try {
             UserEntity userEntity = this.findById(entity.getUsername());
             BeanUtils.copyProperties(entity, userEntity, getNullPropertyNames(entity));
-            em.merge(entity);
+            em.merge(userEntity);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();

@@ -19,7 +19,7 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
         Query q = em.createQuery("SELECT l FROM LessonEntity l");
         List<LessonEntity> lessonEntities = new ArrayList<>();
         try {
-            lessonEntities = new ArrayList<>();
+            lessonEntities = q.getResultList();
         } catch (NoResultException e) {
             lessonEntities = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class LessonDAO extends BaseDAO<LessonEntity> implements ILessonDAO {
         try {
             LessonEntity lessonEntity = this.findById(entity.getId());
             BeanUtils.copyProperties(entity, lessonEntity, getNullPropertyNames(entity));
-            em.merge(entity);
+            em.merge(lessonEntity);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();

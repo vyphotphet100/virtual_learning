@@ -109,7 +109,7 @@
 
 <script src="../resources/js/custom.js"></script>
 <script src="../resources/js/main.js"></script>
-<script src="../resources/js/lesson.js"></script>
+<script src="../resources/js/lesson-teacher.js"></script>
 <script src="../resources/js/main.min.js"></script>
 <script src="../resources/js/scripts.min.js"></script>
 </html>
