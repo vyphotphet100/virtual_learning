@@ -54,7 +54,7 @@ public class QuestionDAO extends BaseDAO<QuestionEntity> implements IQuestionDAO
         try {
             QuestionEntity questionEntity = this.findById(entity.getId());
             BeanUtils.copyProperties(entity, questionEntity, getNullPropertyNames(entity));
-            em.merge(entity);
+            em.merge(questionEntity);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();

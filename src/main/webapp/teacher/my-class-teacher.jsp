@@ -32,7 +32,7 @@
 <div class="courses">
     <!--Background-->
     <div class="section_background parallax-window" data-parallax="scroll"
-         data-image-src="resources/images/courses_background.jpg" data-speed="0.8"></div>
+         data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
     <c:forEach items="${classes}" var="clazz">
         <div class="container my-class">
             <!--Course-->
@@ -61,7 +61,7 @@
 
             <div class="edit-delete">
                 <button class="join-button edit-button" onclick="window.location.href='#'">Edit</button>
-                <button class="join-button edit-button">Delete</button>
+                <button onclick="deleteClass(${clazz.id})" class="join-button edit-button">Delete</button>
             </div>
         </div>
     </c:forEach>
@@ -100,6 +100,7 @@
 
 <script src="../resources/js/custom.js"></script>
 <script src="../resources/js/main.js"></script>
+<script src="../resources/js/my-class-teacher.js"></script>
 <script src="../resources/js/main.min.js"></script>
 <script src="../resources/js/scripts.min.js"></script>
 </html>

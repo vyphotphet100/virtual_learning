@@ -55,6 +55,9 @@ VALUES ("user1", 1),
        ("user2", 2),
        ("user2", 3);
 
+INSERT INTO `joined`(`username`, `class_id`)
+VALUES ('user2', '1');
+
 
 
 

@@ -54,7 +54,7 @@ public class SubjectDAO extends BaseDAO<SubjectEntity> implements ISubjectDAO {
         try {
             SubjectEntity subjectEntity = this.findById(entity.getId());
             BeanUtils.copyProperties(entity, subjectEntity, getNullPropertyNames(entity));
-            em.merge(entity);
+            em.merge(subjectEntity);
             trans.commit();
         } catch (Exception e) {
             e.printStackTrace();

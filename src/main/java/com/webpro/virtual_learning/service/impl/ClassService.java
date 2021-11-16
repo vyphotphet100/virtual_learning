@@ -6,9 +6,12 @@ import com.webpro.virtual_learning.dao.ISubjectDAO;
 import com.webpro.virtual_learning.dao.IUserDAO;
 import com.webpro.virtual_learning.dto.ClassDTO;
 import com.webpro.virtual_learning.entity.ClassEntity;
+import com.webpro.virtual_learning.entity.LessonEntity;
 import com.webpro.virtual_learning.entity.SubjectEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IClassService;
+import com.webpro.virtual_learning.service.ILessonService;
+import com.webpro.virtual_learning.service.IUserService;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -56,9 +59,26 @@ public class ClassService extends BaseService<ClassDTO, ClassEntity> implements 
         return classDao.findById(id);
     }
 
+    @Inject
+    private ILessonService lessonService;
+
+    @Inject
+    private IUserService userService;
+
     @Override
     public void delete(Long id) {
+        ClassEntity classEntity = classDao.findById(id);
+        if (classEntity == null)
+            return;
 
+        // delete lessons of class
+        lessonService.deleteByClassId(id);
+
+        // delete join relationship which joined to this class
+        userService.deleteJoinedClass(id);
+
+        // delete this class
+        classDao.delete(id);
     }
 
     @Override

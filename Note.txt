@@ -1,5 +1,6 @@
-- Căn bản xong teacher
--> Làm trang verify
--> Làm các trang cho student
+- Teacher:
+    - add/edit lesson
+
+- Làm các trang cho student
 
 resources/images/comment_2.jpg

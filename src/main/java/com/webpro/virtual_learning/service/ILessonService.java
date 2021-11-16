@@ -6,4 +6,5 @@ import com.webpro.virtual_learning.entity.LessonEntity;
 public interface ILessonService extends IBaseService<LessonDTO, LessonEntity>{
     LessonEntity findById(Long lessonId);
     void delete(Long lessonId);
+    void deleteByClassId(Long classId);
 }

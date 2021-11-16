@@ -6,7 +6,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
-import java.util.Random;
 
 public class GoogleMailUtil {
     public static boolean sendEmail(String email, String password, String toAddress,
