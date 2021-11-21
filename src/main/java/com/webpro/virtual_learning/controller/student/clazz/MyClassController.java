@@ -1,6 +1,5 @@
 package com.webpro.virtual_learning.controller.student.clazz;
 
-import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 import com.webpro.virtual_learning.service.IClassService;
 import com.webpro.virtual_learning.utils.MyUtil;
@@ -12,13 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(urlPatterns = {"/student/my-class"})
 public class MyClassController extends HttpServlet {
-
-    @Autowired
-    private IClassService classService;
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
