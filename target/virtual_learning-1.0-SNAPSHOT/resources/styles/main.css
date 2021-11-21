@@ -423,7 +423,7 @@ Start question
   }
   
   .items + label:after {
-    content: " ";
+    /*content: " ";*/
     display: block;
     position: absolute;
     height: 20px;

@@ -1,6 +1,7 @@
 - Teacher:
     - add/edit lesson
 
-- Làm các trang cho student
+- Làm các trang cho student:
+    + Làm trang question
 
 resources/images/comment_2.jpg
