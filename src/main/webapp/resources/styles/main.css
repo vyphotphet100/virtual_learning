@@ -375,7 +375,7 @@ End Edit lession
 /*******************************
 Start question
 *********************************/
-#backlession{
+.backlesson{
     position: relative;
     background-color: #14BDEE;
     border-radius: 5px;
@@ -400,15 +400,15 @@ Start question
     font-weight: bold;
     color: #444;
   }
-  
-  .qContent:before {
-    content: "Q" counter(qIndex)". ";
-    color: rgb(207, 17, 17);
-  }
-  
-  .qContent:after {
-    content: " ?";
-  }
+
+  /*.qContent:before {*/
+  /*  content: "Q" counter(qIndex)". ";*/
+  /*  color: rgb(207, 17, 17);*/
+  /*}*/
+
+  /*.qContent:after {*/
+  /*  content: " ?";*/
+  /*}*/
   
   li {
     /* list-style-type: lower-alpha; */

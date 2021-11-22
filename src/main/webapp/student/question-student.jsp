@@ -34,28 +34,23 @@
     <div class="section_background parallax-window" data-parallax="scroll"
          data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
     <div class="container rounded bg-white mt-5 mb-5">
+        <h2>Multiple-choice</h2>
+        <div class="questions">
+            <c:forEach var="question" items="${lesson.questions}" varStatus="order">
+                <div class="q_a question">
+                    <p class="qContent">${question.content}</p>
+                    <input class="question-option" type="hidden" value="${question.option}"/>
+                    <input class="question-correct" type="hidden" value="${question.correct}"/>
+                </div>
+                <hr>
+            </c:forEach>
+        </div>
 
-        <form id="q_a">
-            <h2>Multiple-choice</h2>
-            <div id="answers"></div>
-            <p class="qContent">q2q2q2q2q2q2q2</p>
-            <ul id="q1" class="question">
-                <li><input id="q1a0" class="items" type="radio" name="answer1" value="0"><label
-                        for="q1a0">2222222222</label></li>
-                <li><input id="q1a1" class="items" type="radio" name="answer1" value="1"><label
-                        for="q1a1">bbbbbbbbbb</label></li>
-                <li><input id="q1a2" class="items" type="radio" name="answer1" value="2"><label
-                        for="q1a2">cccccccccc</label></li>
-                <li><input id="q1a3" class="items" type="radio" name="answer1" value="3"><label
-                        for="q1a3">dddddddddd</label></li>
-            </ul>
-            <%--                <hr />--%>
-            <input id="checkResult" type="submit" value="Confirm"/>
-            <input id="resetResult" type="button" value="Do it again"/>
-        </form>
-        <div id="result"></div>
-        <button id="showResult">See the answer</button>
-        <button id="backlession" type="button" onclick="location.href='#';">Back to the classroom</button>
+
+        <div id="result">
+            <button class="backlesson" type="button" onclick="checkResult();">Confirm</button>
+            <button class="backlesson" type="button" onclick="location.href='#';">Back to the classroom</button>
+        </div>
 
     </div>
 </div>
@@ -82,4 +77,5 @@
 <script src="../resources/js/main.js"></script>
 <script src="../resources/js/main.min.js"></script>
 <script src="../resources/js/scripts.min.js"></script>
+<script src="../resources/js/question.js"></script>
 </html>
