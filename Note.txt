@@ -5,3 +5,14 @@
     + Làm trang question
 
 resources/images/comment_2.jpg
+
+Email:
+- ID: virtual.learning.hcmute@gmail.com
+- Password: virtuallearning@123
+
+- Forward port: sudo socat TCP-LISTEN:80,fork TCP:127.0.0.1:8080
+- Port of xampp: 8100
+- Deployed file: /home/caovy2001/test.war
+- Change file to deploy: Edit file .../Catalina/localhost/ROOT.xml
+- Upload file to VM: scp -i ssh-key file.txt caovy2001@34.92.237.234:/home/caovy2001/test.txt
+- Host IP: http://34.92.237.234/

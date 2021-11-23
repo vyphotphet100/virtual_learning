@@ -97,4 +97,19 @@ public class ClassDAO extends BaseDAO<ClassEntity> implements IClassDAO{
             em.close();
         }
     }
+
+    @Override
+    public List<ClassEntity> findAllByName(String name) {
+        EntityManager em = this.getEntityManagerFactory().createEntityManager();
+        Query q = em.createQuery("SELECT c FROM ClassEntity c WHERE c.name like %" + name + "%");
+        List<ClassEntity> classEntities = new ArrayList<>();
+        try {
+            classEntities = q.getResultList();
+        } catch (NoResultException e) {
+            classEntities = new ArrayList<>();
+        }
+
+        em.close();
+        return classEntities;
+    }
 }

@@ -75,7 +75,11 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
             userDto.setAvatar("/file?name=" + fileName);
         }
 
-        UserEntity userEntity = userDao.update((UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class));
+        UserEntity userEntity = (UserEntity) dtoEntityConverter.toEntity(userDto, UserEntity.class);
+        userEntity.setJoinedClasses(null);
+        userEntity.setCreatedClasses(null);
+        userEntity.setDoneQuestions(null);
+        userEntity = userDao.update(userEntity);
 
         if (userEntity == null)
             return this.exceptionObject(new UserEntity(), "Something's wrong");
@@ -109,7 +113,7 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
 
     @Override
     public void deleteJoinedClass(Long classId) {
-        ClassEntity classEntity =  classDao.findById(classId);
+        ClassEntity classEntity = classDao.findById(classId);
         if (classEntity == null)
             return;
 
@@ -117,5 +121,19 @@ public class UserService extends BaseService<UserDTO, UserEntity> implements IUs
             userEntity.getJoinedClasses().remove(classEntity);
             userDao.update(userEntity);
         }
+    }
+
+    @Override
+    public void joinClass(String username, Long classId) {
+        UserEntity userEntity = userDao.findById(username);
+        ClassEntity classEntity = classDao.findById(classId);
+
+        List<ClassEntity> joinedClasses = userEntity.getJoinedClasses();
+        for (ClassEntity classEntity1 : joinedClasses)
+            if (classEntity1.getId().equals(classId))
+                return;
+
+        userEntity.getJoinedClasses().add(classEntity);
+        userDao.update(userEntity);
     }
 }

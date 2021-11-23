@@ -36,8 +36,9 @@
                             <div class="footer_title">Contact Us</div>
                             <div class="footer_contact_info">
                                 <ul>
-                                    <li>Email: Info.deercreative@gmail.com</li>
-                                    <li>Phone: +(88) 111 555 666</li>
+                                    <li>Email: virtual.learning.hcmute@gmail.com</li>
+                                    <br>
+                                    <li>Phone: +(83) 975 543 975</li>
                                     <li>Main base: 254 Dien Bien Phu, Binh Thanh District, Ho Chi Minh City, Viet Nam
                                     </li>
                                 </ul>

@@ -11,4 +11,5 @@ public interface IClassService extends IBaseService<ClassDTO, ClassEntity>{
 
     List<ClassEntity> findBySubjectId(Long subjectId);
     List<ClassEntity> findAllByAuthorUsername(String username);
+    List<ClassEntity> findAllByName(String name);
 }

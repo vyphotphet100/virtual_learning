@@ -8,6 +8,7 @@
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/impl/ClassService.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dto/ClassDTO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/impl/RoleDAO.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/common/MyClassController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/entity/QuestionEntity.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/impl/SubjectDAO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/teacher/clazz/EditClassController.java
@@ -25,6 +26,7 @@
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/entity/SubjectEntity.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/impl/LessonService.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/IQuestionService.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/filter/AuthorizationFilter.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/IRoleDAO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/impl/QuestionService.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/converter/httprequest_dto/mapper/BaseHttpRequestDTOMapper.java
@@ -35,8 +37,10 @@
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/IBaseDAO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/common/VerifyController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/common/SignUpController.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/student/clazz/ClassDetailController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/entity/ClassEntity.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/IClassService.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/student/question/QuestionController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/utils/GoogleCloudUtil.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/IClassDAO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/impl/BaseService.java
@@ -48,11 +52,14 @@
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/teacher/lesson/EditLessonController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/common/LogOutController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/teacher/clazz/MyClassController.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/teacher/clazz/DeleteClassController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/utils/CookieUtil.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dto/UserDTO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/IQuestionDAO.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/student/clazz/JoinClassController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/service/ISubjectService.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/utils/GoogleMailUtil.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/student/clazz/MyClassController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/teacher/lesson/LessonController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/common/LogInController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/common/HomeController.java
@@ -60,6 +67,7 @@
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/impl/QuestionDAO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/teacher/lesson/AddLessonController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dto/DoDTO.java
+/media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/controller/student/lesson/LessonController.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dto/RoleDTO.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/entity/LessonEntity.java
 /media/DATA/IntelliJ_workspace/virtual_learning/src/main/java/com/webpro/virtual_learning/dao/impl/UserDAO.java

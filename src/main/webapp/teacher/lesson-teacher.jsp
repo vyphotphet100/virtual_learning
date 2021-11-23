@@ -57,6 +57,8 @@
                                     <c:forEach items="${clazz.lessons}" var="subLesson">
                                         <c:if test="${subLesson.id == lesson.id}">
                                             <a href="/teacher/lesson?id=${subLesson.id}" class="active">${subLesson.title}</a>
+                                            <c:set var="lesson" value="${subLesson}"/>
+
                                         </c:if>
                                         <c:if test="${subLesson.id != lesson.id}">
                                             <a href="/teacher/lesson?id=${subLesson.id}">${subLesson.title}</a>
@@ -64,7 +66,7 @@
                                     </c:forEach>
                                 </div>
 
-                                <p><a href="#" class="btn btn-quize">Add lesson</a></p>
+                                <p><a href="/teacher/add-lesson?classId=${clazz.id}" class="btn btn-quize">Add lesson</a></p>
                             </div>
 
                             <div class="probootstrap-image probootstrap-animate"
@@ -74,7 +76,7 @@
                             </div>
                             <div class="menu-btn">
                                 <button onclick="deleteLesson(${lesson.id}, ${clazz.id});" class="menu-btn btn-delete">Delete</button>
-                                <button onclick="window.location.href='#'" class="menu-btn btn-edit">Edit</button>
+                                <button onclick="window.location.href='/teacher/edit-lesson?id=${lesson.id}'" class="menu-btn btn-edit">Edit</button>
                             </div>
 
                         </div>

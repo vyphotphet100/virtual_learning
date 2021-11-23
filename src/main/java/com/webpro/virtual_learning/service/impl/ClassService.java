@@ -16,6 +16,7 @@ import com.webpro.virtual_learning.service.IUserService;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ClassService extends BaseService<ClassDTO, ClassEntity> implements IClassService {
     @Inject
@@ -97,5 +98,16 @@ public class ClassService extends BaseService<ClassDTO, ClassEntity> implements 
             return new ArrayList<>();
 
         return userEntity.getCreatedClasses();
+    }
+
+    @Override
+    public List<ClassEntity> findAllByName(String name) {
+        List<ClassEntity> classEntities = classDao.findAll();
+        List<ClassEntity> res = new ArrayList<>();
+        for (ClassEntity classEntity: classEntities)
+            if (classEntity.getName().toLowerCase().contains(name.toLowerCase()))
+                res.add(classEntity);
+
+        return res;
     }
 }

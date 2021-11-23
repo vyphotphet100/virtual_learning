@@ -97,8 +97,8 @@
                 </div>
                 <span><br></span>
                 <div>
-                    <p class="text-center">You have an account already? <a href="#">Login</a></p>
-                    <p class="text-center"><a href="#">Back to homepage</a></p>
+                    <p class="text-center">You have an account already? <a href="/login">Login</a></p>
+                    <p class="text-center"><a href="/home">Back to homepage</a></p>
                 </div>
             </form>
             <div class="login100-more" style="background-image: url('resources/images/background_login_signup.png');">

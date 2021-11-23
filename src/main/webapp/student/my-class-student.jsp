@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,8 @@
 
 <div class="courses">
     <!--Background-->
-    <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
+    <div class="section_background parallax-window" data-parallax="scroll"
+         data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
     <div class=" probootstrap-search" id="probootstrap-search">
         <a href="#" class="probootstrap-close js-probootstrap-close"><i class="icon-cross"></i></a>
         <form action="#">
@@ -57,7 +58,8 @@
                             <div class="probootstrap-service-2 probootstrap-animate">
                                 <div class="image">
                                     <div class="image-bg">
-                                        <img src="../resources/images/img/img_sm_1.jpg"
+                                        <img class="course_img"
+                                             src="../resources/images/img/img_sm_1.jpg"
                                              alt="Free Bootstrap Template by ProBootstrap.com">
                                     </div>
                                 </div>
@@ -65,7 +67,8 @@
 
                                     <h3>${clazz.name}</h3>
                                     <p>${clazz.description}</p>
-                                    <p><a href="#" class="btn btn-primary">Enroll now</a> <span class="enrolled-count">${clazz.joinedUser.size()} students enrolled</span>
+                                    <p><a href="/student/lesson?id=${clazz.lessons[0].id}" class="btn btn-primary">Enroll
+                                        now</a> <span class="enrolled-count">${clazz.joinedUser.size()} students enrolled</span>
                                     </p>
                                 </div>
                             </div>
@@ -81,7 +84,7 @@
                     <div class="col-md-12">
                         <h2 class="probootstrap-animate" data-animate-effect="fadeInRight">Do you want to learn
                             more?</h2>
-                        <a href="#" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate"
+                        <a href="/home" role="button" class="btn btn-primary btn-lg btn-ghost probootstrap-animate"
                            data-animate-effect="fadeInLeft">Read more</a>
                     </div>
                 </div>
@@ -98,6 +101,20 @@
     <%@include file="/common/footer.jsp" %>
 </footer>
 
+<script>
+    function getRandomImage() {
+        var randomNumber = 1;
+        for (var i = 0; i < document.getElementsByClassName('course_img').length; i++) {
+            var tmp = Math.floor(Math.random() * 10);
+            while (tmp == 0 || tmp == randomNumber)
+                tmp = Math.floor(Math.random() * 10);
+            randomNumber = tmp;
+            document.getElementsByClassName('course_img')[i].src = '/resources/images/course_' + randomNumber + '.jpg';
+        }
+    }
+
+    getRandomImage();
+</script>
 
 <script src="../resources/js/jquery-3.2.1.min.js"></script>
 <script src="../resources/styles/bootstrap4/popper.js"></script>

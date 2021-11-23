@@ -64,8 +64,8 @@
                 </div>
                 <span><br></span>
                 <div>
-                    <p class="text-center">Not a member? <a href="#">Sign Up</a></p>
-                    <p class="text-center"><a href="#">Back to homepage</a></p>
+                    <p class="text-center">Not a member? <a href="/sign-up">Sign Up</a></p>
+                    <p class="text-center"><a href="/home">Back to homepage</a></p>
                 </div>
             </form>
             <div class="login100-more" style="background-image: url('resources/images/background_login_signup.png');">
