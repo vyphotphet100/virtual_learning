@@ -1,6 +1,7 @@
 package com.webpro.virtual_learning.controller.common;
 
 import com.webpro.virtual_learning.dao.ISubjectDAO;
+import com.webpro.virtual_learning.entity.ClassEntity;
 import com.webpro.virtual_learning.entity.SubjectEntity;
 import com.webpro.virtual_learning.service.IClassService;
 import com.webpro.virtual_learning.service.ISubjectService;
@@ -30,8 +31,7 @@ public class HomeController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         // check viewAll param
         String viewAll = request.getParameter("viewAll");
-        if (viewAll != null &&
-                !viewAll.equals("")) {
+        if (viewAll != null && !viewAll.trim().equals("")) {
             if (viewAll.equals("all")) { // view all classes
                 List<SubjectEntity> subjectEntities = subjectDao.findAll();
                 request.setAttribute("subjectEntities", subjectEntities);
@@ -47,6 +47,15 @@ public class HomeController extends HttpServlet {
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
                 return;
             }
+        }
+
+        // check keyword param
+        String keyword = request.getParameter("keyword");
+        if (keyword != null && !keyword.trim().equals("")) {
+            List<ClassEntity> classEntities = classService.findAllByName(keyword);
+            request.setAttribute("classes", classEntities);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            return;
         }
 
         // view 4 classes in each subject

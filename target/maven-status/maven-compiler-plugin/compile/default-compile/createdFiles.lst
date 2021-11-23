@@ -4,6 +4,7 @@ com/webpro/virtual_learning/utils/GoogleMailUtil.class
 com/webpro/virtual_learning/service/impl/BaseService.class
 com/webpro/virtual_learning/utils/GoogleCloudUtil.class
 com/webpro/virtual_learning/dto/JoinDTO.class
+com/webpro/virtual_learning/controller/teacher/clazz/DeleteClassController.class
 com/webpro/virtual_learning/dto/RoleDTO.class
 com/webpro/virtual_learning/dao/ISubjectDAO.class
 com/webpro/virtual_learning/service/impl/QuestionService.class
@@ -27,6 +28,7 @@ com/webpro/virtual_learning/service/IBaseService.class
 com/webpro/virtual_learning/service/impl/UserService.class
 com/webpro/virtual_learning/entity/RoleEntity.class
 com/webpro/virtual_learning/service/IQuestionService.class
+com/webpro/virtual_learning/controller/student/clazz/MyClassController.class
 com/webpro/virtual_learning/utils/GoogleMailUtil$1.class
 com/webpro/virtual_learning/dao/impl/BaseDAO.class
 com/webpro/virtual_learning/controller/teacher/lesson/DeleteLessonController.class
@@ -34,7 +36,9 @@ com/webpro/virtual_learning/controller/teacher/lesson/LessonController.class
 com/webpro/virtual_learning/dao/IClassDAO.class
 com/webpro/virtual_learning/dao/IRoleDAO.class
 com/webpro/virtual_learning/dao/impl/SubjectDAO.class
+com/webpro/virtual_learning/controller/student/question/QuestionController.class
 com/webpro/virtual_learning/dto/QuestionDTO.class
+com/webpro/virtual_learning/filter/AuthorizationFilter.class
 com/webpro/virtual_learning/entity/UserEntity.class
 com/webpro/virtual_learning/controller/teacher/lesson/AddLessonController.class
 com/webpro/virtual_learning/dao/IQuestionDAO.class
@@ -44,6 +48,7 @@ com/webpro/virtual_learning/utils/MyUtil.class
 com/webpro/virtual_learning/controller/teacher/clazz/AddClassController.class
 com/webpro/virtual_learning/entity/LessonEntity.class
 com/webpro/virtual_learning/controller/teacher/clazz/MyClassController.class
+com/webpro/virtual_learning/controller/student/clazz/ClassDetailController.class
 com/webpro/virtual_learning/controller/common/HomeController.class
 com/webpro/virtual_learning/dao/impl/QuestionDAO.class
 com/webpro/virtual_learning/controller/teacher/lesson/EditLessonController.class
@@ -61,9 +66,12 @@ com/webpro/virtual_learning/service/ISubjectService.class
 com/webpro/virtual_learning/entity/BaseEntity.class
 com/webpro/virtual_learning/dao/impl/RoleDAO.class
 com/webpro/virtual_learning/constant/Constant.class
+com/webpro/virtual_learning/controller/student/lesson/LessonController.class
+com/webpro/virtual_learning/controller/student/clazz/JoinClassController.class
 com/webpro/virtual_learning/controller/teacher/clazz/EditClassController.class
 com/webpro/virtual_learning/service/IClassService.class
 com/webpro/virtual_learning/dto/ClassDTO.class
+com/webpro/virtual_learning/controller/common/MyClassController.class
 com/webpro/virtual_learning/service/impl/ClassService.class
 com/webpro/virtual_learning/utils/CookieUtil.class
 com/webpro/virtual_learning/dao/impl/UserDAO.class

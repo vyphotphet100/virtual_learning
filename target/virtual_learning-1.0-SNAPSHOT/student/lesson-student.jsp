@@ -55,6 +55,7 @@
                                     <c:if test="${subLesson.id == lesson.id}">
                                         <a href="/student/lesson?id=${subLesson.id}"
                                            class="active">${subLesson.title}</a>
+                                        <c:set var="lesson" value="${subLesson}"/>
                                     </c:if>
                                     <c:if test="${subLesson.id != lesson.id}">
                                         <a href="/student/lesson?id=${subLesson.id}">${subLesson.title}</a>
@@ -62,7 +63,7 @@
                                 </c:forEach>
                             </div>
 
-                            <p><a href="#" class="btn btn-primary">Quizzes</a></p>
+                            <p><a href="/student/question?lessonId=${lesson.id}" class="btn btn-primary">Quizzes</a></p>
                         </div>
 
                         <div class="probootstrap-image probootstrap-animate"

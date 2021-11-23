@@ -39,10 +39,11 @@
             <a class="class-topic-description">
                 <div class="course edit-course" onclick="window.location.href='#'">
                     <div class="course_image"><img
+                            class="course_img"
                             src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                             alt=""></div>
                     <div class="course_body">
-                        <h3 class="course_title"><a href="#">${clazz.name}</a></h3>
+                        <h3 class="course_title"><a href="/teacher/lesson?id=${clazz.lessons[0].id}">${clazz.name}</a></h3>
                         <div class="course_teacher">${clazz.authorUser.fullName}</div>
                         <div class="course_text">
                             <p>${clazz.description}</p>
@@ -60,7 +61,7 @@
             </a>
 
             <div class="edit-delete">
-                <button class="join-button edit-button" onclick="window.location.href='#'">Edit</button>
+                <button class="join-button edit-button" onclick="window.location.href='/teacher/edit-class?id='+ ${clazz.id}">Edit</button>
                 <button onclick="deleteClass(${clazz.id})" class="join-button edit-button">Delete</button>
             </div>
         </div>
@@ -69,7 +70,7 @@
 
     <!--Add button-->
     <div class="text-center" style="margin-top: 15% !important;">
-        <a href="#" class="a-join-button">
+        <a href="/teacher/add-class" class="a-join-button">
             <button class="join-button" onclick="window.location.href='#'">
                 <b>Add</b>
             </button>
@@ -85,6 +86,20 @@
 <footer class="footer">
     <%@include file="/common/footer.jsp" %>
 </footer>
+
+<script>
+    function getRandomImage() {
+        var randomNumber = 1;
+        for (var i=0; i<document.getElementsByClassName('course_img').length; i++) {
+            var tmp = Math.floor(Math.random() * 10);
+            while (tmp == 0 || tmp == randomNumber)
+                tmp = Math.floor(Math.random() * 10);
+            randomNumber = tmp;
+            document.getElementsByClassName('course_img')[i].src = '/resources/images/course_' + randomNumber + '.jpg';
+        }
+    }
+    getRandomImage();
+</script>
 
 <script src="../resources/js/jquery-3.2.1.min.js"></script>
 <script src="../resources/styles/bootstrap4/popper.js"></script>

@@ -49,7 +49,7 @@
                     <nav class="main_nav_contaner ml-auto">
                         <ul class="main_nav">
                             <li><a href="/home">Home</a></li>
-                            <li><a href="#">My classes</a></li>
+                            <li><a href="/my-class">My classes</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                         <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
@@ -72,14 +72,21 @@
         <div class="row">
             <div class="col">
                 <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
-                    <form action="#" class="header_search_form">
-                        <input type="search" class="search_input" placeholder="Search" required="required">
-                        <button class="header_search_button d-flex flex-column align-items-center justify-content-center">
+                    <div action="#" class="header_search_form">
+                        <input id="search-class" type="search" class="search_input" placeholder="Search" required="required">
+                        <button onclick="search()" class="header_search_button d-flex flex-column align-items-center justify-content-center">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function search() {
+        var name = document.getElementById("search-class").value;
+        window.location.href = '/home?keyword=' + name;
+    }
+</script>

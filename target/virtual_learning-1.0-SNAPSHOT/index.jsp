@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="resources/styles/main.css">
     <link rel="stylesheet" type="text/css" href="resources/styles/util.css">
+    <link rel="stylesheet" type="text/css" href="resources/styles/index.css">
     <link rel="stylesheet" type="text/css" href="resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="resources/styles/style.min.css">
     <link rel="stylesheet" type="text/css" href="resources/styles/styles-merged.css">
@@ -44,7 +45,7 @@
         </div>
 
 
-        <c:if test="${empty param['viewAll'] || param['viewAll'] == '' || param['viewAll'] == 'all'}">
+        <c:if test="${empty param['viewAll'] || empty param['keyword'] || param['viewAll'] == '' || param['viewAll'] == 'all'}">
             <c:forEach items="${subjectEntities}" var="subjectEntity">
                 <div class="topic-more">
                     <a href="${currentUrl}?viewAll=${subjectEntity.id}"><h4 class="topic">${subjectEntity.name}</h4></a>
@@ -57,15 +58,13 @@
                         <div class="col-lg-4 course_col">
                             <div class="course">
                                 <div class="course_image"><img
+                                        class="course_img"
                                         src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                         alt=""></div>
                                 <div class="course_body">
                                     <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
                                     <div class="course_teacher">
                                         Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
-                                    <div class="course_text">
-                                        <p>${classDtoBySubjectId.description}</p>
-                                    </div>
                                 </div>
                                 <div class="course_footer">
                                     <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
@@ -73,11 +72,12 @@
                                             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                             <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
                                         </div>
-                                        <a class="course_price ml-auto" href="#">Join</a>
+                                        <a class="course_price ml-auto" href="#" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <br>
                     </c:forEach>
                 </div>
             </c:forEach>
@@ -101,15 +101,13 @@
                     <div class="col-lg-4 course_col">
                         <div class="course">
                             <div class="course_image"><img
+                                    class="course_img"
                                     src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                     alt=""></div>
                             <div class="course_body">
                                 <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
                                 <div class="course_teacher">
                                     Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
-                                <div class="course_text">
-                                    <p>${classDtoBySubjectId.description}</p>
-                                </div>
                             </div>
                             <div class="course_footer">
                                 <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
@@ -117,16 +115,66 @@
                                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                         <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
                                     </div>
-                                    <a class="course_price ml-auto" href="#">Join</a>
+                                    <a class="course_price ml-auto" href="#" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <br>
+                </c:forEach>
+            </div>
+        </c:if>
+
+        <c:if test="${not empty param['keyword']}">
+            <div class="row courses_row">
+                <c:forEach items="${classes}" var="clazz">
+                    <!-- Class -->
+                    <div class="col-lg-4 course_col">
+                        <div class="course">
+                            <div class="course_image"><img
+                                    class="course_img"
+                                    src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
+                                    alt=""></div>
+                            <div class="course_body">
+                                <h3 class="course_title"><a href="#">${clazz.name}</a></h3>
+                                <div class="course_teacher">
+                                    Lecturer: ${clazz.authorUser.fullName}</div>
+                            </div>
+                            <div class="course_footer">
+                                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="course_info">
+                                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                                        <span>${clazz.joinedUser.size()} student(s)</span>
+                                    </div>
+                                    <a class="course_price ml-auto" href="#" onclick="openModal(${clazz.id});">Join</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 </c:forEach>
             </div>
         </c:if>
 
     </div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Enter password of this class to join</h3>
+        <div class="wrap-input100 validate-input" data-validate="Pasword is required">
+            <input class="input100" type="password" id="password" value="">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Class password</span>
+        </div>
+        <input type="hidden" id="class-to-join" value=""/>
+        <div class="container-login100-form-btn">
+            <input type="submit" class="login100-form-btn" onclick="joinClass();" value="Join"/>
+        </div>
+    </div>
+
 </div>
 </body>
 
@@ -134,6 +182,20 @@
 <footer class="footer">
     <%@include file="/common/footer.jsp" %>
 </footer>
+
+<script>
+    function getRandomImage() {
+        var randomNumber = 1;
+        for (var i=0; i<document.getElementsByClassName('course_img').length; i++) {
+            var tmp = Math.floor(Math.random() * 10);
+            while (tmp == 0 || tmp == randomNumber)
+                tmp = Math.floor(Math.random() * 10);
+            randomNumber = tmp;
+            document.getElementsByClassName('course_img')[i].src = 'resources/images/course_' + randomNumber + '.jpg';
+        }
+    }
+    getRandomImage();
+</script>
 
 <script src="resources/js/jquery-3.2.1.min.js"></script>
 <script src="resources/styles/bootstrap4/popper.js"></script>
@@ -152,4 +214,5 @@
 <script src="resources/js/main.js"></script>
 <script src="resources/js/main.min.js"></script>
 <script src="resources/js/scripts.min.js"></script>
+<script src="resources/js/index.js"></script>
 </html>
