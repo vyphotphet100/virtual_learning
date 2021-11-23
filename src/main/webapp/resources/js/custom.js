@@ -368,3 +368,36 @@ $(document).ready(function()
 /*******************************
  End question
 *********************************/
+/********************************
+ Start Add lesstion teacher
+ *********************************/
+ (function($){
+    const fileUploader = document.getElementById('file-uploader');
+    const feedback = document.getElementById('feedback');
+    const progress = document.getElementById('progress');
+    
+    const reader = new FileReader();
+    
+    fileUploader.addEventListener('change', (event) => {
+    const files = event.target.files;
+    const file = files[0];
+    reader.readAsDataURL(file);
+    console.log('files', files);
+    
+    reader.addEventListener('progress', (event) => {
+        if (event.loaded && event.total) {
+        const percent = (event.loaded / event.total) * 100;
+        progress.value = percent;
+        document.getElementById('progress-label').innerHTML = Math.round(percent) + '%';
+        
+        if (percent === 100) {
+            let msg = `<span style="color:#14BDEE;"> <u><strong>${files.length}</b></u> File has been uploaded successfully.</span>`;
+            feedback.innerHTML = msg;
+        }
+        }
+    });
+    });
+})(jQuery);
+/********************************
+ End Add lesstion teacher
+ *********************************/

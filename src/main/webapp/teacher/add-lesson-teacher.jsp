@@ -61,9 +61,14 @@
 
             <div class="text-center">
                 <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit">
-                        <b>Upload video</b>
+                    <button class="join-button join-button-edit" >
+                        <strong class="Uploadvideo">Upload video</strong>
+                        <input class="input-edit" type="file" id="file-uploader" multiple>
                     </button>
+                    <div id="feedback">
+                    </div>
+                    <label id="progress-label" for="progress"></label>
+                    <progress id="progress" value="0" max="100"> </progress>
                 </a>
             </div>
 
@@ -72,7 +77,7 @@
             <div class="text-center">
                 <a href="#" class="a-join-button">
                     <button class="join-button join-button-edit">
-                        <b>Question 1</b>
+                        <strong>Question 1</strong>
                     </button>
                 </a>
             </div>
@@ -80,7 +85,7 @@
             <div class="text-center">
                 <a href="#" class="a-join-button">
                     <button class="join-button join-button-edit">
-                        <b>Question 2</b>
+                        <strong>Question 2</strong>
                     </button>
                 </a>
             </div>
@@ -88,11 +93,10 @@
             <div class="text-center">
                 <a href="#" class="a-join-button">
                     <button class="join-button join-button-edit">
-                        <b>Add question</b>
+                        <strong>Add question</strong>
                     </button>
                 </a>
             </div>
-            
         </form>
     </div>
 
