@@ -1,3 +1,7 @@
+body {
+  padding-right: 0px !important;
+}
+
 /*Sign up + form input*/
 #edit-form-position{
     padding: 35px 55px 55px 55px !important;
@@ -149,10 +153,74 @@
     font-size: 19px;
 }
 
+
 /*Edit lesson*/
 .edit-question-form{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-content {
+margin: 0 20px;
+}
+
+.question-input {
+display: block;
+border-radius: 5px;
+border: 1.5px solid #ccc !important;
+width: 100%;
+height: 70px;
+outline-style: solid;
+outline-color: black;
+outline-width: 1.5px;
+}
+
+.answer-header {
+display: block;
+margin-top: 20px;
+}
+
+.answer-input {
+display: block;
+border-radius: 5px;
+border: 1.5px solid #ccc !important;
+width: 100%;
+height: 40px;
+outline-style: solid;
+outline-color: black;
+outline-width: 1.5px;
+}
+
+.modal.fade > .modal-dialog {
+position:absolute;
+left: 18%;
+right: 25%;
+}
+
+.correct-answer {
+display: inline;
+margin: 0 5%;
+}
+
+.correct-answer > h5 {
+display: inline;
+}
+
+.modal-footer > .btn.btn-primary {
+background-color: #14bdee;
+border:none;
+}
+
+.modal-footer > .btn.btn-primary:hover {
+border:none;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#editLink {
+border: 1px solid #384158;
+border-radius: 5px;
+outline: 1px solid #384158;
+width: 78%;
 }
 
 
