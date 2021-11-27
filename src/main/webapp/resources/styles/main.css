@@ -2,6 +2,7 @@ body {
   padding-right: 0px !important;
 }
 
+
 /*Sign up + form input*/
 #edit-form-position{
     padding: 35px 55px 55px 55px !important;
@@ -21,6 +22,7 @@ body {
     width: 450px !important;
     height: 65px !important;
 }
+
 
 /*index*/
 .fa-user-circle-o{
@@ -66,8 +68,8 @@ body {
     color: burlywood !important;
 }
 
-/*Class detail*/
 
+/*Class detail*/
 .topic-of-page{
     margin-top: 200px;
     margin-left: 10%;
@@ -117,6 +119,7 @@ body {
     background-color: burlywood !important;
 }
 
+
 /*My class*/
 .my-class{
     margin-top: 80px;
@@ -146,6 +149,7 @@ body {
     width: 66% !important;
 }
 
+
 /*Add lesson*/
 .join-button-edit{
     width: 100% !important; 
@@ -165,14 +169,14 @@ margin: 0 20px;
 }
 
 .question-input {
-display: block;
-border-radius: 5px;
-border: 1.5px solid #ccc !important;
-width: 100%;
-height: 70px;
-outline-style: solid;
-outline-color: black;
-outline-width: 1.5px;
+  display: block;
+  border-radius: 5px;
+  border: 1.5px solid #ccc !important;
+  width: 100%;
+  height: 70px;
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 1.5px;
 }
 
 .answer-header {
@@ -220,7 +224,20 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 border: 1px solid #384158;
 border-radius: 5px;
 outline: 1px solid #384158;
-width: 78%;
+height: 40px;
+width: 100%;
+}
+
+.alert-validate::after {
+  z-index: 0 !important;
+}
+
+.wrap-input100.validate-input.description {
+  height: 150px;  
+}
+
+.wrap-input100.validate-input.description > textarea {
+  height: 80%;
 }
 
 

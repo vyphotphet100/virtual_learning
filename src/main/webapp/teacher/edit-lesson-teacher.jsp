@@ -118,9 +118,9 @@
 		    </div>
 		    <nav class="menu_nav">
 		    	<ul class="menu_mm">
-				    <li class="menu_mm"><a href="index.html">Home</a></li>
-				    <li class="menu_mm"><a href="MyClass.html">My classes</a></li>
-			     	<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				    <li class="menu_mm"><a href="#">Home</a></li>
+				    <li class="menu_mm"><a href="#">My classes</a></li>
+			     	<li class="menu_mm"><a href="#">Contact</a></li>
 			    </ul>
 		    </nav>
 	    </div>   
@@ -149,44 +149,36 @@
                 <span class="label-input100">Title</span>
             </div>
             
-            <div class="wrap-input100 validate-input" data-validate = "Description is required">
-                <input class="input100" type="text" name="text">
+            <div class="wrap-input100 validate-input description" data-validate = "Description is required">
+                <textarea class="input100" type="text" name="text"></textarea>
                 <span class="focus-input100"></span>
                 <span class="label-input100">Description</span>
             </div>
 
             <div class="text-center">
                 <b>Edit link video</b>
-                <input id="editLink"></input>
+                <textarea id="editLink"></textarea>
             </div>
 
             <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
             
-            <div class="text-center edit-question-form">
-                <a href="#" class="a-join-button" style="width: 79%;">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="join-button join-button-edit" data-toggle="modal" data-target="#question">
-                        <b>Question 1</b>
-                    </button>
-                </a>
-                <a href="#" class="a-join-button">
-                    <button type="button" class="join-button join-button-edit effect-delete" data-toggle="modal" data-target="#delete">
-                        <b>Delete</b>
-                    </button>
-                </a>
-            </div>
 
-            <div class="text-center edit-question-form">
-                <a href="#" class="a-join-button" style="width: 79%;">
-                    <button class="join-button join-button-edit" data-toggle="modal" data-target="#question">
-                        <b>Question 2</b>
+            
+            <div class="question-form-container">
+                <div class="text-center edit-question-form">  
+                    <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal" data-target="#question" style="width: 79% !important;">
+                        Question
                     </button>
-                </a>
-                <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit effect-delete">
-                        <b>Delete</b>
+                    <button type="button" class="join-button join-button-edit font-weight-bold deleteButton" data-toggle="modal" data-target="#delete" style="width: 20% !important;">
+                        Delete
                     </button>
-                </a>
+                </div>
+            </div>
+        
+            <div class="text-center">
+                <button class="join-button join-button-edit font-weight-bold addQuestion">
+                    Add question
+                </button>
             </div>
 
             <!-- Modal - question-->
@@ -228,43 +220,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                 </div>
                 </div>
             </div>
             </div>
             <!--End modal-->
-
-            <!-- Modal - delete-->
-            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="ModalLongTitle"><b>Delete question</b></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Do you want to remove this question?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary">Delete</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <!--End modal -->
-
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit">
-                        <b>Add question</b>
-                    </button>
-                </a>
-            </div>
-            
         </form>
     </div>
 
@@ -280,8 +241,8 @@
 </body>
 
 <div class="newsletter">
-    <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="images/newsletter.jpg" data-speed="0.8"></div>
-    <div class="container">
+    <!-- <div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="images/newsletter.jpg" data-speed="0.8"></div> -->
+    <div class="container" style="background-image: url('../resources/images/newsletter.jpg'); min-width: 100%; padding: 0 15rem;">
         <div class="row">
             <div class="col">
                 <div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
