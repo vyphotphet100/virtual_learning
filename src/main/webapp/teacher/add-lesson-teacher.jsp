@@ -61,9 +61,23 @@
 
             <div class="text-center">
                 <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit">
-                        <b>Upload video</b>
-                    </button>
+                        <button class="join-button join-button-edit" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> Upload link</button>
+                        <p id="feedback"></p>
+                        <div id="id01" class="modal">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            
+                                <div class="container">
+                                    <h1 id="textUploadLink">Upload link</h1textEnterLink>
+                                    <p id="textEnterLink">Enter the link here</p>
+                                    <input id="EnterLink" type="text" placeholder="Enter link" name="email" required>
+                                        <div class="clearfix">
+                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                            <button type="button" onclick="test()" class="signupbtn">Save</button>    
+                                        </div>
+                                </div>
+                                <p id="feedback2"></p>
+                         
+                        </div>
                 </a>
             </div>
 
