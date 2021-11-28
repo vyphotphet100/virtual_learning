@@ -368,3 +368,28 @@ $(document).ready(function()
 /*******************************
  End question
 *********************************/
+/********************************
+ Start Add lesstion teacher
+ *********************************/
+ (function($) {
+	var modal = document.getElementById('id01');
+
+   
+   // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event) {
+	 if (event.target == modal) {
+	   modal.style.display = "none";
+	   
+	 }
+   }
+	 function test(){
+	   alert('Link uploaded!');
+	   // window.open('', '_self', ''); window.close();
+	   let msg = `<span style="color:#14BDEE;" >  You want to do it again?</span>`;
+		   feedback2.innerHTML = msg;
+	 }
+	 
+})(jQuery);
+/********************************
+End Add lesstion teacher
+*********************************/
