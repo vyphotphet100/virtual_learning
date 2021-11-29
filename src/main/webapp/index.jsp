@@ -64,7 +64,13 @@
                                 <div class="course_body">
                                     <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
                                     <div class="course_teacher">
-                                        Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
+                                        Lecturer: ${classEntityBySubjectId.authorUser.fullName}
+                                    </div>
+                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79% !important;">
+                                        Readmore
+                                    </button>
+
+
                                 </div>
                                 <div class="course_footer">
                                     <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
@@ -158,6 +164,32 @@
 
     </div>
 </div>
+<!-- Modal - question-->
+<div class="modal fade" id="readmore" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1> Introduce</h1>
+            </div>
+            <div class="modal-body">
+
+                <h3><p>Teacher: Mr Tuong</p></h3>
+                <h3>Class name: Sololearn</h3>
+                <h3>Describe:</h3>
+                <p>Sololearn is a 6-part Java programming language training program with 65 lessons, covering topics such as loops and conditions, arrays, classes. objects, exceptions, lists, themes, and files.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='#'">
+                    <strong> Join class</strong>
+                </button>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!--End modal-->
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->

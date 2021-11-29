@@ -382,11 +382,9 @@ $(document).ready(function()
 	   
 	 }
    }
-	 function test(){
+	 function testAdd(){
 	   alert('Link uploaded!');
-	   // window.open('', '_self', ''); window.close();
-	   let msg = `<span style="color:#14BDEE;" >  You want to do it again?</span>`;
-		   feedback2.innerHTML = msg;
+
 	 }
 	 
 })(jQuery);

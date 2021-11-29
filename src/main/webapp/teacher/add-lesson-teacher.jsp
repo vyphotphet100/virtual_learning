@@ -59,28 +59,42 @@
                 <span class="label-input100">Description</span>
             </div>
 
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                        <button class="join-button join-button-edit" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> Upload link</button>
-                        <p id="feedback"></p>
-                        <div id="id01" class="modal">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            
-                                <div class="container">
-                                    <h1 id="textUploadLink">Upload link</h1textEnterLink>
-                                    <p id="textEnterLink">Enter the link here</p>
-                                    <input id="EnterLink" type="text" placeholder="Enter link" name="email" required>
-                                        <div class="clearfix">
-                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                            <button type="button" onclick="test()" class="signupbtn">Save</button>    
-                                        </div>
-                                </div>
-                                <p id="feedback2"></p>
-                         
-                        </div>
-                </a>
+            <div class="question-form-container">
+                <div class="text-center edit-question-form">
+                    <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal" data-target="#question" style="width: 79% !important;">
+                        Upload Video
+                    </button>
+                    <button type="button" class="join-button join-button-edit font-weight-bold" id="btnSaveLink" onclick="alert('Link uploaded!');">
+                        Save
+                    </button>
+                </div>
             </div>
+            <!-- Modal - question-->
+            <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="questionTitle"><b>Post your link</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="question-content">
+                                <label>Enter link here</label>
+                                <input type="text" name="link" placeholder="You link" class="InputLink">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" >Confirm</button>
+                        </div>
 
+
+                    </div>
+                </div>
+            </div>
+            <!--End modal-->
             <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
             
             <div class="text-center">

@@ -65,6 +65,20 @@ body {
 .topic:hover{
     color: burlywood !important;
 }
+.button-readmore{
+    background-color: #1da1f2;
+    border-radius: 8px;
+    text-align: center !important;
+    border: none;
+    color: white;
+    font-size: 10px;
+    width: 100%;
+
+    position: absolute;
+    left: 50%;
+    margin: 10px;
+    transform: translate(-50%, -50%);
+}
 
 /*Class detail*/
 
@@ -153,11 +167,43 @@ body {
     font-size: 19px;
 }
 
+#btnSaveLink{
+    padding-left: 7px !important;
+    width: 20% !important;
+    position: absolute;
+    right: 0px;
+}
+.InputLink{
+    border-style: groove;
+    hight: 100px ;
+    width: 100%;
+}
 
 /*Edit lesson*/
 .edit-question-form{
     display: flex;
     justify-content: space-between;
+}
+/* The Modal (background) */
+.modalAdd {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modalAdd-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
 }
 
 .question-content {
