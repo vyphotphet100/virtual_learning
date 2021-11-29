@@ -71,7 +71,7 @@
     <!--Add button-->
     <div class="text-center" style="margin-top: 15% !important;">
         <a href="/teacher/add-class" class="a-join-button">
-            <button class="join-button" onclick="window.location.href='#'">
+            <button class="join-button">
                 <b>Add</b>
             </button>
         </a>
