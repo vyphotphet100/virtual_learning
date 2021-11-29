@@ -237,6 +237,41 @@ body {
 }
 
 
+
+/*contact*/
+.container.profile-member{
+    margin-top: 200px;
+    height: 600px;
+  }
+  
+  .container.profile-member > .row {
+    height: 100%;
+  }
+  
+  .inf-member.col{
+    text-align: center;
+    height: 100%;
+  }
+  
+  .inf-member.col > h3{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .inf-member.col > p{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .inf-member.col > h4{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  #imgMember {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+  }
+
+
 /*Verify account*/
 #background-1{
     width: 100%;
