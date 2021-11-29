@@ -69,6 +69,17 @@
     
     /*==================================================================
     [ Add + delete question ]*/
+    var deleteEvent = function (deleteButton) {
+        deleteButton.addEventListener('click', function () {
+            if (document.querySelectorAll('.deleteButton').length < 2) {
+                alert('Must have at least 1 Question');
+            } else {
+                deleteButton.parentNode.parentNode.removeChild(deleteButton.parentNode);
+            }
+        });
+    };
+
+    
     var deleteButton0 = document.querySelectorAll('.deleteButton');
     deleteEvent(deleteButton0[0]);
 
