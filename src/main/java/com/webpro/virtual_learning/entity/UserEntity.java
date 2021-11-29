@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 public class UserEntity extends BaseEntity{
     @Id
-    @Column(name = "username")
+    @Column(name = "username", columnDefinition = "VARCHAR(20)")
     private String username;
 
     @Column(name = "password")

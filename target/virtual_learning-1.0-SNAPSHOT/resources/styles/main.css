@@ -1,3 +1,8 @@
+body {
+  padding-right: 0px !important;
+}
+
+
 /*Sign up + form input*/
 #edit-form-position{
     padding: 35px 55px 55px 55px !important;
@@ -17,6 +22,7 @@
     width: 450px !important;
     height: 65px !important;
 }
+
 
 /*index*/
 .fa-user-circle-o{
@@ -62,8 +68,8 @@
     color: burlywood !important;
 }
 
-/*Class detail*/
 
+/*Class detail*/
 .topic-of-page{
     margin-top: 200px;
     margin-left: 10%;
@@ -113,6 +119,7 @@
     background-color: burlywood !important;
 }
 
+
 /*My class*/
 .my-class{
     margin-top: 80px;
@@ -142,17 +149,226 @@
     width: 66% !important;
 }
 
+
 /*Add lesson*/
 .join-button-edit{
     width: 100% !important; 
     height: 50px !important; 
     font-size: 19px;
 }
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #014268;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button.signupbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.clearfix {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+button.cancelbtn {
+
+  color: white;
+
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+  
+}
+#textEnterLink{
+  display: block !important;
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
+  color: #2e8ea7 !important;
+}
+#textUploadLink{
+  color: #4fd1f1 !important;
+}
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 50%;
+     height: 50%;
+  }
+}
+
 
 /*Edit lesson*/
 .edit-question-form{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-content {
+margin: 0 20px;
+}
+
+.question-input {
+  display: block;
+  border-radius: 5px;
+  border: 1.5px solid #ccc !important;
+  width: 100%;
+  height: 70px;
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 1.5px;
+}
+
+.answer-header {
+display: block;
+margin-top: 20px;
+}
+
+.answer-input {
+display: block;
+border-radius: 5px;
+border: 1.5px solid #ccc !important;
+width: 100%;
+height: 40px;
+outline-style: solid;
+outline-color: black;
+outline-width: 1.5px;
+}
+
+.modal.fade > .modal-dialog {
+position:absolute;
+left: 18%;
+right: 25%;
+}
+
+.correct-answer {
+display: inline;
+margin: 0 5%;
+}
+
+.correct-answer > h5 {
+display: inline;
+}
+
+.modal-footer > .btn.btn-primary {
+background-color: #14bdee;
+border:none;
+}
+
+.modal-footer > .btn.btn-primary:hover {
+border:none;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#editLink {
+border: 1px solid #384158;
+border-radius: 5px;
+outline: 1px solid #384158;
+height: 40px;
+width: 100%;
+}
+
+.alert-validate::after {
+  z-index: 0 !important;
+}
+
+.wrap-input100.validate-input.description {
+  height: 150px;  
+}
+
+.wrap-input100.validate-input.description > textarea {
+  height: 80%;
 }
 
 

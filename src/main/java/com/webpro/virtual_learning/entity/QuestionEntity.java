@@ -1,5 +1,6 @@
 package com.webpro.virtual_learning.entity;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.LazyCollection;
@@ -29,6 +30,7 @@ public class QuestionEntity extends BaseEntity{
     private Integer correct;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name = "lesson_id")
     private LessonEntity lesson;
 
