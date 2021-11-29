@@ -35,9 +35,6 @@ public class ContactController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException  {
-        request.setCharacterEncoding("UTF-8");
-
-
 
         this.doGet(request, response);
     }

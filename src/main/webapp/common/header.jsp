@@ -50,7 +50,7 @@
                         <ul class="main_nav">
                             <li><a href="/home">Home</a></li>
                             <li><a href="/my-class">My classes</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                         <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 
