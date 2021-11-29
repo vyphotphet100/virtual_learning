@@ -25,11 +25,13 @@ public class FileController extends HttpServlet {
         String anchorPath = rb.getString("anchor.path");
         String downloadedPath = ResourceUtils.getFile(anchorPath).getAbsolutePath().split("anchor.file")[0];
 
-        if (!ResourceUtils.getFile(downloadedPath + fileName).exists())
-            GoogleCloudUtil.getFileFromGoogleCloud(fileName);
+
+
+//        if (!ResourceUtils.getFile(downloadedPath + fileName).exists())
+//            GoogleCloudUtil.getFileFromGoogleCloud(fileName);
 
         // reads input file from an absolute path
-        String filePath = downloadedPath + fileName;
+        String filePath = "downloaded/"+ fileName;
         File downloadFile = new File(filePath);
         FileInputStream inStream = new FileInputStream(downloadFile);
 

@@ -1,7 +1,6 @@
 body {
-  padding-right: 0px !important;
+    padding-right: 0px !important;
 }
-
 
 /*Sign up + form input*/
 #edit-form-position{
@@ -23,7 +22,6 @@ body {
     height: 65px !important;
 }
 
-
 /*index*/
 .fa-user-circle-o{
     font-size: 30px !important;
@@ -33,8 +31,8 @@ body {
     color: #14BDEE;
 }
 .Login:hover{
-     color: #14BDEE;
-     background-color: #333333;
+    color: #14BDEE;
+    background-color: #333333;
 }
 
 .list_classes_container{
@@ -68,8 +66,8 @@ body {
     color: burlywood !important;
 }
 
-
 /*Class detail*/
+
 .topic-of-page{
     margin-top: 200px;
     margin-left: 10%;
@@ -107,7 +105,7 @@ body {
     font-size: 25px;
     margin-bottom: 3%;
 }
-.join-button:hover{ 
+.join-button:hover{
     background-color: #333333;
 }
 
@@ -118,7 +116,6 @@ body {
 .effect-delete:hover{
     background-color: burlywood !important;
 }
-
 
 /*My class*/
 .my-class{
@@ -136,8 +133,8 @@ body {
 
 .edit-delete{
     display: flex;
-   flex-direction: column !important;
-   margin-left: 5%;
+    flex-direction: column !important;
+    margin-left: 5%;
 }
 
 .edit-button{
@@ -149,284 +146,152 @@ body {
     width: 66% !important;
 }
 
-
 /*Add lesson*/
 .join-button-edit{
-    width: 100% !important; 
-    height: 50px !important; 
+    width: 100% !important;
+    height: 50px !important;
     font-size: 19px;
-}
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #014268;
-  outline: none;
-}
-
-/* Set a style for all buttons */
-button.signupbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  opacity: 0.9;
-}
-.clearfix {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: stretch;
-}
-button.cancelbtn {
-
-  color: white;
-
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  opacity: 0.9;
-}
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
-}
-
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
- 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-  
-}
-#textEnterLink{
-  display: block !important;
-  margin-block-start: 1em !important;
-  margin-block-end: 1em !important;
-  margin-inline-start: 0px !important;
-  margin-inline-end: 0px !important;
-  color: #2e8ea7 !important;
-}
-#textUploadLink{
-  color: #4fd1f1 !important;
-}
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 50%;
-     height: 50%;
-  }
 }
 
 
 /*Edit lesson*/
 .edit-question-form{
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .question-content {
-margin: 0 20px;
+    margin: 0 20px;
 }
 
 .question-input {
-  display: block;
-  border-radius: 5px;
-  border: 1.5px solid #ccc !important;
-  width: 100%;
-  height: 70px;
-  outline-style: solid;
-  outline-color: black;
-  outline-width: 1.5px;
+    display: block;
+    border-radius: 5px;
+    border: 1.5px solid #ccc !important;
+    width: 100%;
+    height: 70px;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 1.5px;
 }
 
 .answer-header {
-display: block;
-margin-top: 20px;
+    display: block;
+    margin-top: 20px;
 }
 
 .answer-input {
-display: block;
-border-radius: 5px;
-border: 1.5px solid #ccc !important;
-width: 100%;
-height: 40px;
-outline-style: solid;
-outline-color: black;
-outline-width: 1.5px;
+    display: block;
+    border-radius: 5px;
+    border: 1.5px solid #ccc !important;
+    width: 100%;
+    height: 40px;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 1.5px;
 }
 
 .modal.fade > .modal-dialog {
-position:absolute;
-left: 18%;
-right: 25%;
+    position:absolute;
+    left: 18%;
+    right: 25%;
 }
 
 .correct-answer {
-display: inline;
-margin: 0 5%;
+    display: inline;
+    margin: 0 5%;
 }
 
 .correct-answer > h5 {
-display: inline;
+    display: inline;
 }
 
 .modal-footer > .btn.btn-primary {
-background-color: #14bdee;
-border:none;
+    background-color: #14bdee;
+    border:none;
 }
 
 .modal-footer > .btn.btn-primary:hover {
-border:none;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border:none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 #editLink {
-border: 1px solid #384158;
-border-radius: 5px;
-outline: 1px solid #384158;
-height: 40px;
-width: 100%;
+    border: 1px solid #384158;
+    border-radius: 5px;
+    outline: 1px solid #384158;
+    height: 40px;
+    width: 100%;
 }
 
 .alert-validate::after {
-  z-index: 0 !important;
+    z-index: 0 !important;
 }
 
 .wrap-input100.validate-input.description {
-  height: 150px;  
+    height: 150px;
 }
 
 .wrap-input100.validate-input.description > textarea {
-  height: 80%;
+    height: 80%;
 }
 
 
 /*Verify account*/
 #background-1{
-  width: 100%;
-  height: 100%;
-  background-color: #F4F4F4;
+    width: 100%;
+    height: 100%;
+    background-color: #F4F4F4;
 }
 
 #background-2 {
-  position: relative;
-  width: 100%;
-  height: 30%;
-  background-color:#14bdee;
+    position: relative;
+    width: 100%;
+    height: 30%;
+    background-color:#14bdee;
 }
 
 #background-2 .text{
-  font-size: 30px;
-  color:whitesmoke;
-  text-align: center;
-  padding-top: 40px;
+    font-size: 30px;
+    color:whitesmoke;
+    text-align: center;
+    padding-top: 40px;
 }
 
 #content {
-  position: relative;
-  top: -100px;
-  margin-left: 25%;
-  width: 50%;
-  height: 78%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  background-color:#FFFFFF;
+    position: relative;
+    top: -100px;
+    margin-left: 25%;
+    width: 50%;
+    height: 78%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    background-color:#FFFFFF;
 }
 
 #content h1 {
-  text-align: center;
-  padding-top: 5%;
+    text-align: center;
+    padding-top: 5%;
 }
 
 #content p {
-  margin: 0 5%;
+    margin: 0 5%;
 }
 
 .verify-btn {
-  width: 30%;
-  height: 8%;
-  /*margin-left: 35%;*/
-  margin-bottom: 2%;
-  margin-top: 20px;
-  border-radius: 3px;
-  background-color: #14bdee;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    height: 8%;
+    /*margin-left: 35%;*/
+    margin-bottom: 2%;
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: #14bdee;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .verify-btn:hover {
-  background-color: #333333;
-  color: whitesmoke;
+    background-color: #333333;
+    color: whitesmoke;
 }
 
 .resend-btn {
@@ -446,14 +311,14 @@ width: 100%;
 }
 
 .input-container {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 #input-code {
-  border: 1.5px solid #ccc !important;
-  width: 50%;
-  height: 30px;
+    border: 1.5px solid #ccc !important;
+    width: 50%;
+    height: 30px;
 }
 
 
@@ -472,173 +337,171 @@ width: 100%;
     border-radius: 10px;
 
 
-  }
-  .button:hover {
+}
+.button:hover {
     background-color: #f1f1f1;
-  }
+}
 
-  .vertical-menu {
+.vertical-menu {
     padding: 5px 5px; /* Set a width if you like */
-  }
-  
-  .vertical-menu a {
+}
+
+.vertical-menu a {
     background-color: #eee; /* Grey background color */
     color: black; /* Black text color */
     display: block; /* Make the links appear below each other */
     padding: 12px; /* Add some padding */
     text-decoration: none; /* Remove underline from links */
-  }
-  
-  .vertical-menu a:hover {
+}
+
+.vertical-menu a:hover {
     background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
+}
+
+.vertical-menu a.active {
     background-color: #04AA6D; /* Add a green color to the "active/current" link */
     color: white;
-  }
-  .probootstrap-cta{
+}
+.probootstrap-cta{
     position: relative;
     border-radius: 20px;
     margin-bottom: 100px;
-  }
+}
 
 /*******************************
 Start  lesstion
 *********************************/
-  #lession2{
+#lession2{
     position: relative;
     top: 100px;
     bottom: 500px;
-  }
-  .description{
-    width: 1125px;
-    height: 250px;
-    border: 0.3px inset #65d8ec;
-    padding: 10px;
+}
+/*.description{*/
+/*    width: 1125px;*/
+/*    height: 250px;*/
+/*    border: 0.3px inset #65d8ec;*/
+/*    padding: 10px;*/
+/*}*/
 
-
-  }
- 
-  .tt{
+.tt{
     text-align: center;
     width: 780px;
-  }
-  .des{
+}
+.des{
     font-size: 14px;
-  }
-  #quizze{
+}
+#quizze{
 
     position: relative;
     top: 100px;
     bottom: 500px;
-  
-    
+
+
     flex-direction: row
-    
-  }
+
+}
 
 /*******************************
 End  lesstion
-*********************************/  
-/* 
-Start Edit lession 
+*********************************/
+/*
+Start Edit lession
  */
- .menu-btn{
-  position: relative;
-  width: 100%;
-  background-color: #b0e0e6;
-  margin: 10px 5px 100px;
+.menu-btn{
+    position: relative;
+    width: 100%;
+    background-color: #b0e0e6;
+    margin: 10px 5px 100px;
 
 
 }
 .btn-delete{
-  position: absolute;
-  right: 0px;
-  width: 200px;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 20px;
+    position: absolute;
+    right: 0px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
 
-      
+
 }
 .btn-edit{
-  position: absolute;
-  right: 220px;
-  width: 200px;
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 20px;
- 
+    position: absolute;
+    right: 220px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+
 }
 .btn-delete:hover{
-  background-color: rgb(10, 84, 119);
+    background-color: rgb(10, 84, 119);
 }
 .btn-edit:hover{
-  background-color: rgb(10, 84, 119);
+    background-color: rgb(10, 84, 119);
 }
 .btn-quize{
-  position: relative;
-  margin-top:15px;
-  width: auto;
-  background-color: #b0e0e6;
+    position: relative;
+    margin-top:15px;
+    width: auto;
+    background-color: #b0e0e6;
 }
 
-/* 
-End Edit lession 
+/*
+End Edit lession
  */
 
 /*******************************
 Start question
 *********************************/
-.backlesson{
+#backlession{
     position: relative;
     background-color: #14BDEE;
     border-radius: 5px;
     margin-left: 250px;
     width: 20%;
     height: 30px;
-  }
-  
-  #showResult,
-  #resetResult {
+}
+
+#showResult,
+#resetResult {
     display: none;
-  }
-  
-  input[type="submit"],
-  input[type="button"],
-  button {
+}
+
+input[type="submit"],
+input[type="button"],
+button {
     cursor: pointer;
-  }
-  
-  .qContent {
+}
+
+.qContent {
     counter-increment: qIndex;
     font-weight: bold;
     color: #444;
-  }
+}
 
-  /*.qContent:before {*/
-  /*  content: "Q" counter(qIndex)". ";*/
-  /*  color: rgb(207, 17, 17);*/
-  /*}*/
+.qContent:before {
+    content: "Q" counter(qIndex)". ";
+    color: rgb(207, 17, 17);
+}
 
-  /*.qContent:after {*/
-  /*  content: " ?";*/
-  /*}*/
-  
-  li {
+.qContent:after {
+    content: " ?";
+}
+
+li {
     /* list-style-type: lower-alpha; */
     cursor: pointer;
     line-height: 22px;
     height: 22px;
     color:#444;
-  }
-  
-  .items {
+}
+
+.items {
     display: none;
-  }
-  
-  .items + label:after {
+}
+
+.items + label:after {
     /*content: " ";*/
     display: block;
     position: absolute;
@@ -650,66 +513,66 @@ Start question
     top: 1px;
     left: -26px;
     border-radius: 50%;
-  }
-  
-  li:hover label:after {
+}
+
+li:hover label:after {
     border-color: orange;
-  }
-  
-  li:hover input:disabled + label:after {
+}
+
+li:hover input:disabled + label:after {
     border-color: black;
-  }
-  
-  .items:checked + label {
+}
+
+.items:checked + label {
     color: #0093FC;
-  }
-  
-  .items:checked + label:after {
+}
+
+.items:checked + label:after {
     border-color: #0093FC;
-  }
-  
-  .correct .items:checked + label {
+}
+
+.correct .items:checked + label {
     color: green;
-  }
-  
-  .correct .items:checked + label:after {
+}
+
+.correct .items:checked + label:after {
     border-color: green;
-  }
-  
-  .wrong .items:checked + label {
+}
+
+.wrong .items:checked + label {
     color: rgba(128, 57, 57, 0.918);
-  }
-  
-  .wrong .items:checked + label:after {
+}
+
+.wrong .items:checked + label:after {
     border-color: rgba(128, 57, 57, 0.918);
-  }
-  
-  .items.key + label {
+}
+
+.items.key + label {
     color: #B500FF;
-  }
-  
-  .items.key + label:after {
+}
+
+.items.key + label:after {
     border-color: #B500FF;
-  }
-  
-  
-  
-  #checkResult {
+}
+
+
+
+#checkResult {
     position: absolute;
     color:black;
     background:#14BDEE;
     border-radius:5px;
     width: 20%;
     height: 30px;
-  }
-  
-  #resetResult {
+}
+
+#resetResult {
     color: red;
-  }
-  
-  #showResult {
+}
+
+#showResult {
     color: #B500FF;
-  }
+}
 
 
 /*******************************
