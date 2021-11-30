@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+<%@include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,113 +16,133 @@
 
     <link rel="stylesheet" type="text/css" href="../resources/styles/main.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/util.css">
-	<link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/style.min.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/styles-merged.css">
 </head>
 
 <body>
-    <div class="super_container">
+<div class="super_container">
 
-        <!-- Header -->
-        <header class="header">
-			<%@include file="/common/header.jsp"%>
-	    </header>
-    </div>    
+    <!-- Header -->
+    <header class="header">
+        <%@include file="/common/header.jsp" %>
+    </header>
+</div>
 
-    <div class="courses">
-        <!--Background-->
-        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="images/courses_background.jpg" data-speed="0.8"></div>
-        <div class="topic-of-page">
-            <h3 class="h">Add lesson</h3>
-        </div>
+<div class="courses">
+    <!--Background-->
+    <div class="section_background parallax-window" data-parallax="scroll"
+         data-image-src="images/courses_background.jpg" data-speed="0.8"></div>
+    <div class="topic-of-page">
+        <h3 class="h">Add lesson</h3>
+    </div>
 
-        <!--Form add class-->
-        <form class="login100-form validate-form edit-form">
+    <!--Form add class-->
+    <form class="login100-form validate-form edit-form">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
                     <h1>Adding lesson form</h1>
                     <p>This is the section for the question that you want to give your students</p>   
                 </div>
             </span>
-            
-            
-            <div class="wrap-input100 validate-input" data-validate = "Name of class is required">
-                <input class="input100" type="text" name="name">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Title</span>
-            </div>
-            
-            <div class="wrap-input100 validate-input" data-validate = "Full-name is required">
-                <input class="input100" type="text" name="text">
-                <span class="focus-input100"></span>
-                <span class="label-input100">Description</span>
-            </div>
 
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                        <button class="join-button join-button-edit" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> Upload link</button>
-                        <p id="feedback"></p>
-                        <div id="id01" class="modal">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            
-                                <div class="container">
-                                    <h1 id="textUploadLink">Upload link</h1textEnterLink>
-                                    <p id="textEnterLink">Enter the link here</p>
-                                    <input id="EnterLink" type="text" placeholder="Enter link" name="email" required>
-                                        <div class="clearfix">
-                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                                            <button type="button" onclick="test()" class="signupbtn">Save</button>    
-                                        </div>
-                                </div>
-                                <p id="feedback2"></p>
-                         
+
+        <div class="wrap-input100 validate-input" data-validate="Name of class is required">
+            <input class="input100" type="text" name="name">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Title</span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate="Full-name is required">
+            <input class="input100" type="text" name="text">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Description</span>
+        </div>
+
+        <div class="question-form-container">
+            <div class="text-center edit-question-form">
+                <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal"
+                        data-target="#question" style="width: 79% !important;">
+                    Upload Video
+                </button>
+                <button type="button" class="join-button join-button-edit font-weight-bold" id="btnSaveLink"
+                        onclick="alert('Link uploaded!');">
+                    Save
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal - question-->
+        <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="questionTitle"><b>Post your link</b></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="question-content">
+                            <label>Enter link here</label>
+                            <input type="text" name="link" placeholder="You link" class="InputLink">
                         </div>
-                </a>
-            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                    </div>
 
-            <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
-            
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit">
-                        <b>Question 1</b>
-                    </button>
-                </a>
-            </div>
 
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit">
-                        <b>Question 2</b>
-                    </button>
-                </a>
+                </div>
             </div>
+        </div>
+        <!--End modal-->
 
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                    <button class="join-button join-button-edit">
-                        <b>Add question</b>
-                    </button>
-                </a>
-            </div>
-            
-        </form>
-    </div>
+        <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
 
-    <!--join button-->
-    <div class="text-center">
-        <a href="#" class="a-join-button">
-            <button class="join-button">
-                <b>Apply</b>
-            </button>
-        </a>
-    </div>
+        <div class="text-center">
+            <a href="#" class="a-join-button">
+                <button class="join-button join-button-edit">
+                    <b>Question 1</b>
+                </button>
+            </a>
+        </div>
+
+        <div class="text-center">
+            <a href="#" class="a-join-button">
+                <button class="join-button join-button-edit">
+                    <b>Question 2</b>
+                </button>
+            </a>
+        </div>
+
+        <div class="text-center">
+            <a href="#" class="a-join-button">
+                <button class="join-button join-button-edit">
+                    <b>Add question</b>
+                </button>
+            </a>
+        </div>
+
+    </form>
+</div>
+
+<!--join button-->
+<div class="text-center">
+    <a href="#" class="a-join-button">
+        <button class="join-button">
+            <b>Apply</b>
+        </button>
+    </a>
+</div>
 </body>
 
 <!-- Footer-->
 <footer class="footer">
-	<%@include file="/common/footer.jsp"%>
+    <%@include file="/common/footer.jsp" %>
 </footer>
 
 <script src="../resources/js/jquery-3.2.1.min.js"></script>

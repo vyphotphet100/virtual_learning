@@ -140,17 +140,17 @@
                 <img src="../resources/images/vy.jpg" id="imgMember" alt="">
                 <h3>Cao Dinh Sy Vy</h3>
                 <h4>ID: 19110143</h4>
-                <h4>191100@student.hcmute.edu.vn</h4>
-                <p>A front-end web developer is responsible for implementing visual 
-                    elements that users see and interact with in a web application.</p>
+                <h4>19110143@student.hcmute.edu.vn</h4>
+				<p>A full stack developer is a web developer or engineer who works with both the front and back ends of a website or application. In this sense, they provide an end-to-end service,
+					and can be involved in projects that involve databases and building user-facing websites.</p>
             </div>
             <div class="inf-member col">
                 <img src="../resources/images/hung.jpg" id="imgMember" alt="">
                 <h3>Pham Van Manh Hung</h3>
                 <h4>ID: 19110081</h4>
                 <h4>19110081@student.hcmute.edu.vn</h4>
-                <p>A front-end web developer is responsible for implementing visual 
-                    elements that users see and interact with in a web application.</p>
+				<p>A backend developer works alongside front end developers, full stack developers, programmers or UX
+					specialists to create comprehensive digital solutions for business needs.</p>
             </div>
         </div>
     </div>
