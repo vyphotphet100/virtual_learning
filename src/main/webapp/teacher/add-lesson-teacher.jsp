@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual learning | Edit lesson</title>
+    <title>Virtual learning | Add lesson</title>
     <link rel="stylesheet" type="text/css" href="../resources/styles/bootstrap4/bootstrap.min.css">
     <link href="../resources/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../resources/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -130,15 +130,15 @@
     <!--Background-->
     <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
     <div class="topic-of-page">
-        <h3 class="h">Edit lesson</h3>
+        <h3 class="h">Add lesson</h3>
     </div>
 
     <!--Form add class-->
     <form class="login100-form validate-form edit-form">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
-                    <h1>Editing lesson form</h1>
-                    <p>This is the section editings that you want to change</p>
+                    <h1>Adding lesson form</h1>
+                    <p>This is the section for you can create your lesson</p>
                 </div>
             </span>
 
@@ -155,10 +155,12 @@
             <span class="label-input100">Description</span>
         </div>
 
+        <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
+
         <div class="question-form-container">
             <div class="text-center edit-question-form">
                 <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal"
-                        data-target="#question" style="width: 79% !important;">
+                        data-target="#upload_link_video" style="width: 79% !important;">
                     Upload Video
                 </button>
                 <button type="button" class="join-button join-button-edit font-weight-bold" id="btnSaveLink"
@@ -167,10 +169,6 @@
                 </button>
             </div>
         </div>
-
-        <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
-
-
 
         <div class="question-form-container">
             <div class="text-center edit-question-form">
@@ -234,6 +232,35 @@
             </div>
         </div>
         <!--End modal-->
+
+        <!-- Modal - upload link video-->
+        <div class="modal fade" id="upload_link_video" tabindex="-1" role="dialog" aria-labelledby="upload_link_Title"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="upload_link_Title"><b>Post your link</b></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="question-content">
+                            <label>Enter link here</label>
+                            <input type="text" name="link" placeholder="Your link" class="InputLink">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--End modal-->
+
     </form>
 </div>
 
