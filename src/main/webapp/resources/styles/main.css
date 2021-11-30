@@ -683,6 +683,13 @@ li:hover input:disabled + label:after {
 }
 
 
+/*Edit more profile*/
+#avatar{
+    width: 120px;
+    height: 120px;
+}
+
+
 /*******************************
 End question
 *********************************/

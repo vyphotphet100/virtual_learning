@@ -51,7 +51,7 @@
                 <input id="avatarInput" value="${sessionScope.USER_SESSION.avatar}" type="hidden" name="avatar">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h5 class="text-right">Edit your profile</h5>
+                        <h3 class="text-right" style="font-weight: 700;">Edit your profile</h3>
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-12">
@@ -112,6 +112,9 @@
                     </c:if>
                     <div class="mt-5 text-center">
                         <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
+                    </div>
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-danger profile-button" type="button">Log out</button>
                     </div>
                 </div>
             </form>
