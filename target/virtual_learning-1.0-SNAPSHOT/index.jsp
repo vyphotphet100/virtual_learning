@@ -183,7 +183,7 @@
                 <p>Sololearn is a 6-part Java programming language training program with 65 lessons, covering topics such as loops and conditions, arrays, classes. objects, exceptions, lists, themes, and files.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="window.location.href='#'">
+                <button type="button" class="btn btn-secondary" onclick="window.location.href=''">
                     <strong> Join class</strong>
                 </button>
 

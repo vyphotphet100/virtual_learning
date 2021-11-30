@@ -85,8 +85,9 @@
                 <span class="label-input100">Name of class</span>
             </div>
 
-            <div>
-                <select name="subjectId">
+            <div class="wrap-input100 validate-input" data-validate = "Type of class is required">
+                <h3 class="TypeOfClass">Type of class</h3>
+                <select name="subjectId"  class="form-select form-select-lg " id="subjectId">
                     <c:forEach items="${subjects}" var="subject">
                         <c:if test="${subject.id == clazz.subject.id}">
                             <option value="${subject.id}" selected>${subject.name}</option>
@@ -96,6 +97,7 @@
                         </c:if>
                     </c:forEach>
                 </select>
+
             </div>
 
 <%--            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">--%>
