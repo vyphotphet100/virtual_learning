@@ -66,7 +66,7 @@
                                     <div class="course_teacher">
                                         Lecturer: ${classEntityBySubjectId.authorUser.fullName}
                                     </div>
-                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79% !important;">
+                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 14%; align-items: center;">
                                         Readmore
                                     </button>
                                 </div>
@@ -112,6 +112,9 @@
                                 <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
                                 <div class="course_teacher">
                                     Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
+                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 15%">
+                                    Readmore
+                                </button>
                             </div>
                             <div class="course_footer">
                                 <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
@@ -143,6 +146,9 @@
                                 <h3 class="course_title"><a href="#">${clazz.name}</a></h3>
                                 <div class="course_teacher">
                                     Lecturer: ${clazz.authorUser.fullName}</div>
+                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 15%">
+                                    Readmore
+                                </button>
                             </div>
                             <div class="course_footer">
                                 <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
@@ -191,7 +197,7 @@
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-content" id="ModalfitHight">
         <span class="close">&times;</span>
         <h3>Enter password of this class to join</h3>
         <div class="wrap-input100 validate-input" data-validate="Pasword is required">

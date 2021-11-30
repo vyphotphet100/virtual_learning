@@ -71,15 +71,22 @@ body {
     text-align: center !important;
     border: none;
     color: white;
-    font-size: 10px;
-    width: 100%;
-
+    font-size: 12px !important;
+    padding: 2px ;
     position: absolute;
     left: 50%;
     margin: 10px;
     transform: translate(-50%, -50%);
 }
+#ModalfitHight{
+    padding: 90px !important;
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    left: 33%;
+    border-radius: 4px;
 
+}
 /*Class detail*/
 
 .topic-of-page{
