@@ -19,7 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/style.min.css">
     <link rel="stylesheet" type="text/css" href="resources/styles-merged.css">
-    
+
 </head>
 
 <body>
@@ -48,12 +48,12 @@
 			     	<li class="menu_mm"><a href="#">Contact</a></li>
 			    </ul>
 		    </nav>
-	    </div>   
+	    </div>
     </div>
 
     <div class="courses">
         <!--Background-->
-        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="resources/images/courses_background.jpg" data-speed="0.8"></div>
+        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="..resources/images/courses_background.jpg" data-speed="0.8"></div>
         <div class="topic-of-page">
             <h3 class="h">Edit Class</h3>
         </div>
@@ -63,7 +63,7 @@
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
                     <h1>Editing class form</h1>
-                    <p>This is the section for the initial setting up for your class</p>   
+                    <p>This is the section for the initial setting up for your class</p>
                 </div>
             </span>
 
@@ -132,17 +132,14 @@
                 </a>
             </div>
         </form>
-
-
-
-    </div>    
+    </div>
 </body>
 
 <!-- Footer-->
 <footer class="footer">
 	<%@include file="/common/footer.jsp"%>
 </footer>
-    
+
     <script src="../resources/js/jquery-3.2.1.min.js"></script>
     <script src="../resources/styles/bootstrap4/popper.js"></script>
     <script src="../resources/styles/bootstrap4/bootstrap.min.js"></script>
