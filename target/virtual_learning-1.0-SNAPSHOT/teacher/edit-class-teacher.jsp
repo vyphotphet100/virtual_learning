@@ -133,99 +133,70 @@
         <h3 class="h">Edit lesson</h3>
     </div>
 
-    <!--Form add class-->
-    <form class="login100-form validate-form edit-form">
+    <!--Form edit class-->
+    <form class="login100-form validate-form edit-form" method="post">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
-                    <h1>Editing lesson form</h1>
-                    <p>This is the section editings that you want to change</p>
+                    <h1>Editing class form</h1>
+                    <p>This is the section for the initial setting up for your class</p>
                 </div>
             </span>
 
+        <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'ERROR'}">
+            <div class="alert alert-danger" role="alert">
+                <c:out value="${responseEntity.message}"/>
+            </div>
+        </c:if>
+        <c:if test="${not empty responseEntity && responseEntity.httpStatus == 'OK'}">
+            <div class="alert alert-success" role="alert">
+                <c:out value="${responseEntity.message}"/>
+            </div>
+        </c:if>
+        <input type="hidden" value="${clazz.id}" name="id">
 
         <div class="wrap-input100 validate-input" data-validate = "Name of class is required">
-            <input class="input100" type="text" name="name">
+            <input class="input100 has-val" type="text" name="name" value="${clazz.name}">
             <span class="focus-input100"></span>
-            <span class="label-input100">Title</span>
+            <span class="label-input100">Name of class</span>
         </div>
 
-        <div class="wrap-input100 validate-input description" data-validate = "Description is required">
-            <textarea class="input100" type="text" name="text"></textarea>
+        <div class="wrap-input100 validate-input" data-validate = "Type of class is required">
+            <h3 class="TypeOfClass">Type of class</h3>
+            <select name="subjectId"  class="form-select form-select-lg " id="subjectId">
+                <c:forEach items="${subjects}" var="subject">
+                    <c:if test="${subject.id == clazz.subject.id}">
+                        <option value="${subject.id}" selected>${subject.name}</option>
+                    </c:if>
+                    <c:if test="${subject.id != clazz.subject.id}">
+                        <option value="${subject.id}">${subject.name}</option>
+                    </c:if>
+                </c:forEach>
+            </select>
+
+        </div>
+
+        <%--            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">--%>
+        <%--                <input class="input100" type="text" name="text">--%>
+        <%--                <span class="focus-input100"></span>--%>
+        <%--                <span class="label-input100">Name of subject</span>--%>
+        <%--            </div>--%>
+        <div class="wrap-input100 validate-input" data-validate = "Description is required">
+            <input class="input100 has-val" type="text" name="description" value="${clazz.description}">
             <span class="focus-input100"></span>
             <span class="label-input100">Description</span>
         </div>
 
-        <div class="text-center">
-            <b>Edit link video</b>
-            <textarea id="editLink"></textarea>
+        <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <input class="input100" id="password-field1" type="password" name="password">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Password</span>
         </div>
 
-        <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
-
-
-
-        <div class="question-form-container">
-            <div class="text-center edit-question-form">
-                <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal" data-target="#question" style="width: 79% !important;">
-                    Question
-                </button>
-                <button type="button" class="join-button join-button-edit font-weight-bold deleteButton" data-toggle="modal" data-target="#delete" style="width: 20% !important;">
-                    Delete
-                </button>
-            </div>
+        <div class="wrap-input100 validate-input" data-validate="Password is required">
+            <input class="input100" id="password-field2" type="password" name="confirmPassword">
+            <span class="focus-input100"></span>
+            <span class="label-input100">Confirm password</span>
         </div>
-
-        <div class="text-center">
-            <button class="join-button join-button-edit font-weight-bold addQuestion">
-                Add question
-            </button>
-        </div>
-
-        <!-- Modal - question-->
-        <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="questionTitle"><b>Complete your question</b></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="question-content">
-                            <label>Type the question:</label>
-                            <textarea class="question-input"></textarea>
-                            <label class="answer-header">Type content for Answer <i>A</i></label>
-                            <textarea class="answer-input"></textarea>
-                            <label class="answer-header">Type content for Answer <i>B</i></label>
-                            <textarea class="answer-input"></textarea>
-                            <label class="answer-header">Type content for Answer <i>C</i></label>
-                            <textarea class="answer-input"></textarea>
-                            <label class="answer-header">Type content for Answer <i>D</i></label>
-                            <textarea class="answer-input"></textarea>
-                            <label class="answer-header">Please select the correct answer:</label>
-                            <div class="correct-answer">
-                                <input type="checkbox"> <b>A</b>
-                            </div>
-                            <div class="correct-answer">
-                                <input type="checkbox"> <b>B</b>
-                            </div>
-                            <div class="correct-answer">
-                                <input type="checkbox"> <b>C</b>
-                            </div>
-                            <div class="correct-answer">
-                                <input type="checkbox"> <b>D</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--End modal-->
     </form>
 </div>
 
