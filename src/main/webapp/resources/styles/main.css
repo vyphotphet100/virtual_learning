@@ -305,7 +305,10 @@ body {
 }
 
 .wrap-input100.validate-input.description > textarea {
-    height: 80%;
+    height: 100% !important;
+    width: 100% !important;
+    margin-top: 32px;
+    padding: 0 14px;
 }
 
 
