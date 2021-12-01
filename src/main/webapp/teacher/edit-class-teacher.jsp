@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/styles/util.css">
 	<link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/style.min.css">
-<%--    <link rel="stylesheet" type="text/css" href="resources/styles-merged.css">--%>
+    <link rel="stylesheet" type="text/css" href="resources/styles-merged.css">
 
 </head>
 
@@ -55,15 +55,15 @@
         <!--Background-->
         <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
         <div class="topic-of-page">
-            <h3 class="h">Edit Class</h3>
+            <h3 class="h fix">Edit Class</h3>
         </div>
 
         <!--Form add class-->
         <form class="login100-form validate-form edit-form" method="post">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
-                    <h1>Editing class form</h1>
-                    <p>This is the section for the initial setting up for your class</p>
+                    <h1 class="h fix">Editing class form</h1>
+                    <p class="h fix">This is the section for the initial setting up for your class</p>
                 </div>
             </span>
 
