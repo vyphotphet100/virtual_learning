@@ -694,9 +694,9 @@ li:hover input:disabled + label:after {
 /*Edit class teacher*/
 .h.fix {
     color: #384158;
-    line-height: 0;
-    font-weight: 0;
-    margin: 0 0;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0px 0px;
 }
 
 /*******************************
