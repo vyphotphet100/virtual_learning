@@ -305,7 +305,9 @@ body {
 }
 
 .wrap-input100.validate-input.description > textarea {
-    height: 80%;
+    height: 70% !important;
+    width: 100% !important;
+    margin-top: 44px;
 }
 
 
@@ -689,6 +691,13 @@ li:hover input:disabled + label:after {
     height: 120px;
 }
 
+/*Edit class teacher*/
+.h.fix {
+    color: #384158;
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 0px 0px;
+}
 
 /*******************************
 End question
