@@ -53,7 +53,7 @@
 
     <div class="courses">
         <!--Background-->
-        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="..resources/images/courses_background.jpg" data-speed="0.8"></div>
+        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
         <div class="topic-of-page">
             <h3 class="h">Edit Class</h3>
         </div>

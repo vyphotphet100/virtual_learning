@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/styles/util.css">
 	<link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/style.min.css">
-    <link rel="stylesheet" type="text/css" href="resources/styles-merged.css">
+<%--    <link rel="stylesheet" type="text/css" href="resources/styles-merged.css">--%>
 
 </head>
 
@@ -105,8 +105,8 @@
 <%--                <span class="focus-input100"></span>--%>
 <%--                <span class="label-input100">Name of subject</span>--%>
 <%--            </div>--%>
-            <div class="wrap-input100 validate-input" data-validate = "Description is required">
-                <input class="input100 has-val" type="text" name="description" value="${clazz.description}">
+            <div class="wrap-input100 validate-input description" data-validate = "Description is required">
+                <textarea class="input100 has-val" type="text" name="description" value="${clazz.description}"></textarea>
                 <span class="focus-input100"></span>
                 <span class="label-input100">Description</span>
             </div>
