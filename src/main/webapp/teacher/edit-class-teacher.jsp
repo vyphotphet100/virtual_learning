@@ -53,17 +53,17 @@
 
     <div class="courses">
         <!--Background-->
-        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="..resources/images/courses_background.jpg" data-speed="0.8"></div>
+        <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
         <div class="topic-of-page">
-            <h3 class="h">Edit Class</h3>
+            <h3 class="h fix">Edit Class</h3>
         </div>
 
         <!--Form add class-->
         <form class="login100-form validate-form edit-form" method="post">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
-                    <h1>Editing class form</h1>
-                    <p>This is the section for the initial setting up for your class</p>
+                    <h1 class="h fix">Editing class form</h1>
+                    <p class="h fix">This is the section for the initial setting up for your class</p>
                 </div>
             </span>
 
@@ -105,8 +105,8 @@
 <%--                <span class="focus-input100"></span>--%>
 <%--                <span class="label-input100">Name of subject</span>--%>
 <%--            </div>--%>
-            <div class="wrap-input100 validate-input" data-validate = "Description is required">
-                <input class="input100 has-val" type="text" name="description" value="${clazz.description}">
+            <div class="wrap-input100 validate-input description" data-validate = "Description is required">
+                <textarea class="input100 has-val" type="text" name="description" value="${clazz.description}"></textarea>
                 <span class="focus-input100"></span>
                 <span class="label-input100">Description</span>
             </div>
