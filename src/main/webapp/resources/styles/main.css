@@ -301,14 +301,14 @@ body {
 }
 
 .wrap-input100.validate-input.description {
-    height: 150px;
+    height: 151px;
 }
 
 .wrap-input100.validate-input.description > textarea {
     height: 100% !important;
     width: 100% !important;
     margin-top: 32px;
-    padding: 0 14px;
+    padding: 0 15px;
 }
 
 
