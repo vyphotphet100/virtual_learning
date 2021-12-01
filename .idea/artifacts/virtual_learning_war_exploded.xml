@@ -6,7 +6,6 @@
         <exploded>true</exploded>
         <module>virtual_learning</module>
         <packaging>war</packaging>
-        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -59,7 +58,6 @@
           <element id="library" level="project" name="Maven: com.google.http-client:google-http-client-gson:1.39.2" />
           <element id="library" level="project" name="Maven: com.google.http-client:google-http-client-apache-v2:1.39.2" />
           <element id="library" level="project" name="Maven: com.google.apis:google-api-services-storage:v1-rev20210127-1.32.1" />
-          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.8" />
           <element id="library" level="project" name="Maven: com.google.cloud:google-cloud-core:2.1.0" />
           <element id="library" level="project" name="Maven: com.google.auto.value:auto-value-annotations:1.8.2" />
           <element id="library" level="project" name="Maven: com.google.api.grpc:proto-google-common-protos:2.3.2" />
@@ -76,6 +74,7 @@
           <element id="library" level="project" name="Maven: com.google.api.grpc:proto-google-iam-v1:1.0.14" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java-util:3.17.3" />
           <element id="library" level="project" name="Maven: org.threeten:threetenbp:1.5.1" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.8" />
         </element>
       </element>
       <element id="directory" name="META-INF">

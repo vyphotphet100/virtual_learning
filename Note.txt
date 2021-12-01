@@ -1,10 +1,14 @@
+- Fake data:
+    + AddQuestionController
+    + AddLessonController
+
 - Teacher:
-    - add/edit lesson
+    + Xong add lesson (backend)
+    + edit lesson
 
 - Làm các trang cho student:
     + Làm trang question
 
-resources/images/comment_2.jpg
 
 Email:
 - ID: virtual.learning.hcmute@gmail.com
