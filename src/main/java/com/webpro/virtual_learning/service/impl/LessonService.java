@@ -1,5 +1,6 @@
 package com.webpro.virtual_learning.service.impl;
 
+import com.webpro.virtual_learning.converter.dto_entity.DTOEntityConverter;
 import com.webpro.virtual_learning.dao.ILessonDAO;
 import com.webpro.virtual_learning.dto.LessonDTO;
 import com.webpro.virtual_learning.entity.LessonEntity;
@@ -13,6 +14,9 @@ public class LessonService extends BaseService<LessonDTO, LessonEntity> implemen
     @Inject
     private ILessonDAO lessonDao;
 
+    @Inject
+    private DTOEntityConverter dtoEntityConverter;
+
     @Override
     public List<LessonEntity> findAll() {
         return null;
@@ -20,7 +24,14 @@ public class LessonService extends BaseService<LessonDTO, LessonEntity> implemen
 
     @Override
     public LessonEntity save(LessonDTO dto) {
-        return null;
+        LessonEntity lessonEntity = (LessonEntity) dtoEntityConverter.toEntity(dto, LessonEntity.class);
+        lessonEntity = lessonDao.save(lessonEntity);
+
+        if (lessonEntity == null)
+            return this.exceptionObject(new LessonEntity(), "Something went wrong.");
+
+        lessonEntity.setMessage("Add lesson successfully.");
+        return lessonEntity;
     }
 
     @Override

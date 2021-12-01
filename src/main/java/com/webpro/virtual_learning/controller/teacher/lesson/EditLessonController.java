@@ -14,4 +14,9 @@ public class EditLessonController extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/teacher/edit-lesson-teacher.jsp").forward(request, response);
     }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+
+    }
 }

@@ -37,7 +37,7 @@
         <div class="container my-class">
             <!--Course-->
             <a class="class-topic-description">
-                <div class="course edit-course" onclick="window.location.href='#'">
+                <div class="course edit-course">
                     <div class="course_image"><img
                             class="course_img"
                             src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
