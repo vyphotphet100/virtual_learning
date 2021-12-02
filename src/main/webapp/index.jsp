@@ -66,7 +66,7 @@
                                     <div class="course_teacher">
                                         Lecturer: ${classEntityBySubjectId.authorUser.fullName}
                                     </div>
-                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 14%; align-items: center;">
+                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 84%;height: 18%; left: 47.5%">
                                         Readmore
                                     </button>
                                 </div>
@@ -76,7 +76,7 @@
                                             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                             <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
                                         </div>
-                                        <a class="course_price ml-auto" href="#" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
+                                        <a class="course_price ml-auto" href="" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
                                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                         <span>${clazz.joinedUser.size()} student(s)</span>
                                     </div>
-                                    <a class="course_price ml-auto" href="#" onclick="openModal(${clazz.id});">Join</a>
+                                    <a class="course_price ml-auto" href="" onclick="openModal(${clazz.id});">Join</a>
                                 </div>
                             </div>
                         </div>

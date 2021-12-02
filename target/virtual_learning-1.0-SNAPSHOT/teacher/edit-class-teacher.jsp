@@ -55,14 +55,14 @@
         <!--Background-->
         <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
         <div class="topic-of-page">
-            <h3 class="h fix">Edit Class</h3>
+            <h3 class="h fix" style="font-size: 28px">Edit Class</h3>
         </div>
 
         <!--Form add class-->
         <form class="login100-form validate-form edit-form" method="post">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
-                    <h1 class="h fix">Editing class form</h1>
+                    <h1 class="h fix" style="font-size: 48px">Editing class form</h1>
                     <p class="">This is the section for the initial setting up for your class</p>
                 </div>
             </span>
@@ -122,16 +122,16 @@
                 <span class="focus-input100"></span>
                 <span class="label-input100">Confirm password</span>
             </div>
-
-            <!--Apply button-->
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                    <button type="submit" class="join-button">
-                        <b>Apply</b>
-                    </button>
-                </a>
-            </div>
         </form>
+
+        <!--Apply button-->
+        <div class="text-center">
+            <a href="#" class="a-join-button">
+                <button type="submit" class="join-button">
+                    <b>Apply</b>
+                </button>
+            </a>
+        </div>
     </div>
 </body>
 
