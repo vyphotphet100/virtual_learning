@@ -39,7 +39,7 @@
         </div>
 
         <!--Form add class-->
-        <form class="login100-form validate-form edit-form" method="post">
+        <form class="login100-form validate-form edit-form" method="post" id="add-class">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
                     <h1 class="h fix" style="font-size: 48px;">Adding class form</h1>
@@ -106,7 +106,7 @@
         <!--Apply button-->
         <div class="text-center">
             <a href="#" class="a-join-button">
-                <button type="submit" class="join-button">
+                <button type="submit" class="join-button" form="add-class">
                     <b>Apply</b>
                 </button>
             </a>
