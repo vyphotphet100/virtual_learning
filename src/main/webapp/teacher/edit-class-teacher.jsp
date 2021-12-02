@@ -122,16 +122,16 @@
                 <span class="focus-input100"></span>
                 <span class="label-input100">Confirm password</span>
             </div>
-
-            <!--Apply button-->
-            <div class="text-center">
-                <a href="#" class="a-join-button">
-                    <button type="submit" class="join-button">
-                        <b>Apply</b>
-                    </button>
-                </a>
-            </div>
         </form>
+
+        <!--Apply button-->
+        <div class="text-center">
+            <a href="#" class="a-join-button">
+                <button type="submit" class="join-button">
+                    <b>Apply</b>
+                </button>
+            </a>
+        </div>
     </div>
 </body>
 
