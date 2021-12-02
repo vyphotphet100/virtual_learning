@@ -35,14 +35,14 @@
         <!--Background-->
         <div class="section_background parallax-window" data-parallax="scroll" data-image-src="../resources/images/courses_background.jpg" data-speed="0.8"></div>
         <div class="topic-of-page">
-            <h3 class="h fix">Add Class</h3>
+            <h3 class="h fix" style="font-size: 28px">Add Class</h3>
         </div>
 
         <!--Form add class-->
         <form class="login100-form validate-form edit-form" method="post">
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
-                    <h1 class="h fix">Adding class form</h1>
+                    <h1 class="h fix" style="font-size: 48px;">Adding class form</h1>
                     <p>This is the section for the initial setting up for your class</p>   
                 </div>
             </span>
@@ -64,10 +64,16 @@
                 <span class="label-input100">Name of class</span>
             </div>
 
-            <div>
-                <select name="subjectId">
+            <div class="wrap-input100 validate-input" data-validate = "Type of class is required">
+                <h3 class="TypeOfClass">Type of class</h3>
+                <select name="subjectId"  class="form-select form-select-lg " id="subjectId">
                     <c:forEach items="${subjects}" var="subject">
+                        <c:if test="${subject.id == clazz.subject.id}">
+                            <option value="${subject.id}" selected>${subject.name}</option>
+                        </c:if>
+                        <c:if test="${subject.id != clazz.subject.id}">
                             <option value="${subject.id}">${subject.name}</option>
+                        </c:if>
                     </c:forEach>
                 </select>
             </div>
@@ -77,7 +83,7 @@
 <%--                <span class="focus-input100"></span>--%>
 <%--                <span class="label-input100">Name of subject</span>--%>
 <%--            </div>--%>
-            <div class="wrap-input100 validate-input" data-validate = "Description is required">
+            <div class="wrap-input100 validate-input description" data-validate = "Description is required">
                 <input class="input100" type="text" name="description">
                 <span class="focus-input100"></span>
                 <span class="label-input100">Description</span>
