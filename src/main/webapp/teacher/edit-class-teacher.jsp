@@ -63,7 +63,7 @@
             <span class="login100-form-title p-b-43">
                 <div class="text-center">
                     <h1 class="h fix">Editing class form</h1>
-                    <p class="h fix">This is the section for the initial setting up for your class</p>
+                    <p class="">This is the section for the initial setting up for your class</p>
                 </div>
             </span>
 
