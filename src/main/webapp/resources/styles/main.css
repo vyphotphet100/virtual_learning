@@ -67,14 +67,14 @@ body {
 }
 .button-readmore{
     background-color: #1da1f2;
-    border-radius: 8px;
-    text-align: center !important;
     border: none;
     color: white;
     font-size: 12px !important;
     padding: 2px ;
     position: absolute;
-    left: 50%;
+    left: 47.5%;
+    height: 18%;
+    width: 84%;
     margin: 10px;
     transform: translate(-50%, -50%);
 }
@@ -694,6 +694,7 @@ li:hover input:disabled + label:after {
 /*Edit class teacher*/
 .h.fix {
     color: #384158;
+    font-family: 'Roboto Slab', serif !important;
     line-height: 1.2;
     font-weight: 700;
     margin: 0px 0px;

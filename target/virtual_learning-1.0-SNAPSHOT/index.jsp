@@ -66,7 +66,7 @@
                                     <div class="course_teacher">
                                         Lecturer: ${classEntityBySubjectId.authorUser.fullName}
                                     </div>
-                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 14%; align-items: center;">
+                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="">
                                         Readmore
                                     </button>
                                 </div>
@@ -112,7 +112,7 @@
                                 <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
                                 <div class="course_teacher">
                                     Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
-                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 15%">
+                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="">
                                     Readmore
                                 </button>
                             </div>
@@ -146,7 +146,7 @@
                                 <h3 class="course_title"><a href="#">${clazz.name}</a></h3>
                                 <div class="course_teacher">
                                     Lecturer: ${clazz.authorUser.fullName}</div>
-                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="width: 79%;height: 15%">
+                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="">
                                     Readmore
                                 </button>
                             </div>
@@ -194,6 +194,7 @@
     </div>
 </div>
 <!--End modal-->
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
@@ -203,15 +204,15 @@
         <div class="wrap-input100 validate-input" data-validate="Pasword is required">
             <input class="input100" type="password" id="password" value="">
             <span class="focus-input100"></span>
-            <span class="label-input100">Class password</span>
+            <span class="label-input100">Password</span>
         </div>
         <input type="hidden" id="class-to-join" value=""/>
         <div class="container-login100-form-btn">
             <input type="submit" class="login100-form-btn" onclick="joinClass();" value="Join"/>
         </div>
     </div>
-
 </div>
+
 </body>
 
 <!-- Footer-->
