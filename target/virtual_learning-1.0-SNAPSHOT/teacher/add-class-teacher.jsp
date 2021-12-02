@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="../resources/styles/util.css">
 	<link rel="stylesheet" type="text/css" href="../resources/styles/main_1.css">
     <link rel="stylesheet" type="text/css" href="../resources/styles/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../resources/styles/styles-merged.css">>
+<%--    <link rel="stylesheet" type="text/css" href="../resources/styles/styles-merged.css">>--%>
     
 </head>
 
