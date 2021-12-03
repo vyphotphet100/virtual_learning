@@ -89,23 +89,38 @@
         </div>
 
         <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
-
-
         <div class="question-form-container">
-            <div class="text-center edit-question-form">
-                <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal"
-                        data-target="#question" style="width: 79% !important;">
-                    Question
-                </button>
-                <button type="button" class="join-button join-button-edit font-weight-bold deleteButton"
-                        data-toggle="modal" data-target="#delete" style="width: 20% !important;">
-                    Delete
-                </button>
-            </div>
+            <c:forEach items="${lesson.questions}" var="question" varStatus="loop">
+                <div class="text-center edit-question-form" id="question-overview-${loop.index}">
+                    <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal"
+                            data-target="#question" style="width: 79% !important;"
+                            onclick="getQuestionById(${question.id});">
+                        Question
+                    </button>
+                    <button type="button" class="join-button join-button-edit font-weight-bold deleteButton"
+                            data-toggle="modal" data-target="#delete" style="width: 20% !important;"
+                            onclick="deleteQuestion('question-overview-${loop.index}')">
+                        Delete
+                    </button>
+                </div>
+            </c:forEach>
         </div>
 
+        <%--        <div class="question-form-container">--%>
+        <%--            <div class="text-center edit-question-form">--%>
+        <%--                <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal"--%>
+        <%--                        data-target="#question" style="width: 79% !important;" onclick="getQuestionById(1);">--%>
+        <%--                    Question--%>
+        <%--                </button>--%>
+        <%--                <button type="button" class="join-button join-button-edit font-weight-bold deleteButton"--%>
+        <%--                        data-toggle="modal" data-target="#delete" style="width: 20% !important;">--%>
+        <%--                    Delete--%>
+        <%--                </button>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
+
         <div class="text-center">
-            <button class="join-button join-button-edit font-weight-bold addQuestion">
+            <button type="button" class="join-button join-button-edit font-weight-bold addQuestion">
                 Add question
             </button>
         </div>
@@ -124,27 +139,27 @@
                     <div class="modal-body">
                         <div class="question-content">
                             <label>Type the question:</label>
-                            <textarea class="question-input"></textarea>
+                            <textarea class="question-input" id="question-input"></textarea>
                             <label class="answer-header">Type content for Answer <i>A</i></label>
-                            <textarea class="answer-input"></textarea>
+                            <textarea class="answer-input" id="answer-input-a"></textarea>
                             <label class="answer-header">Type content for Answer <i>B</i></label>
-                            <textarea class="answer-input"></textarea>
+                            <textarea class="answer-input" id="answer-input-b"></textarea>
                             <label class="answer-header">Type content for Answer <i>C</i></label>
-                            <textarea class="answer-input"></textarea>
+                            <textarea class="answer-input" id="answer-input-c"></textarea>
                             <label class="answer-header">Type content for Answer <i>D</i></label>
-                            <textarea class="answer-input"></textarea>
+                            <textarea class="answer-input" id="answer-input-d"></textarea>
                             <label class="answer-header">Please select the correct answer:</label>
                             <div class="correct-answer">
-                                <input type="checkbox"> <b>A</b>
+                                <input name="correct" type="radio"> <b>A</b>
                             </div>
                             <div class="correct-answer">
-                                <input type="checkbox"> <b>B</b>
+                                <input name="correct" type="radio"> <b>B</b>
                             </div>
                             <div class="correct-answer">
-                                <input type="checkbox"> <b>C</b>
+                                <input name="correct" type="radio"> <b>C</b>
                             </div>
                             <div class="correct-answer">
-                                <input type="checkbox"> <b>D</b>
+                                <input name="correct" type="radio"> <b>D</b>
                             </div>
                         </div>
                     </div>
@@ -188,25 +203,6 @@
 <script src="../resources/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="../resources/js/custom.js"></script>
 <script src="../resources/js/edit-lesson-teacher.js"></script>
-
-<script>
-    function getQuestionById(id) {
-        var question = $.ajax({
-            url: '/teacher/get-question?id=' + id,
-            type: 'GET',
-            async: false,
-            contentType: 'application/json',
-            success: function(result) {
-                return result;
-            },
-            error: function(result) {
-                return result;
-            }
-        });
-
-        question = JSON.parse(question.responseText);
-    }
-</script>
-
 <script src="../resources/js/main.js"></script>
+
 </html>
