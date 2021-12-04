@@ -85,6 +85,8 @@
 
     var addQuestion = document.querySelector('.addQuestion');
     addQuestion.addEventListener('click', function() {
+        return;
+
         var container = document.querySelector('.question-form-container');
 
         var div = document.createElement('div');

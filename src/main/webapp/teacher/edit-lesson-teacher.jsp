@@ -90,8 +90,8 @@
 
         <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
         <div class="question-form-container">
-            <c:forEach items="${lesson.questions}" var="question" varStatus="loop">
-                <div class="text-center edit-question-form" id="question-overview-${loop.index}">
+            <c:forEach items="${lesson.questions}" var="question">
+                <div class="text-center edit-question-form" id="question-overview-${question.id}">
                     <button type="button" class="join-button join-button-edit font-weight-bold" data-toggle="modal"
                             data-target="#question" style="width: 79% !important;"
                             onclick="getQuestionById(${question.id});">
@@ -99,7 +99,7 @@
                     </button>
                     <button type="button" class="join-button join-button-edit font-weight-bold deleteButton"
                             data-toggle="modal" data-target="#delete" style="width: 20% !important;"
-                            onclick="deleteQuestion('question-overview-${loop.index}')">
+                            onclick="deleteQuestion('question-overview-${question.id}')">
                         Delete
                     </button>
                 </div>
@@ -120,7 +120,10 @@
         <%--        </div>--%>
 
         <div class="text-center">
-            <button type="button" class="join-button join-button-edit font-weight-bold addQuestion">
+            <button type="button" class="join-button join-button-edit font-weight-bold addQuestion"
+                    data-toggle="modal"
+                    data-target="#question"
+                    onclick="getQuestionById();">
                 Add question
             </button>
         </div>
@@ -165,7 +168,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveChangeAddQuestion();">Save changes</button>
                     </div>
                 </div>
             </div>

@@ -34,13 +34,13 @@ public class AddQuestionController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // fake data
-        QuestionDTO questionDto = new QuestionDTO();
-        questionDto.setContent("Test question content");
-        questionDto.setOption("option1|option2|option3|option4");
-        questionDto.setCorrect(2);
-        questionDto.setLessonId(1L);
+//        QuestionDTO questionDto = new QuestionDTO();
+//        questionDto.setContent("Test question content");
+//        questionDto.setOption("option1|option2|option3|option4");
+//        questionDto.setCorrect(2);
+//        questionDto.setLessonId(1L);
 
-        //QuestionDTO questionDto = requestDTOConverter.toDTO(request, questionHttpRequestDTOMapper);
+        QuestionDTO questionDto = requestDTOConverter.toDTO(request, questionHttpRequestDTOMapper);
         QuestionEntity questionEntity = questionService.save(questionDto);
         questionDto = (QuestionDTO)dtoEntityConverter.toDTO(questionEntity, QuestionDTO.class);
         String questionDtoJson = this.gson.toJson(questionDto);
