@@ -101,6 +101,32 @@
                 Add question
             </button>
         </div>
+
+        <!-- Modal - description-->
+        <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content description">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="question-content">
+                            <label>Type the description:</label>
+                            <textarea id="modalDescriptionInput" class="question-input description"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End modal-->
     </form>
 
     <!-- Modal - question-->
@@ -146,32 +172,6 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" onclick="saveChangeAddQuestion();">Save changes
                     </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End modal-->
-
-    <!-- Modal - description-->
-    <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content description">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="question-content">
-                        <label>Type the description:</label>
-                        <textarea id="modalDescriptionInput" class="question-input description"></textarea>
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
                 </div>
             </div>
         </div>

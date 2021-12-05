@@ -85,13 +85,13 @@
         </c:if>
         <input type="hidden" value="${clazz.id}" name="id">
 
-        <div class="wrap-input100 validate-input" id="subjectSelector" data-validate="Name of class is required">
+        <div class="wrap-input100 validate-input" data-validate="Name of class is required">
             <input class="input100 has-val" type="text" name="name" value="${clazz.name}">
             <span class="focus-input100"></span>
             <span class="label-input100">Name of class</span>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="Type of class is required">
+        <div class="wrap-input100 validate-input" id="subjectSelector" data-validate="Type of class is required">
             <h3 class="TypeOfClass">Type of class</h3>
             <select name="subjectId" class="form-select form-select-lg " id="subjectId">
                 <c:forEach items="${subjects}" var="subject">
@@ -128,33 +128,33 @@
             <span class="focus-input100"></span>
             <span class="label-input100">Confirm password</span>
         </div>
-    </form>
 
-    <!-- Modal - description-->
-    <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content description">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="question-content">
-                        <label>Type the description:</label>
-                        <textarea id="modalDescriptionInput" class="question-input description"></textarea>
-
+        <!-- Modal - description-->
+        <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content description">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    <div class="modal-body">
+                        <div class="question-content">
+                            <label>Type the description:</label>
+                            <textarea id="modalDescriptionInput" class="question-input description"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--End modal-->
+        <!--End modal-->
+    </form>
 
     <!--Apply button-->
     <div class="text-center">
