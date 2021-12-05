@@ -713,6 +713,10 @@ li:hover input:disabled + label:after {
     height: 500px;
 }
 
+.modal-content.description {
+    width: 125%;
+}
+
 /*******************************
 End question
 *********************************/
