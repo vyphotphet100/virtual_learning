@@ -105,8 +105,8 @@
 <%--                <span class="label-input100">Name of subject</span>--%>
 <%--            </div>--%>
             <div class="wrap-input100 validate-input description" data-validate = "Description is required">
-                <textarea id="descriptionInput" class="input100 has-val" type="text" name="description" data-toggle="modal"
-                          data-target="#description" value=""></textarea>
+                <textarea id="descriptionInput" class="input100" type="text" name="description" data-toggle="modal"
+                          data-target="#description"></textarea>
                 <span class="focus-input100"></span>
                 <span class="label-input100">Description</span>
             </div>
