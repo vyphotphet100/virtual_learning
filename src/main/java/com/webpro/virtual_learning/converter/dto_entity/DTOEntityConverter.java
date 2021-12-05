@@ -16,7 +16,7 @@ public class DTOEntityConverter {
             return null;
 
         ModelMapper modelMap = new ModelMapper();
-        BaseDTO resObj = (BaseDTO)modelMap.map(entity, tClass);
+        BaseDTO resObj = (BaseDTO) modelMap.map(entity, tClass);
         return this.dtoObject(entity, resObj);
     }
 
@@ -25,7 +25,7 @@ public class DTOEntityConverter {
             return null;
 
         ModelMapper modelMap = new ModelMapper();
-        BaseEntity resObj = (BaseEntity)modelMap.map(dto, tClass);
+        BaseEntity resObj = (BaseEntity) modelMap.map(dto, tClass);
         return this.entityObject(dto, resObj);
     }
 
@@ -37,71 +37,66 @@ public class DTOEntityConverter {
             resDto.setAuthorUsername(resEntity.getAuthorUser().getUsername());
 
             // joined users
-            for (UserEntity userEntity: resEntity.getJoinedUser())
+            for (UserEntity userEntity : resEntity.getJoinedUser())
                 resDto.getJoinedUsernames().add(userEntity.getUsername());
 
             // lessons
-            for (LessonEntity lessonEntity: resEntity.getLessons())
+            for (LessonEntity lessonEntity : resEntity.getLessons())
                 resDto.getLessonIds().add(lessonEntity.getId());
 
             return resDto;
-        }
-        else if (dto.getClass() == LessonDTO.class) {
+        } else if (dto.getClass() == LessonDTO.class) {
             LessonDTO resDto = (LessonDTO) dto;
             LessonEntity resEntity = (LessonEntity) entity;
 
             resDto.setClassId(resEntity.getClazz().getId());
 
             // questions
-            for (QuestionEntity questionEntity: resEntity.getQuestions())
+            for (QuestionEntity questionEntity : resEntity.getQuestions())
                 resDto.getQuestionIds().add(questionEntity.getId());
 
             return resDto;
-        }
-        else if (dto.getClass() == QuestionDTO.class) {
+        } else if (dto.getClass() == QuestionDTO.class) {
             QuestionDTO resDto = (QuestionDTO) dto;
             QuestionEntity resEntity = (QuestionEntity) entity;
 
             // users
-            for (UserEntity userEntity: resEntity.getUsers())
+            for (UserEntity userEntity : resEntity.getUsers())
                 resDto.getUsernames().add(userEntity.getUsername());
 
             return resDto;
-        }
-        else if (dto.getClass() == RoleDTO.class) {
+        } else if (dto.getClass() == RoleDTO.class) {
             RoleDTO resDto = (RoleDTO) dto;
             RoleEntity resEntity = (RoleEntity) entity;
 
             // users
-            for (UserEntity userEntity: resEntity.getUsers())
+            for (UserEntity userEntity : resEntity.getUsers())
                 resDto.getUsernames().add(userEntity.getUsername());
 
             return resDto;
-        }
-        else if (dto.getClass() == SubjectDTO.class) {
+        } else if (dto.getClass() == SubjectDTO.class) {
             SubjectDTO resDto = (SubjectDTO) dto;
             SubjectEntity resEntity = (SubjectEntity) entity;
 
             // classes
-            for (ClassEntity classEntity: resEntity.getClasses())
+            for (ClassEntity classEntity : resEntity.getClasses())
                 resDto.getClassIds().add(classEntity.getId());
 
             return resDto;
-        }
-        else if (dto.getClass() == UserDTO.class) {
+        } else if (dto.getClass() == UserDTO.class) {
             UserDTO resDto = (UserDTO) dto;
             UserEntity resEntity = (UserEntity) entity;
 
             // created classes
-            for (ClassEntity classEntity: resEntity.getCreatedClasses())
+            for (ClassEntity classEntity : resEntity.getCreatedClasses())
                 resDto.getCreatedClassIds().add(classEntity.getId());
 
             // joined classes
-            for (ClassEntity classEntity: resEntity.getJoinedClasses())
+            for (ClassEntity classEntity : resEntity.getJoinedClasses())
                 resDto.getJoinedClassIds().add(classEntity.getId());
 
             // done questions
-            for (QuestionEntity questionEntity: resEntity.getDoneQuestions())
+            for (QuestionEntity questionEntity : resEntity.getDoneQuestions())
                 resDto.getDoneQuestionIds().add(questionEntity.getId());
 
             return resDto;
@@ -130,101 +125,103 @@ public class DTOEntityConverter {
             resEntity.setAuthorUser(userDao.findById(resDto.getAuthorUsername()));
 
             // joined users
-            for (String username: resDto.getJoinedUsernames()) {
-                UserEntity userEntity = userDao.findById(username);
-                if (userEntity != null)
-                    resEntity.getJoinedUser().add(userEntity);
-            }
+            if (resDto.getJoinedUsernames() != null)
+                for (String username : resDto.getJoinedUsernames()) {
+                    UserEntity userEntity = userDao.findById(username);
+                    if (userEntity != null)
+                        resEntity.getJoinedUser().add(userEntity);
+                }
 
             // lessons
-            for (Long id: resDto.getLessonIds()) {
-                LessonEntity lessonEntity = lessonDao.findById(id);
-                if (lessonEntity != null)
-                    resEntity.getLessons().add(lessonEntity);
-            }
+            if (resDto.getLessonIds() != null)
+                for (Long id : resDto.getLessonIds()) {
+                    LessonEntity lessonEntity = lessonDao.findById(id);
+                    if (lessonEntity != null)
+                        resEntity.getLessons().add(lessonEntity);
+                }
 
             return resEntity;
-        }
-        else if (entity.getClass() == LessonEntity.class) {
+        } else if (entity.getClass() == LessonEntity.class) {
             LessonDTO resDto = (LessonDTO) dto;
             LessonEntity resEntity = (LessonEntity) entity;
 
             resEntity.setClazz(classDao.findById(resDto.getClassId()));
 
             // questions
-            for (Long id: resDto.getQuestionIds()) {
-                QuestionEntity questionEntity = questionDao.findById(id);
-                if (questionEntity != null)
-                    resEntity.getQuestions().add(questionEntity);
-            }
+            if (resDto.getQuestionIds() != null)
+                for (Long id : resDto.getQuestionIds()) {
+                    QuestionEntity questionEntity = questionDao.findById(id);
+                    if (questionEntity != null)
+                        resEntity.getQuestions().add(questionEntity);
+                }
 
             return resEntity;
-        }
-        else if (entity.getClass() == QuestionEntity.class) {
+        } else if (entity.getClass() == QuestionEntity.class) {
             QuestionDTO resDto = (QuestionDTO) dto;
             QuestionEntity resEntity = (QuestionEntity) entity;
 
             // users
-            for (String username: resDto.getUsernames()) {
-                UserEntity userEntity = userDao.findById(username);
-                if (userEntity != null)
-                    resEntity.getUsers().add(userEntity);
-            }
+            if (resDto.getUsernames() != null)
+                for (String username : resDto.getUsernames()) {
+                    UserEntity userEntity = userDao.findById(username);
+                    if (userEntity != null)
+                        resEntity.getUsers().add(userEntity);
+                }
 
             return resEntity;
-        }
-        else if (entity.getClass() == RoleEntity.class) {
+        } else if (entity.getClass() == RoleEntity.class) {
             RoleDTO resDto = (RoleDTO) dto;
             RoleEntity resEntity = (RoleEntity) entity;
 
             // users
-            for (String username: resDto.getUsernames()) {
-                UserEntity userEntity = userDao.findById(username);
-                if (userEntity != null)
-                    resEntity.getUsers().add(userEntity);
-            }
+            if (resDto.getUsernames() != null)
+                for (String username : resDto.getUsernames()) {
+                    UserEntity userEntity = userDao.findById(username);
+                    if (userEntity != null)
+                        resEntity.getUsers().add(userEntity);
+                }
 
             return resEntity;
-        }
-        else if (entity.getClass() == SubjectEntity.class) {
+        } else if (entity.getClass() == SubjectEntity.class) {
             SubjectDTO resDto = (SubjectDTO) dto;
             SubjectEntity resEntity = (SubjectEntity) entity;
 
             // classes
-            for (Long id: resDto.getClassIds()) {
-                ClassEntity classEntity = classDao.findById(id);
-                if (classEntity != null)
-                    resEntity.getClasses().add(classEntity);
-            }
+            if (resDto.getClassIds() != null)
+                for (Long id : resDto.getClassIds()) {
+                    ClassEntity classEntity = classDao.findById(id);
+                    if (classEntity != null)
+                        resEntity.getClasses().add(classEntity);
+                }
 
             return resEntity;
-        }
-        else if (entity.getClass() == UserEntity.class) {
+        } else if (entity.getClass() == UserEntity.class) {
             UserDTO resDto = (UserDTO) dto;
             UserEntity resEntity = (UserEntity) entity;
 
             // created classes
-            for (Long id: resDto.getCreatedClassIds()) {
-                ClassEntity classEntity = classDao.findById(id);
-                if (classEntity != null)
-                    resEntity.getCreatedClasses().add(classEntity);
-            }
+            if (resDto.getCreatedClassIds() != null)
+                for (Long id : resDto.getCreatedClassIds()) {
+                    ClassEntity classEntity = classDao.findById(id);
+                    if (classEntity != null)
+                        resEntity.getCreatedClasses().add(classEntity);
+                }
 
             // joined classes
-            for (Long id: resDto.getJoinedClassIds()) {
-                ClassEntity classEntity = classDao.findById(id);
-                if (classEntity != null)
-                    resEntity.getJoinedClasses().add(classEntity);
-            }
+            if (resDto.getJoinedClassIds() != null)
+                for (Long id : resDto.getJoinedClassIds()) {
+                    ClassEntity classEntity = classDao.findById(id);
+                    if (classEntity != null)
+                        resEntity.getJoinedClasses().add(classEntity);
+                }
 
             // done questions
-            for (QuestionEntity questionEntity: resEntity.getDoneQuestions())
-                resDto.getDoneQuestionIds().add(questionEntity.getId());
-            for (Long id: resDto.getDoneQuestionIds()) {
-                QuestionEntity questionEntity = questionDao.findById(id);
-                if (questionEntity != null)
-                    resEntity.getDoneQuestions().add(questionEntity);
-            }
+            if (resDto.getDoneQuestionIds() != null)
+                for (Long id : resDto.getDoneQuestionIds()) {
+                    QuestionEntity questionEntity = questionDao.findById(id);
+                    if (questionEntity != null)
+                        resEntity.getDoneQuestions().add(questionEntity);
+                }
 
             return resEntity;
         }

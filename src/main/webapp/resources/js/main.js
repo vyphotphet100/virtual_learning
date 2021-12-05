@@ -106,6 +106,7 @@
         var deleteButton = document.createElement('button');
         deleteButton.setAttribute('class', 'join-button join-button-edit font-weight-bold deleteButton');
         deleteButton.setAttribute('data-toggle', 'modal');
+        deleteButton.setAttribute('type', 'button');
         deleteButton.setAttribute('data-target', '#delete');
         deleteButton.setAttribute('style', 'width: 20% !important;');
         deleteButton.innerHTML = 'Delete';

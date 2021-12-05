@@ -1,9 +1,11 @@
 package com.webpro.virtual_learning.utils;
 
 import com.webpro.virtual_learning.constant.Constant;
+import com.webpro.virtual_learning.entity.QuestionEntity;
 import com.webpro.virtual_learning.entity.UserEntity;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Random;
 
 public class MyUtil {
@@ -25,5 +27,18 @@ public class MyUtil {
         } catch (Exception ex) {
             return null;
         }
+    }
+
+    public static List<QuestionEntity> sortQuestionEntities(List<QuestionEntity> questionEntities) {
+        for (int i=0; i<questionEntities.size()-1; i++)
+            for (int j=0; j<questionEntities.size(); j++) {
+                if (questionEntities.get(i).getId() > questionEntities.get(j).getId()){
+                    QuestionEntity tmp = questionEntities.get(i);
+                    questionEntities.set(i, questionEntities.get(j));
+                    questionEntities.set(j, tmp);
+                }
+            }
+
+        return questionEntities;
     }
 }
