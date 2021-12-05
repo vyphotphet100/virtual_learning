@@ -53,7 +53,7 @@
         </div>
 
         <div class="wrap-input100 validate-input description" data-validate="Description is required">
-            <textarea class="input100 has-val" type="text" form="class-form"
+            <textarea id="descriptionInput" class="input100 has-val" type="text" form="class-form" data-toggle="modal" data-target="#description"
                       name="description">${lesson.description}</textarea>
             <span class="focus-input100"></span>
             <span class="label-input100">Description</span>
@@ -102,6 +102,7 @@
             </button>
         </div>
     </form>
+
     <!-- Modal - question-->
     <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle"
          aria-hidden="true">
@@ -150,6 +151,33 @@
         </div>
     </div>
     <!--End modal-->
+
+    <!-- Modal - description-->
+    <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content description">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="question-content">
+                        <label>Type the description:</label>
+                        <textarea id="modalDescriptionInput" class="question-input description"></textarea>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End modal-->
+
     <form id="hidden-question-form">
         <input type="hidden" name="id" id="id">
         <input type="hidden" name="content" id="content">
