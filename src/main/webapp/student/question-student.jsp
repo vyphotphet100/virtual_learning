@@ -48,8 +48,8 @@
 
 
         <div id="result">
-            <button class="backlesson" type="button" onclick="checkResult();">Confirm</button>
-            <button class="backlesson" type="button" onclick="location.href='/student/lesson?id=${lesson.id}';">Back to the classroom</button>
+            <button class="checkResult" type="button" onclick="checkResult();">Confirm</button>
+            <button class="checkResult" type="button" onclick="location.href='/student/lesson?id=${lesson.id}';">Back to the classroom</button>
         </div>
 
     </div>

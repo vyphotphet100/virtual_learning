@@ -4,7 +4,8 @@
 
 - Teacher:
     + Xong add lesson (backend)
-    + edit lesson
+    + edit lesson:
+        + Nút delete question
 
 - Làm các trang cho student:
     + Làm trang question

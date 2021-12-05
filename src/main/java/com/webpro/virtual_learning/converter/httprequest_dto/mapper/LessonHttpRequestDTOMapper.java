@@ -20,9 +20,14 @@ public class LessonHttpRequestDTOMapper extends BaseHttpRequestDTOMapper<LessonD
         lessonDto.setVideo(request.getParameter("video"));
         lessonDto.setClassId(Long.parseLong(request.getParameter("classId")));
         String[] requestQuestionIds = request.getParameterValues("questionIds");
-        List<Long> questionIds = new ArrayList<>();
-        for (String questionId: requestQuestionIds)
-            questionIds.add(Long.parseLong(questionId));
+        if (requestQuestionIds != null) {
+            List<Long> questionIds = new ArrayList<>();
+            for (String questionId: requestQuestionIds)
+                questionIds.add(Long.parseLong(questionId));
+            lessonDto.setQuestionIds(questionIds);
+        }
+        else
+            lessonDto.setQuestionIds(null);
 
         return lessonDto;
     }

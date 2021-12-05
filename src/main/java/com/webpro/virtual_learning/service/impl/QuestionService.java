@@ -38,7 +38,17 @@ public class QuestionService extends BaseService<QuestionDTO, QuestionEntity> im
 
     @Override
     public QuestionEntity update(QuestionDTO dto) {
-        return null;
+        if (questionDao.findById(dto.getId()) == null)
+            return this.exceptionObject(new QuestionEntity(), "This question does not exist.");
+
+        QuestionEntity questionEntity = (QuestionEntity)dtoEntityConverter.toEntity(dto, QuestionEntity.class);
+        questionEntity = questionDao.update(questionEntity);
+
+        if (questionEntity == null)
+            return this.exceptionObject(new QuestionEntity(), "Something went wrong.");
+
+        questionEntity.setMessage("Update question successfully.");
+        return questionEntity;
     }
 
     @Override

@@ -50,7 +50,17 @@ public class EditClassController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         ClassDTO classDto = requestDTOConverter.toDTO(request, classMapper);
-        ClassEntity classEntity = classService.update(classDto);
+        ClassEntity classEntity = null;
+
+        // check confirm password
+        if (!classDto.getPassword().equals(request.getParameter("confirmPassword"))) {
+            classEntity = classService.exceptionObject(new ClassEntity(), "Invalid confirm password.");
+            request.setAttribute("responseEntity", classEntity);
+            this.doGet(request, response);
+            return;
+        }
+
+        classEntity = classService.update(classDto);
         request.setAttribute("responseEntity", classEntity);
         this.doGet(request, response);
         //response.sendRedirect("/teacher/edit-class?id=" + classEntity.getId());

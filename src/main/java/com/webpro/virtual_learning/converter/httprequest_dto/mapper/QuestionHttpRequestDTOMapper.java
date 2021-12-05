@@ -17,12 +17,15 @@ public class QuestionHttpRequestDTOMapper extends BaseHttpRequestDTOMapper<Quest
         }
         questionDto.setContent(request.getParameter("content"));
         questionDto.setOption(request.getParameter("option"));
+        questionDto.setLessonId(Long.parseLong(request.getParameter("lessonId")));
         questionDto.setCorrect(Integer.parseInt(request.getParameter("correct")));
         String[] requestUsernames = request.getParameterValues("usernames");
-        List<String> usernames = new ArrayList<>();
-        for (String username : requestUsernames)
-            usernames.add(username);
-        questionDto.setUsernames(usernames);
+        if (requestUsernames != null) {
+            List<String> usernames = new ArrayList<>();
+            for (String username : requestUsernames)
+                usernames.add(username);
+            questionDto.setUsernames(usernames);
+        }
 
         return questionDto;
     }

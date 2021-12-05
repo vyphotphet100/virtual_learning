@@ -36,7 +36,17 @@ public class LessonService extends BaseService<LessonDTO, LessonEntity> implemen
 
     @Override
     public LessonEntity update(LessonDTO dto) {
-        return null;
+        if (lessonDao.findById(dto.getId()) == null)
+            return this.exceptionObject(new LessonEntity(), "This lesson does not exist.");
+
+        LessonEntity lessonEntity = (LessonEntity) dtoEntityConverter.toEntity(dto, LessonEntity.class);
+        lessonEntity = lessonDao.update(lessonEntity);
+
+        if (lessonEntity == null)
+            return this.exceptionObject(new LessonEntity(), "Something went wrong.");
+
+        lessonEntity.setMessage("Update lesson successfully.");
+        return lessonEntity;
     }
 
     @Override
