@@ -164,7 +164,7 @@ body {
 }
 
 .edit-course{
-    width: 66% !important;
+    width: 60.5% !important;
 }
 
 /*Add lesson*/
@@ -208,6 +208,8 @@ body {
     width: 100%;
     height:60%;
     padding-left: 24px;
+    outline: none;
+    border: none;
 }
 
 /* The Modal (background) */
@@ -698,6 +700,17 @@ li:hover input:disabled + label:after {
     line-height: 1.2;
     font-weight: 700;
     margin: 0px 0px;
+}
+
+#subjectSelector {
+    border: none;
+    outline: 1px solid #e6e6e6;
+}
+
+/*the size of modal description input*/
+.question-input.description {
+    width: 100%;
+    height: 500px;
 }
 
 /*******************************

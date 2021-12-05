@@ -111,4 +111,11 @@
 
         deleteEvent(deleteButton);
     });
+
+    /*==================================================================
+    [ take the text in modal description into textarea description ]*/
+    document.querySelector('#descriptionSave').addEventListener('click', function () {
+        document.querySelector('#descriptionInput').value = document.querySelector('#modalDescriptionInput').value;
+    });
+
 })(jQuery);
