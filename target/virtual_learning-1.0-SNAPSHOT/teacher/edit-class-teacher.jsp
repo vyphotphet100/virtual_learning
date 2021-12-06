@@ -24,36 +24,10 @@
 
 <body>
 <div class="super_container">
-
     <!-- Header -->
     <header class="header">
         <%@include file="/common/header.jsp" %>
     </header>
-
-    <!-- Menu -->
-    <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-        <div class="menu_close_container">
-            <div class="menu_close">
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <div class="search">
-            <form action="#" class="header_search_form menu_mm">
-                <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
-                <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
-                    <i class="fa fa-search menu_mm" aria-hidden="true"></i>
-                </button>
-            </form>
-        </div>
-        <nav class="menu_nav">
-            <ul class="menu_mm">
-                <li class="menu_mm"><a href="#">Home</a></li>
-                <li class="menu_mm"><a href="#">My classes</a></li>
-                <li class="menu_mm"><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
 </div>
 
 <div class="courses">
@@ -92,8 +66,8 @@
         </div>
 
         <div class="wrap-input100 validate-input" id="subjectSelector" data-validate="Type of class is required">
-            <h3 class="TypeOfClass">Type of class</h3>
-            <select name="subjectId" class="form-select form-select-lg " id="subjectId">
+            <h3 class="TypeOfClass">Subject</h3>
+            <select name="subjectId" class="form-select form-select-lg " id="subjectId" style="background: rgb(0 0 0 / 0%);">
                 <c:forEach items="${subjects}" var="subject">
                     <c:if test="${subject.id == clazz.subject.id}">
                         <option value="${subject.id}" selected>${subject.name}</option>

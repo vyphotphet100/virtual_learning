@@ -29,3 +29,30 @@ function joinClass() {
     var password = document.getElementById("password").value;
     window.location.href = '/student/class/join?classId=' + classId + '&password=' + password;
 }
+
+function classDetail(classId) {
+    var classResult = $.ajax({
+        type: "GET",
+        url: "/class?id=" + classId,
+        async: false,
+        success: function (result) {
+            return result;
+        },
+        error: function (result) {
+            return result;
+        }
+    }).responseText;
+
+    classResult = JSON.parse(classResult);
+    if (classResult.httpStatus != 'OK')
+        return;
+
+    $('#class-detail-modal-teacher-name').text(document.getElementById('class-teacher-'+classResult.id).innerText);
+    $('#class-detail-modal-class-name').text('Class name: ' + classResult.name);
+    $('#class-detail-modal-description').text(classResult.description);
+    $('#class-detail-modal-join').click(function() {
+        $('#readmore').modal('hide');
+        openModal(classResult.id);
+    });
+    $('#readmore').modal('show');
+}

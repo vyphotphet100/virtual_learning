@@ -67,8 +67,19 @@
 
                                     <h3>${clazz.name}</h3>
                                     <p>${clazz.description}</p>
-                                    <p><a href="/student/lesson?id=${clazz.lessons[0].id}" class="btn btn-primary">Enroll
-                                        now</a> <span class="enrolled-count">${clazz.joinedUser.size()} students enrolled</span>
+                                    <p>
+                                        <c:if test="${not empty clazz.lessons[0].id}">
+                                            <a href="/student/lesson?id=${clazz.lessons[0].id}" class="btn btn-primary">
+                                                Enroll now
+                                            </a>
+                                        </c:if>
+                                        <c:if test="${empty clazz.lessons[0].id}">
+                                            <a href="##" onclick="alert('This class still has no any lesson.');" class="btn btn-primary">
+                                                Enroll now
+                                            </a>
+                                        </c:if>
+
+                                        <span class="enrolled-count">${clazz.joinedUser.size()} students enrolled</span>
                                     </p>
                                 </div>
                             </div>

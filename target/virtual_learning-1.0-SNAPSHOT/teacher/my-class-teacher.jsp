@@ -43,7 +43,12 @@
                             src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                             alt=""></div>
                     <div class="course_body">
-                        <h3 class="course_title"><a href="/teacher/lesson?id=${clazz.lessons[0].id}">${clazz.name}</a></h3>
+                        <c:if test="${not empty clazz.lessons[0].id}">
+                            <h3 class="course_title"><a href="/teacher/lesson?id=${clazz.lessons[0].id}">${clazz.name}</a></h3>
+                        </c:if>
+                        <c:if test="${empty clazz.lessons[0].id}">
+                            <h3 class="course_title"><a href="##" onclick="addLesson(${clazz.id});">${clazz.name}</a></h3>
+                        </c:if>
                         <div class="course_teacher">${clazz.authorUser.fullName}</div>
                         <div class="course_text">
                             <p>${clazz.description}</p>
@@ -79,6 +84,32 @@
 
 </div>
 
+<!-- Modal - add lesson-->
+<div class="modal fade" id="add-lesson-modal" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content description">
+            <div class="modal-header">
+                <h4 class="modal-title" id="descriptionTitle"><b>Add lesson</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="question-content">
+                    <label>Lesson title:</label>
+                    <input id="add-lesson-title" style="box-shadow: 0 0 3px #14bdee;width: 530px;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="descriptionSave" type="button" class="btn btn-primary" onclick="saveAddLesson()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
 
 </body>
 
@@ -99,6 +130,7 @@
         }
     }
     getRandomImage();
+
 </script>
 
 <script src="../resources/js/jquery-3.2.1.min.js"></script>

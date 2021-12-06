@@ -115,32 +115,6 @@ function saveChangeAddQuestion() {
     $("#hidden-question-form").submit();
 }
 
-$("#class-form").submit(function (e) {
-    e.preventDefault(); // avoid to execute the actual submit of the form.
-    var form = $(this);
-
-    var result = $.ajax({
-        type: "POST",
-        url: "/teacher/edit-lesson",
-        async: false,
-        data: form.serialize(), // serializes the form's elements.
-        success: function (result) {
-            return result;
-        },
-        error: function (result) {
-            return result;
-        }
-    }).responseText;
-
-    result = JSON.parse(result);
-    if (result.httpStatus != 'OK') {
-        alert(result.message);
-        return;
-    }
-
-    window.location.reload();
-});
-
 $("#hidden-question-form").submit(function (e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
     var form = $(this);
@@ -219,4 +193,27 @@ $("#hidden-question-form").submit(function (e) {
 
         $('#question').modal("hide");
     }
+});
+
+$("#class-form").submit(function (e) {
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+    var form = $(this);
+
+    var result = $.ajax({
+        type: "POST",
+        url: "/teacher/edit-lesson",
+        async: false,
+        data: form.serialize(), // serializes the form's elements.
+        success: function (result) {
+            return result;
+        },
+        error: function (result) {
+            return result;
+        }
+    }).responseText;
+
+    result = JSON.parse(result);
+
+    $('#announcement-content').text(result.message);
+    $('#announcement').modal('show');
 });
