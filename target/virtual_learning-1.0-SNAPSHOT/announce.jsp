@@ -28,8 +28,6 @@
     </header>
 </div>
 
-
-
 <div class="courses">
     <!--Background-->
     <div class="section_background parallax-window" data-parallax="scroll"
