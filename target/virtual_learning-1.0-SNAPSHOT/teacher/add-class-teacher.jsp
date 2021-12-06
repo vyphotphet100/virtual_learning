@@ -118,7 +118,7 @@
 <!-- Modal - description-->
 <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content description">
+        <div class="modal-content" style="width: 125%;">
             <div class="modal-header">
                 <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
