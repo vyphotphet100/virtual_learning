@@ -44,13 +44,13 @@ public class AddLessonController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // fake data
-        LessonDTO lessonDto = new LessonDTO();
-        lessonDto.setTitle("Test class");
-        lessonDto.setDescription("Description");
-        lessonDto.setVideo("https://www.youtube.com/watch?v=Uc59ulnJI2o");
-        lessonDto.setClassId(3L);
+//        LessonDTO lessonDto = new LessonDTO();
+//        lessonDto.setTitle("Test class");
+//        lessonDto.setDescription("Description");
+//        lessonDto.setVideo("https://www.youtube.com/watch?v=Uc59ulnJI2o");
+//        lessonDto.setClassId(3L);
 
-        //LessonDTO lessonDto = requestDTOConverter.toDTO(request, lessonHttpRequestDTOMapper);
+        LessonDTO lessonDto = requestDTOConverter.toDTO(request, lessonHttpRequestDTOMapper);
         LessonEntity lessonEntity = lessonService.save(lessonDto);
         lessonDto = (LessonDTO) dtoEntityConverter.toDTO(lessonEntity, LessonDTO.class);
         String lessonDtoJson = this.gson.toJson(lessonDto);

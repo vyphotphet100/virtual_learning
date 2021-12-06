@@ -62,11 +62,11 @@
                                         src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                         alt=""></div>
                                 <div class="course_body">
-                                    <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
-                                    <div class="course_teacher">
+                                    <h3 class="course_title"><a href="##" onclick="classDetail(${classEntityBySubjectId.id});">${classEntityBySubjectId.name}</a></h3>
+                                    <div class="course_teacher" id="class-teacher-${classEntityBySubjectId.id}">
                                         Lecturer: ${classEntityBySubjectId.authorUser.fullName}
                                     </div>
-                                    <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="">
+                                    <button type="button" class="button-readmore" onclick="classDetail(${classEntityBySubjectId.id});" style="">
                                         Readmore
                                     </button>
                                 </div>
@@ -76,7 +76,7 @@
                                             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                             <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
                                         </div>
-                                        <a class="course_price ml-auto" href="#" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
+                                        <a class="course_price ml-auto" href="##" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
                                     </div>
                                 </div>
                             </div>
@@ -109,10 +109,10 @@
                                     src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                     alt=""></div>
                             <div class="course_body">
-                                <h3 class="course_title"><a href="#">${classEntityBySubjectId.name}</a></h3>
-                                <div class="course_teacher">
+                                <h3 class="course_title"><a href="##" onclick="classDetail(${classEntityBySubjectId.id});">${classEntityBySubjectId.name}</a></h3>
+                                <div class="course_teacher" id="class-teacher-${classEntityBySubjectId.id}">
                                     Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
-                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="">
+                                <button type="button" class="button-readmore" onclick="classDetail(${classEntityBySubjectId.id});" style="">
                                     Readmore
                                 </button>
                             </div>
@@ -122,7 +122,7 @@
                                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                         <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
                                     </div>
-                                    <a class="course_price ml-auto" href="#" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
+                                    <a class="course_price ml-auto" href="##" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
                                 </div>
                             </div>
                         </div>
@@ -143,10 +143,10 @@
                                     src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                     alt=""></div>
                             <div class="course_body">
-                                <h3 class="course_title"><a href="#">${clazz.name}</a></h3>
-                                <div class="course_teacher">
+                                <h3 class="course_title"><a href="##" onclick="classDetail(${classEntityBySubjectId.id});">${clazz.name}</a></h3>
+                                <div class="course_teacher" id="class-teacher-${classEntityBySubjectId.id}">
                                     Lecturer: ${clazz.authorUser.fullName}</div>
-                                <button type="button" class="button-readmore" data-toggle="modal" data-target="#readmore" style="">
+                                <button type="button" class="button-readmore" onclick="classDetail(${classEntityBySubjectId.id});" style="">
                                     Readmore
                                 </button>
                             </div>
@@ -156,7 +156,7 @@
                                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                         <span>${clazz.joinedUser.size()} student(s)</span>
                                     </div>
-                                    <a class="course_price ml-auto" href="#" onclick="openModal(${clazz.id});">Join</a>
+                                    <a class="course_price ml-auto" href="##" onclick="openModal(${clazz.id});">Join</a>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +168,7 @@
 
     </div>
 </div>
-<!-- Modal - question-->
+<!-- Modal - class detail-->
 <div class="modal fade" id="readmore" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -177,13 +177,13 @@
             </div>
             <div class="modal-body">
 
-                <h3><p>Teacher: Mr Tuong</p></h3>
-                <h3>Class name: Sololearn</h3>
+                <h3><p id="class-detail-modal-teacher-name">Teacher: Mr Tuong</p></h3>
+                <h3 id="class-detail-modal-class-name">Class name: Sololearn</h3>
                 <h3>Describe:</h3>
-                <p>Sololearn is a 6-part Java programming language training program with 65 lessons, covering topics such as loops and conditions, arrays, classes. objects, exceptions, lists, themes, and files.</p>
+                <p id="class-detail-modal-description">Sololearn is a 6-part Java programming language training program with 65 lessons, covering topics such as loops and conditions, arrays, classes. objects, exceptions, lists, themes, and files.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="window.location.href=''">
+                <button id="class-detail-modal-join" type="button" class="btn btn-secondary">
                     <strong> Join class</strong>
                 </button>
 
@@ -198,7 +198,7 @@
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content" id="ModalfitHight">
+    <div class="modal-content" id="ModalfitHight" style="height: 400px">
         <span class="close">&times;</span>
         <h3>Enter password of this class to join</h3>
         <div class="wrap-input100 validate-input" data-validate="Pasword is required">

@@ -24,7 +24,6 @@
 
 <body>
     <div class="super_container">
-
         <!-- Header -->
         <header class="header">
 			<%@include file="/common/header.jsp"%>
@@ -65,8 +64,8 @@
             </div>
 
             <div class="wrap-input100 validate-input" id="subjectSelector" data-validate = "Type of class is required">
-                <h3 class="TypeOfClass">Type of class</h3>
-                <select name="subjectId"  class="form-select form-select-lg " id="subjectId">
+                <h3 class="TypeOfClass">Subject</h3>
+                <select name="subjectId"  class="form-select form-select-lg " id="subjectId" style="background: rgb(0 0 0 / 0%);">
                     <c:forEach items="${subjects}" var="subject">
                         <c:if test="${subject.id == clazz.subject.id}">
                             <option value="${subject.id}" selected>${subject.name}</option>
@@ -103,31 +102,6 @@
             </div>
             <input type="hidden" name="authorUsername" value="${sessionScope.USER_SESSION.username}"/>
 
-            <!-- Modal - description-->
-            <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content description">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="question-content">
-                                <label>Type the description:</label>
-                                <textarea id="modalDescriptionInput" class="question-input description"></textarea>
-
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End modal-->
         </form>
 
         <!--Apply button-->
@@ -141,10 +115,37 @@
     </div>    
 </body>
 
+<!-- Modal - description-->
+<div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content description">
+            <div class="modal-header">
+                <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="question-content">
+                    <label>Type the description:</label>
+                    <textarea id="modalDescriptionInput" class="question-input description"></textarea>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
+
 <!-- Footer-->
 <footer class="footer">
 	<%@include file="/common/footer.jsp"%>
-
 </footer>
     
     <script src="../resources/js/jquery-3.2.1.min.js"></script>

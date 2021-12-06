@@ -46,14 +46,15 @@
 
         <input type="hidden" name="id" value="${lesson.id}">
         <input type="hidden" name="classId" value="${lesson.clazz.id}">
-        <div class="wrap-input100 validate-input" data-validate="Name of class is required">
+        <div class="wrap-input100 validate-input" data-validate="Name of lesson is required">
             <input class="input100 has-val" type="text" name="title" value="${lesson.title}">
             <span class="focus-input100"></span>
             <span class="label-input100">Title</span>
         </div>
 
         <div class="wrap-input100 validate-input description" data-validate="Description is required">
-            <textarea id="descriptionInput" class="input100 has-val" type="text" form="class-form" data-toggle="modal" data-target="#description"
+            <textarea id="descriptionInput" class="input100 has-val" type="text" form="class-form" data-toggle="modal"
+                      data-target="#description"
                       name="description">${lesson.description}</textarea>
             <span class="focus-input100"></span>
             <span class="label-input100">Description</span>
@@ -61,7 +62,8 @@
 
         <div class="text-center">
             <b>Edit link video</b>
-            <textarea id="editLink" name="video" form="class-form">${lesson.video}</textarea>
+            <textarea id="editLink" name="video" form="class-form"
+                      style="background-color: rgb(0 0 0 / 0%);">${lesson.video}</textarea>
         </div>
 
         <h3 class="text-center" style="margin-bottom: 20px; margin-top: 50px;">Question?</h3>
@@ -101,82 +103,7 @@
                 Add question
             </button>
         </div>
-
-        <!-- Modal - description-->
-        <div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content description">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="question-content">
-                            <label>Type the description:</label>
-                            <textarea id="modalDescriptionInput" class="question-input description"></textarea>
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--End modal-->
     </form>
-
-    <!-- Modal - question-->
-    <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="questionTitle"><b>Complete your question</b></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="question-content">
-                        <input type="hidden" id="question-id" value="">
-                        <label>Type the question:</label>
-                        <textarea class="question-input" id="question-input"></textarea>
-                        <label class="answer-header">Type content for Answer <i>A</i></label>
-                        <textarea class="answer-input" id="answer-input-a"></textarea>
-                        <label class="answer-header">Type content for Answer <i>B</i></label>
-                        <textarea class="answer-input" id="answer-input-b"></textarea>
-                        <label class="answer-header">Type content for Answer <i>C</i></label>
-                        <textarea class="answer-input" id="answer-input-c"></textarea>
-                        <label class="answer-header">Type content for Answer <i>D</i></label>
-                        <textarea class="answer-input" id="answer-input-d"></textarea>
-                        <label class="answer-header">Please select the correct answer:</label>
-                        <div class="correct-answer">
-                            <input name="correct" type="radio"> <b>A</b>
-                        </div>
-                        <div class="correct-answer">
-                            <input name="correct" type="radio"> <b>B</b>
-                        </div>
-                        <div class="correct-answer">
-                            <input name="correct" type="radio"> <b>C</b>
-                        </div>
-                        <div class="correct-answer">
-                            <input name="correct" type="radio"> <b>D</b>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="saveChangeAddQuestion();">Save changes
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End modal-->
 
     <form id="hidden-question-form">
         <input type="hidden" name="id" id="id">
@@ -190,12 +117,118 @@
 <!--Apply button-->
 <div class="text-center">
     <a class="a-join-button">
+        <button class="join-button" onclick="window.location.href = '/teacher/lesson?id='+${lesson.id}">
+            <b>Return to class</b>
+        </button>
+    </a>
+    <a class="a-join-button">
         <button class="join-button" form="class-form">
             <b>Apply</b>
         </button>
     </a>
 </div>
 
+<!-- Modal - description-->
+<div class="modal fade" id="description" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content description">
+            <div class="modal-header">
+                <h4 class="modal-title" id="descriptionTitle"><b>Complete your description</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="question-content">
+                    <label>Type the description:</label>
+                    <textarea id="modalDescriptionInput"
+                              class="question-input description">${lesson.description}</textarea>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="descriptionSave" type="button" class="btn btn-primary" data-dismiss="modal">Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
+
+<!-- Modal - question-->
+<div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="questionTitle"><b>Complete your question</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="question-content">
+                    <input type="hidden" id="question-id" value="">
+                    <label>Type the question:</label>
+                    <textarea class="question-input" id="question-input"></textarea>
+                    <label class="answer-header">Type content for Answer <i>A</i></label>
+                    <textarea class="answer-input" id="answer-input-a"></textarea>
+                    <label class="answer-header">Type content for Answer <i>B</i></label>
+                    <textarea class="answer-input" id="answer-input-b"></textarea>
+                    <label class="answer-header">Type content for Answer <i>C</i></label>
+                    <textarea class="answer-input" id="answer-input-c"></textarea>
+                    <label class="answer-header">Type content for Answer <i>D</i></label>
+                    <textarea class="answer-input" id="answer-input-d"></textarea>
+                    <label class="answer-header">Please select the correct answer:</label>
+                    <div class="correct-answer">
+                        <input name="correct" type="radio"> <b>A</b>
+                    </div>
+                    <div class="correct-answer">
+                        <input name="correct" type="radio"> <b>B</b>
+                    </div>
+                    <div class="correct-answer">
+                        <input name="correct" type="radio"> <b>C</b>
+                    </div>
+                    <div class="correct-answer">
+                        <input name="correct" type="radio"> <b>D</b>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="saveChangeAddQuestion();">Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
+
+<!-- Modal - announcement-->
+<div class="modal fade" id="announcement" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content description">
+            <div class="modal-header">
+                <h4 class="modal-title"><b>Announcement</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="announcement-content"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Got it
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
 </body>
 
 <!-- Footer-->

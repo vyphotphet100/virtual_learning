@@ -56,7 +56,8 @@
                                 <div class="vertical-menu">
                                     <c:forEach items="${clazz.lessons}" var="subLesson">
                                         <c:if test="${subLesson.id == lesson.id}">
-                                            <a href="/teacher/lesson?id=${subLesson.id}" class="active">${subLesson.title}</a>
+                                            <a href="/teacher/lesson?id=${subLesson.id}"
+                                               class="active">${subLesson.title}</a>
                                             <c:set var="lesson" value="${subLesson}"/>
 
                                         </c:if>
@@ -66,7 +67,9 @@
                                     </c:forEach>
                                 </div>
 
-                                <p><a href="/teacher/add-lesson?classId=${clazz.id}" class="btn btn-quize">Add lesson</a></p>
+                                <p><a <%--href="/teacher/add-lesson?classId=${clazz.id}" --%>
+                                        class="btn btn-quize" data-toggle="modal" data-target="#add-lesson-modal">Add
+                                    lesson</a></p>
                             </div>
 
                             <div class="probootstrap-image probootstrap-animate"
@@ -75,8 +78,12 @@
                                         class="fa fa-play"></i></a>
                             </div>
                             <div class="menu-btn">
-                                <button onclick="deleteLesson(${lesson.id}, ${clazz.id});" class="menu-btn btn-delete">Delete</button>
-                                <button onclick="window.location.href='/teacher/edit-lesson?id=${lesson.id}'" class="menu-btn btn-edit">Edit</button>
+                                <button onclick="deleteLesson(${lesson.id}, ${clazz.id});" class="menu-btn btn-delete">
+                                    Delete
+                                </button>
+                                <button onclick="window.location.href='/teacher/edit-lesson?id=${lesson.id}'"
+                                        class="menu-btn btn-edit">Edit
+                                </button>
                             </div>
 
                         </div>
@@ -89,6 +96,57 @@
     <!-- END wrapper -->
 
 </div>
+
+<!-- Modal - add lesson-->
+<div class="modal fade" id="add-lesson-modal" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content description">
+            <div class="modal-header">
+                <h4 class="modal-title" id="descriptionTitle"><b>Add lesson</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="question-content">
+                    <label>Lesson title:</label>
+                    <input id="add-lesson-title" style="box-shadow: 0 0 3px #14bdee;width: 530px;">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button id="descriptionSave" type="button" class="btn btn-primary" onclick="saveAddLesson(${lesson.clazz.id})">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
+
+<!-- Modal - announcement-->
+<div class="modal fade" id="announcement" tabindex="-1" role="dialog" aria-labelledby="descriptionTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content description">
+            <div class="modal-header">
+                <h4 class="modal-title"><b>Announcement</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="announcement-content"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Got it
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End modal-->
 
 
 </body>

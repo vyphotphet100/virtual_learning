@@ -48,7 +48,7 @@
                 <div class="col-md-12">
                     <div class="probootstrap-flex-block">
                         <div class="probootstrap-text probootstrap-animate">
-                            <div class="text-uppercase probootstrap-uppercase">Featured Course</div>
+                            <div class="text-uppercase probootstrap-uppercase">Featured Lesson</div>
 
                             <div class="vertical-menu">
                                 <c:forEach items="${clazz.lessons}" var="subLesson">

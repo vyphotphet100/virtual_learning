@@ -112,7 +112,7 @@
                     </c:if>
                     <div class="mt-5 text-center">
                         <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
-                        <button class="btn btn-danger profile-button" type="button">Log out</button>
+                        <button class="btn btn-danger profile-button" type="button" onclick="window.location.href = '/logout';">Log out</button>
                     </div>
 
                 </div>
