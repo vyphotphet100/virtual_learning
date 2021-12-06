@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual learning | Edit lesson</title>
+    <title>Virtual learning | Add lesson</title>
     <link rel="stylesheet" type="text/css" href="../resources/styles/bootstrap4/bootstrap.min.css">
     <link href="../resources/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../resources/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -135,7 +135,7 @@
     <div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content desciption">
                 <div class="modal-header">
                     <h4 class="modal-title" id="questionTitle"><b>Complete your question</b></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
