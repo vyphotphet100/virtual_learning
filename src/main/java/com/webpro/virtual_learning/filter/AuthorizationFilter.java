@@ -22,30 +22,32 @@ public class AuthorizationFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-//        String url = request.getRequestURI();
-//        UserEntity userSession = MyUtil.getUserFromSession(request);
-//
-//        if (url.contains("/student/") || url.contains("/teacher/")) {
-//            if (userSession == null) {
-//                response.sendRedirect("/login");
-//                //filterChain.doFilter(request, response);
-//                return;
-//            }
-//        }
-//
-//        if (url.contains("/student/") && userSession.getRole().getCode().equals(Constant.ROLE_TEACHER)){
-//            request.getSession().setAttribute(Constant.USER_SESSION, null);
-//            response.sendRedirect("/login?message=" + "Please log in as student to continue");
-//            //filterChain.doFilter(request, response);
-//            return;
-//        }
-//
-//        if (url.contains("/teacher/") && userSession.getRole().getCode().equals(Constant.ROLE_STUDENT)){
-//            request.getSession().setAttribute(Constant.USER_SESSION, null);
-//            response.sendRedirect("/login?message=" + "Please log in as teacher to continue");
-//            //filterChain.doFilter(request, response);
-//            return;
-//        }
+        String url = request.getRequestURI();
+        UserEntity userSession = MyUtil.getUserFromSession(request);
+
+        if (url.startsWith("/student/") ||
+                url.startsWith("/teacher/") ||
+                url.startsWith("/profile")) {
+            if (userSession == null) {
+                response.sendRedirect("/login");
+                //filterChain.doFilter(request, response);
+                return;
+            }
+        }
+
+        if (url.startsWith("/student/") && userSession.getRole().getCode().equals(Constant.ROLE_TEACHER)) {
+            request.getSession().setAttribute(Constant.USER_SESSION, null);
+            response.sendRedirect("/login?message=" + "Please log in as student to continue");
+            //filterChain.doFilter(request, response);
+            return;
+        }
+
+        if (url.startsWith("/teacher/") && userSession.getRole().getCode().equals(Constant.ROLE_STUDENT)) {
+            request.getSession().setAttribute(Constant.USER_SESSION, null);
+            response.sendRedirect("/login?message=" + "Please log in as teacher to continue");
+            //filterChain.doFilter(request, response);
+            return;
+        }
 
         filterChain.doFilter(request, response);
     }
