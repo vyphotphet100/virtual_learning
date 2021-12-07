@@ -339,6 +339,20 @@ body {
     height: 150px;
     top:15%;
     margin: 2px 5px 5px 5px;
+    padding: 4px 4px 4px 4px;
+
+}
+.descriptionlessonP{
+    width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+    -webkit-line-clamp: 3;
+    height: 75px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-left: 20px;
+
 }
 .linelesson{
 

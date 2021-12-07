@@ -75,7 +75,7 @@
                                     <div class="wrap-input100 validate-input description"  id="descriptionlesson">
                                         <span class="focus-input100"></span>
                                         <span  class="label-input100" >Description</span>
-                                        <p id="descriptionInput" class="input100 has-val" data-toggle="modal"  data-target="#description">${lesson.description}</p>
+                                        <p id="descriptionInput" class=" descriptionlessonP " data-toggle="modal"  data-target="#description">${lesson.description}</p>
 
                                     </div>
                                 </div>
