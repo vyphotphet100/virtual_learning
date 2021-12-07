@@ -66,7 +66,7 @@
                                 <div class="text">
 
                                     <h3>${clazz.name}</h3>
-                                    <p>${clazz.description}</p>
+                                    <p style="height: 150px; overflow: auto;">${clazz.description}</p>
                                     <p>
                                         <c:if test="${not empty clazz.lessons[0].id}">
                                             <a href="/student/lesson?id=${clazz.lessons[0].id}" class="btn btn-primary">
