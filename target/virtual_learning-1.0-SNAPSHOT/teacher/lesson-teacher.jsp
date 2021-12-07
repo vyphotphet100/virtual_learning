@@ -73,7 +73,7 @@
                             </div>
 
                             <div class="probootstrap-image2 probootstrap-animate"
-                                 style="background-image: url(../resources/images/img/slider_3.jpg)">
+                                 style="background-image: url(../resources/images/img/slider_3.jpg); width: 67%; height: 420px">
                                 <a href="${lesson.video}" class="btn-video popup-vimeo"><i
                                         id="btnPlayvideoClass"></i></a>
                                 <div class="menu-btn deletebtnbox">
