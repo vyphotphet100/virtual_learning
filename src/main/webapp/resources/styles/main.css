@@ -180,7 +180,42 @@ a:hover {
     height: 100px;
     overflow: auto;
 }
+.probootstrap-image2 {
+    width: 67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 0px;
+    height: 440px;
+    padding-bottom: 50px;
+}
+.deletebtnbox{
+    background-color: #3D9970;
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 45px;
+    top: 15%
 
+}
+
+
+#btnPlayvideoClass{
+
+
+    position: relative;
+    display: block;
+    background: url(http://www.slatecube.com/images/play-btn.png);
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.course_text > p {
+    height: 100px;
+    overflow: auto;
+}
 /*Add lesson*/
 .join-button-edit{
     width: 100% !important;
@@ -326,40 +361,75 @@ a:hover {
     margin-top: 44px;
 }
 
+#descriptionlesson {
+    height: 150px;
+    top:15%;
+    margin: 2px 5px 5px 5px;
+}
+.descriptionlessonP{
+    width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+    -webkit-line-clamp: 3;
+    height: 75px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin-left: 20px;
 
+}
+.linelesson{
+
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em auto;
+    padding: 0;
+}
+.courses_buttonlesson{
+    width: 210px;
+    height: 46px;
+    border-radius: 3px;
+    background: #14bdee;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 41px;
+    box-shadow: 0px 5px 40px rgb(29 34 47 / 15%);
+    vertical-align: middle !important;
+}
 
 /*contact*/
 .container.profile-member{
     margin-top: 200px;
     height: 600px;
-  }
-  
-  .container.profile-member > .row {
+}
+
+.container.profile-member > .row {
     height: 100%;
-  }
-  
-  .inf-member.col{
+}
+
+.inf-member.col{
     text-align: center;
     height: 100%;
-  }
-  
-  .inf-member.col > h3{
+}
+
+.inf-member.col > h3{
     font-family: 'Courier New', Courier, monospace;
-  }
-  
-  .inf-member.col > p{
+}
+
+.inf-member.col > p{
     font-family: 'Courier New', Courier, monospace;
-  }
-  
-  .inf-member.col > h4{
+}
+
+.inf-member.col > h4{
     font-family: 'Courier New', Courier, monospace;
-  }
-  
-  #imgMember {
+}
+
+#imgMember {
     height: 100px;
     width: 100px;
     border-radius: 50px;
-  }
+}
 
 
 /*Verify account*/
