@@ -58,7 +58,7 @@ public class HomeController extends HttpServlet {
             return;
         }
 
-        // view 4 classes in each subject
+        // view 3 classes in each subject
         List<SubjectEntity> subjectEntities = subjectService.findAllWithNumberOfClass(3);
         request.setAttribute("subjectEntities", subjectEntities);
         request.getRequestDispatcher("/index.jsp").forward(request, response);

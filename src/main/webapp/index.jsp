@@ -46,7 +46,7 @@
 
 
         <c:if test="${empty param['viewAll'] || empty param['keyword'] || param['viewAll'] == '' || param['viewAll'] == 'all'}">
-            <c:forEach items="${subjectEntities}" var="subjectEntity">
+            <c:forEach items="${subjectEntities}" var="subjectEntity" varStatus="loop">
                 <div class="topic-more">
                     <a href="${currentUrl}?viewAll=${subjectEntity.id}"><h4 class="topic">${subjectEntity.name}</h4></a>
                     <a href="${currentUrl}?viewAll=${subjectEntity.id}"><h5 class="more">More</h5></a>
@@ -62,11 +62,11 @@
                                         src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                         alt=""></div>
                                 <div class="course_body">
-                                    <h3 class="course_title"><a href="##" onclick="classDetail(${classEntityBySubjectId.id});">${classEntityBySubjectId.name}</a></h3>
-                                    <div class="course_teacher" id="class-teacher-${classEntityBySubjectId.id}">
-                                        Lecturer: ${classEntityBySubjectId.authorUser.fullName}
+                                    <h3 class="course_title"><a href="##" onclick="classDetail(${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id});">${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].name}</a></h3>
+                                    <div class="course_teacher" id="class-teacher-${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id}">
+                                        Lecturer: ${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].authorUser.fullName}
                                     </div>
-                                    <button type="button" class="button-readmore" onclick="classDetail(${classEntityBySubjectId.id});" style="">
+                                    <button type="button" class="button-readmore" onclick="classDetail(${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id});" style="">
                                         Readmore
                                     </button>
                                 </div>
@@ -74,9 +74,9 @@
                                     <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
                                         <div class="course_info">
                                             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                            <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
+                                            <span>${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].joinedUser.size()} student(s)</span>
                                         </div>
-                                        <a class="course_price ml-auto" href="##" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
+                                        <a class="course_price ml-auto" href="##" onclick="openModal(${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id});">Join</a>
                                     </div>
                                 </div>
                             </div>
@@ -109,10 +109,10 @@
                                     src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                     alt=""></div>
                             <div class="course_body">
-                                <h3 class="course_title"><a href="##" onclick="classDetail(${classEntityBySubjectId.id});">${classEntityBySubjectId.name}</a></h3>
-                                <div class="course_teacher" id="class-teacher-${classEntityBySubjectId.id}">
-                                    Lecturer: ${classEntityBySubjectId.authorUser.fullName}</div>
-                                <button type="button" class="button-readmore" onclick="classDetail(${classEntityBySubjectId.id});" style="">
+                                <h3 class="course_title"><a href="##" onclick="classDetail(${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id});">${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].name}</a></h3>
+                                <div class="course_teacher" id="class-teacher-${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id}">
+                                    Lecturer: ${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].authorUser.fullName}</div>
+                                <button type="button" class="button-readmore" onclick="classDetail(${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id});" style="">
                                     Readmore
                                 </button>
                             </div>
@@ -120,9 +120,9 @@
                                 <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
                                     <div class="course_info">
                                         <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                        <span>${classEntityBySubjectId.joinedUser.size()} student(s)</span>
+                                        <span>${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].joinedUser.size()} student(s)</span>
                                     </div>
-                                    <a class="course_price ml-auto" href="##" onclick="openModal(${classEntityBySubjectId.id});">Join</a>
+                                    <a class="course_price ml-auto" href="##" onclick="openModal(${subjectEntity.classes[subjectEntity.classes.size()-order.index-1].id});">Join</a>
                                 </div>
                             </div>
                         </div>
@@ -143,10 +143,10 @@
                                     src="https://blog.commlabindia.com/wp-content/uploads/2018/06/elearning-to-achieve-business-goals-1.png"
                                     alt=""></div>
                             <div class="course_body">
-                                <h3 class="course_title"><a href="##" onclick="classDetail(${classEntityBySubjectId.id});">${clazz.name}</a></h3>
-                                <div class="course_teacher" id="class-teacher-${classEntityBySubjectId.id}">
+                                <h3 class="course_title"><a href="##" onclick="classDetail(${clazz.id});">${clazz.name}</a></h3>
+                                <div class="course_teacher" id="class-teacher-${clazz.id}">
                                     Lecturer: ${clazz.authorUser.fullName}</div>
-                                <button type="button" class="button-readmore" onclick="classDetail(${classEntityBySubjectId.id});" style="">
+                                <button type="button" class="button-readmore" onclick="classDetail(${clazz.id});" style="">
                                     Readmore
                                 </button>
                             </div>

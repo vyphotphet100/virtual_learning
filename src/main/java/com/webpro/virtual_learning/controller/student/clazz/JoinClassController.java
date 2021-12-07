@@ -31,7 +31,7 @@ public class JoinClassController extends HttpServlet {
         try {
             classId = Long.parseLong(request.getParameter("classId"));
             password = request.getParameter("password");
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             request.setAttribute("message", "Invalid password or class does not exist.");
             request.getRequestDispatcher("/announce.jsp").forward(request, response);
             return;
@@ -57,9 +57,13 @@ public class JoinClassController extends HttpServlet {
         if (classEntity.getPassword().equals(password)) {
             userService.joinClass(userSession.getUsername(), classId);
             request.getSession().setAttribute(Constant.USER_SESSION, userService.findByUsername(userSession.getUsername()));
-            response.sendRedirect("/student/lesson?id=" + classEntity.getLessons().get(0).getId());
-        }
-        else {
+            if (classEntity.getLessons().size() > 0)
+                response.sendRedirect("/student/lesson?id=" + classEntity.getLessons().get(0).getId());
+            else {
+                request.setAttribute("message", "This class has no any lesson. Please join later.");
+                request.getRequestDispatcher("/announce.jsp").forward(request, response);
+            }
+        } else {
             request.setAttribute("message", "Invalid password.");
             request.getRequestDispatcher("/announce.jsp").forward(request, response);
         }

@@ -53,7 +53,7 @@ function checkResult() {
             }
         }
 
-        document.getElementsByClassName('label-option-question'+i)[document.getElementsByClassName('question-correct')[i].value].style.color = 'green';
+        document.getElementsByClassName('label-option-question'+i)[document.getElementsByClassName('question-correct')[i].value-1].style.color = 'green';
     }
 }
 
