@@ -751,17 +751,22 @@ li:hover input:disabled + label:after {
     border-color: #B500FF;
 }
 
-
-
 #checkResult {
     position: absolute;
-    color:black;
-    background:#14BDEE;
-    border-radius:5px;
-    width: 20%;
-    height: 30px;
+    left: 220px;
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #b0e0e6;
+    margin: 10px 5px 100px 4px;
 }
-
+#checkResult:hover{
+    background-color: rgba(144, 191, 211, 0.82);
+}
+#checkResultLesson:hover{
+    background-color: rgba(144, 191, 211, 0.82);
+}
 #resetResult {
     color: red;
 }
