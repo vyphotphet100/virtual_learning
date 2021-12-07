@@ -34,7 +34,7 @@ function getQuestionById(id) {
     for (var i = 0; i < document.getElementsByClassName('answer-input').length; i++) {
         document.getElementsByClassName('answer-input')[i].value = options[i];
     }
-    document.getElementsByName('correct')[question.correct - 1].checked = true;
+    document.getElementsByName('correct')[question.correct].checked = true;
 
     document.getElementById('question').className += ' show';
 }
@@ -84,7 +84,7 @@ function saveChangeAddQuestion() {
     var correct = -1;
     for (var i = 0; i < document.getElementsByName('correct').length; i++)
         if (document.getElementsByName('correct')[i].checked) {
-            correct = i + 1;
+            correct = i;
             break;
         }
     if (correct == -1) {
