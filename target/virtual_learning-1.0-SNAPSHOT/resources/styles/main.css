@@ -166,7 +166,36 @@ body {
 .edit-course{
     width: 60.5% !important;
 }
+.probootstrap-image2 {
+    width: 67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 0px;
+    height: 440px;
+    padding-bottom: 50px;
+}
+.deletebtnbox{
+    background-color: #3D9970;
+    position: relative;
+    margin-top: 70px;
+    margin-bottom: 45px;
+    top: 15%
 
+}
+
+
+#btnPlayvideoClass{
+
+    position: relative;
+    display: block;
+    background: url(http://www.slatecube.com/images/play-btn.png);
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
 /*Add lesson*/
 .join-button-edit{
     width: 100% !important;
@@ -304,8 +333,21 @@ body {
 
 .wrap-input100.validate-input.description {
     height: 150px;
-}
 
+}
+#descriptionlesson {
+    height: 150px;
+    top:15%;
+    margin: 2px 5px 5px 5px;
+}
+.linelesson{
+
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em auto;
+    padding: 0;
+}
 .wrap-input100.validate-input.description > textarea {
     height: 70% !important;
     width: 100% !important;

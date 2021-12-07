@@ -72,19 +72,20 @@
                                     lesson</a></p>
                             </div>
 
-                            <div class="probootstrap-image probootstrap-animate"
+                            <div class="probootstrap-image2 probootstrap-animate"
                                  style="background-image: url(../resources/images/img/slider_3.jpg)">
                                 <a href="${lesson.video}" class="btn-video popup-vimeo"><i
-                                        class="fa fa-play"></i></a>
+                                        id="btnPlayvideoClass"></i></a>
+                                <div class="menu-btn deletebtnbox">
+                                    <button onclick="deleteLesson(${lesson.id}, ${clazz.id});" class="menu-btn btn-delete">
+                                        Delete
+                                    </button>
+                                    <button onclick="window.location.href='/teacher/edit-lesson?id=${lesson.id}'"
+                                            class="menu-btn btn-edit">Edit
+                                    </button>
+                                </div>
                             </div>
-                            <div class="menu-btn">
-                                <button onclick="deleteLesson(${lesson.id}, ${clazz.id});" class="menu-btn btn-delete">
-                                    Delete
-                                </button>
-                                <button onclick="window.location.href='/teacher/edit-lesson?id=${lesson.id}'"
-                                        class="menu-btn btn-edit">Edit
-                                </button>
-                            </div>
+
 
                         </div>
                     </div>
