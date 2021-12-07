@@ -2,6 +2,10 @@ body {
     padding-right: 0px !important;
 }
 
+a:hover {
+    text-decoration: none !important;
+}
+
 /*Sign up + form input*/
 #edit-form-position{
     padding: 35px 55px 55px 55px !important;
@@ -31,7 +35,7 @@ body {
     color: #14BDEE;
 }
 .Login:hover{
-    color: #14BDEE;
+    color: #14BDEE !important;
     background-color: #333333;
 }
 
@@ -49,6 +53,11 @@ body {
 .course_image{
     width: 100% !important;
     height: 200px;
+}
+
+.course_title {
+    height: 34px;
+    overflow: auto !important;
 }
 
 .topic-more{
@@ -165,6 +174,11 @@ body {
 
 .edit-course{
     width: 60.5% !important;
+}
+
+.course_text > p {
+    height: 100px;
+    overflow: auto;
 }
 
 /*Add lesson*/
