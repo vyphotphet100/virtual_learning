@@ -731,6 +731,12 @@ li:hover input:disabled + label:after {
     width: 125%;
 }
 
+/*My class - student*/
+text > p {
+    height: 150px;
+    overflow: auto;
+}
+
 /*******************************
 End question
 *********************************/

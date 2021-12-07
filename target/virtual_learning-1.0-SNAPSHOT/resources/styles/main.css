@@ -2,7 +2,7 @@ body {
     padding-right: 0px !important;
 }
 
-a :hover {
+a:hover {
     text-decoration: none !important;
 }
 
@@ -729,6 +729,12 @@ li:hover input:disabled + label:after {
 
 .modal-content.description {
     width: 125%;
+}
+
+/*My class - student*/
+text > p {
+    height: 150px;
+    overflow: auto;
 }
 
 /*******************************
