@@ -2,6 +2,10 @@ body {
     padding-right: 0px !important;
 }
 
+a :hover {
+    text-decoration: none;
+}
+
 /*Sign up + form input*/
 #edit-form-position{
     padding: 35px 55px 55px 55px !important;
