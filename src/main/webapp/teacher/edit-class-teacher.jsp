@@ -116,7 +116,7 @@
                     <div class="modal-body">
                         <div class="question-content">
                             <label>Type the description:</label>
-                            <textarea id="modalDescriptionInput" class="question-input description"></textarea>
+                            <textarea id="modalDescriptionInput" class="question-input description">${clazz.description}</textarea>
 
                         </div>
                     </div>

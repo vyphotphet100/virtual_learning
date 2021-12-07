@@ -17,7 +17,7 @@ function deleteClass(classId) {
 }
 
 function addLesson(classId) {
-    if (!confirm("This class does not have any lesson. Do you want to add lesson for it?"))
+    if (!confirm("This class has no any lesson. Do you want to add lesson for it?"))
         return;
 
     if (document.getElementById('classIdTmp') == null) {

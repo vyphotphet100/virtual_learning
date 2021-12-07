@@ -44,7 +44,7 @@ public class SubjectService extends BaseService<SubjectDTO, SubjectEntity> imple
         for (SubjectEntity subjectEntity: subjectEntities) {
             List<ClassEntity> classEntities = subjectEntity.getClasses();
             while (classEntities.size() > numOfClass)
-                classEntities.remove((int)numOfClass);
+                classEntities.remove(0);
 
             subjectEntity.setClasses(classEntities);
         }
