@@ -31,7 +31,7 @@ public class MyUtil {
 
     public static List<QuestionEntity> sortQuestionEntities(List<QuestionEntity> questionEntities) {
         for (int i=0; i<questionEntities.size()-1; i++)
-            for (int j=0; j<questionEntities.size(); j++) {
+            for (int j=i; j<questionEntities.size(); j++) {
                 if (questionEntities.get(i).getId() > questionEntities.get(j).getId()){
                     QuestionEntity tmp = questionEntities.get(i);
                     questionEntities.set(i, questionEntities.get(j));

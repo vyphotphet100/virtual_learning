@@ -2,6 +2,7 @@ package com.webpro.virtual_learning.controller.student.question;
 
 import com.webpro.virtual_learning.entity.LessonEntity;
 import com.webpro.virtual_learning.service.ILessonService;
+import com.webpro.virtual_learning.utils.MyUtil;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -24,6 +25,7 @@ public class QuestionController extends HttpServlet {
             return;
 
         LessonEntity lessonEntity = lessonService.findById(lessonId);
+        lessonEntity.setQuestions(MyUtil.sortQuestionEntities(lessonEntity.getQuestions()));
         request.setAttribute("lesson", lessonEntity);
 
         request.getRequestDispatcher("/student/question-student.jsp").forward(request, response);
